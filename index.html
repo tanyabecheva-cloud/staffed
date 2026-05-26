@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Khaya — the friendly way to find trusted, vetted help for your home. Nannies, cleaners, gardeners, carers & more. Every person background-checked. Trust, brought home.">
+<title>Khaya — Trusted help for your home, made easy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --coral:#FF6B4A;--coral-dark:#EF4E2C;--coral-soft:#FFF1EC;
+  --mint:#10B981;--mint-dark:#0C9268;--mint-soft:#E7FBF3;
+  --sun:#FFC23C;--sun-soft:#FFF5DC;
+  --berry:#6C5CE7;--berry-soft:#F0EEFE;
+  --ink:#1C1726;--ink-soft:#6A6377;
+  --white:#fff;--paper:#FFFAF7;--line:#F0E8E2;
+  --r:18px;--r-lg:30px;--pill:999px;
+  --sh:0 14px 34px rgba(28,23,38,.10);
+  --sh-coral:0 16px 38px rgba(255,107,74,.30);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4,.font-d{font-family:'Poppins',sans-serif;}
+a{text-decoration:none;color:inherit;}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px;}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Poppins',sans-serif;font-weight:600;font-size:.98rem;padding:.85rem 1.6rem;border-radius:var(--pill);border:none;cursor:pointer;transition:transform .18s,box-shadow .18s,background .18s;white-space:nowrap;}
+.btn:hover{transform:translateY(-2px);}
+.btn-coral{background:var(--coral);color:#fff;box-shadow:var(--sh-coral);}
+.btn-coral:hover{background:var(--coral-dark);}
+.btn-ink{background:var(--ink);color:#fff;}
+.btn-ink:hover{background:#000;}
+.btn-ghost{background:#fff;color:var(--ink);border:2px solid var(--ink);}
+.btn-ghost:hover{background:var(--ink);color:#fff;}
+.btn-mint{background:var(--mint);color:#fff;}
+.btn-mint:hover{background:var(--mint-dark);}
+.btn-lg{padding:1.05rem 2rem;font-size:1.05rem;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:74px;}
+.logo{display:flex;align-items:center;gap:.6rem;font-family:'Poppins',sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:-.02em;}
+.logo .dot{color:var(--coral);}
+.nav-links{display:flex;gap:2rem;align-items:center;}
+.nav-links a{font-weight:500;font-size:.95rem;color:var(--ink-soft);transition:color .2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-cta{display:flex;gap:.7rem;align-items:center;}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px;}
+.burger span{width:24px;height:2.5px;background:var(--ink);border-radius:2px;}
+
+/* HERO */
+.hero{position:relative;padding:5rem 0 6rem;overflow:hidden;}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;}
+.pill-tag{display:inline-flex;align-items:center;gap:.5rem;background:var(--mint-soft);color:var(--mint-dark);font-family:'Poppins';font-weight:600;font-size:.82rem;padding:.45rem 1rem;border-radius:var(--pill);margin-bottom:1.4rem;}
+.pill-tag .dotpulse{width:8px;height:8px;border-radius:50%;background:var(--mint);}
+.hero h1{font-weight:800;font-size:clamp(2.6rem,5.4vw,4.4rem);line-height:1.02;letter-spacing:-.03em;margin-bottom:1.3rem;}
+.hero h1 .hl{position:relative;white-space:nowrap;color:var(--coral);}
+.hero h1 .hl::after{content:'';position:absolute;left:-2%;right:-2%;bottom:.06em;height:.34em;background:var(--sun);z-index:-1;border-radius:6px;transform:rotate(-1deg);}
+.hero p.sub{font-size:1.18rem;color:var(--ink-soft);line-height:1.6;max-width:480px;margin-bottom:2rem;}
+.hero-ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:2.4rem;}
+.hero-proof{display:flex;align-items:center;gap:1rem;}
+.avatars{display:flex;}
+.avatars span{width:42px;height:42px;border-radius:50%;border:3px solid #fff;margin-left:-12px;display:flex;align-items:center;justify-content:center;font-family:'Poppins';font-weight:700;color:#fff;font-size:.95rem;}
+.avatars span:first-child{margin-left:0;}
+.hero-proof small{color:var(--ink-soft);font-size:.9rem;line-height:1.3;display:block;}
+.hero-proof b{color:var(--ink);}
+
+/* hero visual */
+.hero-art{position:relative;height:440px;}
+.blob{position:absolute;border-radius:46% 54% 60% 40%/52% 44% 56% 48%;}
+.blob1{width:380px;height:380px;background:linear-gradient(140deg,var(--coral),#FF9166);top:20px;right:0;filter:blur(.2px);}
+.float-card{position:absolute;background:#fff;border-radius:var(--r);box-shadow:var(--sh);padding:1rem 1.15rem;display:flex;align-items:center;gap:.8rem;animation:bob 4s ease-in-out infinite;}
+.float-card .ic{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;}
+.float-card .t b{font-family:'Poppins';font-size:.95rem;display:block;}
+.float-card .t small{color:var(--ink-soft);font-size:.8rem;}
+.fc1{top:30px;left:-10px;animation-delay:0s;}
+.fc2{top:170px;right:-18px;animation-delay:.8s;}
+.fc3{bottom:24px;left:18px;animation-delay:1.5s;}
+.badge-check{position:absolute;bottom:120px;right:60px;background:var(--mint);color:#fff;border-radius:50%;width:64px;height:64px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;box-shadow:0 12px 26px rgba(16,185,129,.4);animation:bob 4s ease-in-out infinite;animation-delay:.4s;}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.deco{position:absolute;border-radius:50%;z-index:-1;}
+.deco1{width:18px;height:18px;background:var(--sun);top:60px;right:40px;}
+.deco2{width:12px;height:12px;background:var(--berry);bottom:80px;left:-20px;}
+.deco3{width:26px;height:26px;background:var(--mint);top:0;left:40%;}
+
+/* MARQUEE strip */
+.strip{background:var(--ink);color:#fff;padding:1.1rem 0;overflow:hidden;}
+.strip-in{display:flex;gap:3rem;white-space:nowrap;animation:scroll 24s linear infinite;font-family:'Poppins';font-weight:600;font-size:1rem;}
+.strip-in span{display:inline-flex;align-items:center;gap:.6rem;opacity:.92;}
+.strip-in .s{color:var(--sun);}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+section{padding:5.5rem 0;}
+.eyebrow{font-family:'Poppins';font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:.8rem;}
+.h2{font-weight:800;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.025em;line-height:1.08;}
+.lead{color:var(--ink-soft);font-size:1.12rem;line-height:1.6;max-width:560px;}
+.sec-head{margin-bottom:3rem;}
+.sec-head.center{text-align:center;}
+.sec-head.center .lead{margin:0 auto;}
+
+/* CATEGORIES */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;}
+.cat{background:#fff;border:2px solid var(--line);border-radius:var(--r-lg);padding:1.8rem 1.4rem;transition:transform .2s,border-color .2s,box-shadow .2s;cursor:pointer;}
+.cat:hover{transform:translateY(-6px);border-color:transparent;box-shadow:var(--sh);}
+.cat .ce{width:64px;height:64px;border-radius:18px;background:var(--coral);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;transition:transform .2s;}
+.cat:hover .ce{transform:rotate(-6deg) scale(1.06);}
+.cat .ce svg{width:34px;height:34px;fill:#fff;}
+.cat h4{font-weight:700;font-size:1.08rem;margin-bottom:.25rem;}
+.cat p{color:var(--ink-soft);font-size:.9rem;}
+.bg-coral{background:var(--coral-soft);}.bg-mint{background:var(--mint-soft);}.bg-sun{background:var(--sun-soft);}.bg-berry{background:var(--berry-soft);}
+
+/* HOW */
+.how{background:var(--paper);}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:1rem;}
+.step{background:#fff;border-radius:var(--r-lg);padding:2.2rem 1.8rem;box-shadow:var(--sh);}
+.step .n{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Poppins';font-weight:800;font-size:1.3rem;color:#fff;margin-bottom:1.2rem;}
+.step h3{font-weight:700;font-size:1.25rem;margin-bottom:.5rem;}
+.step p{color:var(--ink-soft);line-height:1.6;}
+
+/* SAFETY */
+.safety-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;}
+.safe-card{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:2.6rem;position:relative;overflow:hidden;}
+.safe-card::after{content:'';position:absolute;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(255,194,60,.22),transparent 70%);top:-60px;right:-60px;}
+.checks{list-style:none;display:flex;flex-direction:column;gap:1rem;position:relative;}
+.checks li{display:flex;align-items:center;gap:.9rem;font-weight:500;}
+.checks .tick{width:30px;height:30px;border-radius:50%;background:var(--mint);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;}
+
+/* TESTI */
+.testi{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.tcard{border-radius:var(--r-lg);padding:2rem;border:2px solid var(--line);}
+.tcard .stars{color:var(--sun);font-size:1.05rem;margin-bottom:.9rem;}
+.tcard p{font-size:1.02rem;line-height:1.55;margin-bottom:1.4rem;}
+.tcard .who{display:flex;align-items:center;gap:.8rem;}
+.tcard .who .a{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Poppins';font-weight:700;color:#fff;}
+.tcard .who b{font-family:'Poppins';font-size:.95rem;display:block;}
+.tcard .who small{color:var(--ink-soft);}
+
+/* DUAL CTA */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
+.duo-card{border-radius:var(--r-lg);padding:2.8rem;position:relative;overflow:hidden;}
+.duo-emp{background:linear-gradient(150deg,var(--coral),#FF8C5A);color:#fff;}
+.duo-wrk{background:linear-gradient(150deg,var(--mint),#2BD4A0);color:#fff;}
+.duo-card h3{font-weight:800;font-size:1.7rem;margin-bottom:.7rem;}
+.duo-card p{opacity:.95;line-height:1.55;margin-bottom:1.6rem;max-width:300px;}
+.duo-card .em{position:absolute;font-size:7rem;right:-10px;bottom:-20px;opacity:.18;}
+
+/* FINAL */
+.final{text-align:center;background:var(--coral-soft);border-radius:var(--r-lg);padding:4rem 2rem;margin:0 22px;}
+.final h2{font-weight:800;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.025em;margin-bottom:1rem;}
+.final p{color:var(--ink-soft);font-size:1.12rem;margin-bottom:2rem;}
+
+/* FOOTER */
+footer{padding:4rem 0 2rem;}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem;}
+.f-grid p{color:var(--ink-soft);font-size:.92rem;line-height:1.6;margin-top:.8rem;max-width:260px;}
+footer h5{font-family:'Poppins';font-weight:700;font-size:.95rem;margin-bottom:1rem;}
+footer ul{list-style:none;}
+footer li{margin-bottom:.6rem;}
+footer li a{color:var(--ink-soft);font-size:.92rem;}
+footer li a:hover{color:var(--coral);}
+.f-bottom{border-top:1px solid var(--line);padding-top:1.6rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;color:var(--ink-soft);font-size:.88rem;}
+
+@media(max-width:900px){
+  .nav-links,.nav-cta .btn-ghost{display:none;}
+  .burger{display:flex;}
+  .nav-links.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;background:#fff;padding:1.4rem 22px;gap:1.1rem;border-bottom:1px solid var(--line);}
+  .hero-grid,.safety-grid,.duo,.f-grid{grid-template-columns:1fr;}
+  .hero-art{display:none;}
+  .cats,.steps,.testi{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:560px){
+  .cats,.steps,.testi{grid-template-columns:1fr;}
+  section{padding:4rem 0;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="#" class="logo">
+      <svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true">
+        <rect width="40" height="40" rx="12" fill="#FF6B4A"/>
+        <path d="M20 9 L31.5 18.5 H8.5 Z" fill="#fff"/>
+        <rect x="11" y="18" width="18" height="13.5" rx="3" fill="#fff"/>
+        <path d="M20 28.6 C16.6 26 15 24.2 15 22.3 A2.1 2.1 0 0 1 20 21.6 A2.1 2.1 0 0 1 25 22.3 C25 24.2 23.4 26 20 28.6 Z" fill="#FF6B4A"/>
+      </svg>
+      khaya<span class="dot">.</span>
+    </a>
+    <div class="nav-links" id="navlinks">
+      <a href="#how">How it works</a>
+      <a href="#cats">Categories</a>
+      <a href="#safety">Safety</a>
+      <a href="#stories">Stories</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-ghost">Find work</a>
+      <a href="#" class="btn btn-coral">Find help</a>
+      <button class="burger" onclick="document.getElementById('navlinks').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="deco deco1"></div><div class="deco deco2"></div><div class="deco deco3"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill-tag"><span class="dotpulse"></span> 100% background-checked</span>
+      <h1>Trusted help<br>for your home,<br><span class="hl">made easy.</span></h1>
+      <p class="sub">Nannies, cleaners, gardeners, carers & more — every single one vetted, verified and reviewed. Book the good ones in minutes.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn btn-coral btn-lg">Find help 🏠</a>
+        <a href="#" class="btn btn-ghost btn-lg">I'm looking for work</a>
+      </div>
+      <div class="hero-proof">
+        <div class="avatars">
+          <span style="background:#FF6B4A">T</span>
+          <span style="background:#10B981">M</span>
+          <span style="background:#6C5CE7">N</span>
+          <span style="background:#FFC23C;color:#1C1726">+</span>
+        </div>
+        <small><b>2,400+ vetted workers</b><br>ready across Joburg & Pretoria</small>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="blob blob1"></div>
+      <div class="badge-check">✓</div>
+      <div class="float-card fc1"><div class="ic" style="background:var(--coral-soft)">👶</div><div class="t"><b>Thandi N.</b><small>Nanny · ⭐ 4.9 · Verified</small></div></div>
+      <div class="float-card fc2"><div class="ic" style="background:var(--mint-soft)">🌿</div><div class="t"><b>Moses D.</b><small>Gardener · ⭐ 5.0 · Verified</small></div></div>
+      <div class="float-card fc3"><div class="ic" style="background:var(--berry-soft)">❤️</div><div class="t"><b>Nomsa B.</b><small>Carer · ⭐ 4.8 · Verified</small></div></div>
+    </div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="strip">
+  <div class="strip-in">
+    <span>🔍 Criminal checks</span><span class="s">•</span><span>🪪 Home Affairs ID verified</span><span class="s">•</span><span>📞 References called</span><span class="s">•</span><span>⭐ Rated by real families</span><span class="s">•</span><span>📋 Legal contracts included</span><span class="s">•</span><span>🤝 Fair pay, no exploitation</span><span class="s">•</span>
+    <span>🔍 Criminal checks</span><span class="s">•</span><span>🪪 Home Affairs ID verified</span><span class="s">•</span><span>📞 References called</span><span class="s">•</span><span>⭐ Rated by real families</span><span class="s">•</span><span>📋 Legal contracts included</span><span class="s">•</span><span>🤝 Fair pay, no exploitation</span><span class="s">•</span>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section id="cats">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">Browse</div>
+      <h2 class="h2">What do you need a hand with?</h2>
+    </div>
+    <div class="cats">
+      <div class="cat"><div class="ce"><svg viewBox="0 0 32 32"><circle cx="16" cy="9" r="4.5"/><path d="M7 27a9 9 0 0 1 18 0 1 1 0 0 1-1 1H8a1 1 0 0 1-1-1Z"/></svg></div><h4>Nannies & au pairs</h4><p>Childcare, school runs, live-in or out</p></div>
+      <div class="cat"><div class="ce"><svg viewBox="0 0 32 32"><rect x="14.5" y="3" width="3" height="13" rx="1.5"/><path d="M9 15h14l2 13H7Z"/></svg></div><h4>Cleaners</h4><p>Housekeeping, laundry, deep cleans</p></div>
+      <div class="cat"><div class="ce"><svg viewBox="0 0 32 32"><path d="M10 20h12l-1.4 7.5a1 1 0 0 1-1 .85H12.4a1 1 0 0 1-1-.85Z"/><path d="M16 20C16 14 13 11 8 11c0 6 3 9 8 9Z"/><path d="M16 20c0-6 3-9 8-9 0 6-3 9-8 9Z"/></svg></div><h4>Gardeners</h4><p>Maintenance, landscaping, pool care</p></div>
+      <div class="cat"><div class="ce"><svg viewBox="0 0 32 32"><path d="M22.7 4.6a6 6 0 0 0-7.3 7.7L5 22.7a2.4 2.4 0 1 0 3.4 3.4l10.4-10.4a6 6 0 0 0 7.7-7.3l-3.5 3.5a2 2 0 0 1-2.8-2.8Z"/></svg></div><h4>Home fixers</h4><p>Plumbers, electricians, handymen</p></div>
+      <div class="cat"><div class="ce"><svg viewBox="0 0 32 32"><path d="M16 27C6 20 4 15 4 11A5.6 5.6 0 0 1 16 9 5.6 5.6 0 0 1 28 11c0 4-2 9-12 16Z"/></svg></div><h4>Elderly care</h4><p>Companions, frail & medical care</p></div>
+      <div class="cat"><div class="ce"><svg viewBox="0 0 32 32"><path d="M5 21l2.2-6.5A3 3 0 0 1 10 12.5h12a3 3 0 0 1 2.8 2L27 21v4a1.2 1.2 0 0 1-1.2 1.2h-1.6A1.2 1.2 0 0 1 23 25v-1H9v1a1.2 1.2 0 0 1-1.2 1.2H6.2A1.2 1.2 0 0 1 5 25Z"/><path d="M8 20l1.4-4h13.2l1.4 4Z" fill="#FF6B4A"/><circle cx="10.5" cy="20.5" r="2" fill="#FF6B4A"/><circle cx="21.5" cy="20.5" r="2" fill="#FF6B4A"/></svg></div><h4>Drivers</h4><p>School runs, errands, chauffeur</p></div>
+      <div class="cat"><div class="ce"><svg viewBox="0 0 32 32"><ellipse cx="10" cy="12" rx="2.4" ry="3.2"/><ellipse cx="16" cy="10" rx="2.4" ry="3.4"/><ellipse cx="22" cy="12" rx="2.4" ry="3.2"/><path d="M16 16c4.2 0 7.5 3 7.5 6.3a4 4 0 0 1-4 4c-1.3 0-2.3-.6-3.5-.6s-2.2.6-3.5.6a4 4 0 0 1-4-4C8.5 19 11.8 16 16 16Z"/></svg></div><h4>Pet care</h4><p>Walking, sitting, grooming</p></div>
+      <div class="cat"><div class="ce"><svg viewBox="0 0 32 32"><path d="M13.5 6h5v7.5H26v5h-7.5V26h-5v-7.5H6v-5h7.5Z"/></svg></div><h4>More soon</h4><p>Security, office cleaning & more</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">Stupidly simple</div>
+      <h2 class="h2">Three taps to trusted help</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n" style="background:var(--coral)">1</div><h3>Tell us what you need</h3><p>Pick a category, your area and hours. Takes about 60 seconds — no awkward phone calls.</p></div>
+      <div class="step"><div class="n" style="background:var(--mint)">2</div><h3>Meet your matches</h3><p>Browse real profiles with photos, ratings, reviews and a big green Verified badge. Chat right in the app.</p></div>
+      <div class="step"><div class="n" style="background:var(--berry)">3</div><h3>Book & relax</h3><p>Get a ready-made legal contract, hire with confidence, and rate them after. Easy.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY -->
+<section id="safety">
+  <div class="wrap safety-grid">
+    <div>
+      <div class="eyebrow">Safety, seriously</div>
+      <h2 class="h2" style="margin-bottom:1rem;">We check, so you don't have to worry.</h2>
+      <p class="lead" style="margin-bottom:1.6rem;">Before anyone shows up on Khaya, they pass a proper, multi-step vetting process. Because this is your home, your kids, your gran. No corners cut. Ever.</p>
+      <a href="#" class="btn btn-ink btn-lg">See how we vet →</a>
+    </div>
+    <div class="safe-card">
+      <ul class="checks">
+        <li><span class="tick">✓</span> Criminal record check (SAPS database)</li>
+        <li><span class="tick">✓</span> ID verified against Home Affairs</li>
+        <li><span class="tick">✓</span> Live selfie + ID photo match</li>
+        <li><span class="tick">✓</span> Real reference calls completed</li>
+        <li><span class="tick">✓</span> Sex-offender check for childcare roles</li>
+        <li><span class="tick">✓</span> Re-vetted every year</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WORKER PROTECTION -->
+<section id="dignity" style="background:var(--mint-soft);">
+  <div class="wrap safety-grid">
+    <div class="safe-card" style="background:var(--mint-dark);">
+      <ul class="checks">
+        <li><span class="tick" style="background:#fff;color:var(--mint-dark)">✓</span> Proper, BCEA-compliant contracts</li>
+        <li><span class="tick" style="background:#fff;color:var(--mint-dark)">✓</span> Fair pay, agreed up front</li>
+        <li><span class="tick" style="background:#fff;color:var(--mint-dark)">✓</span> Help registering for UIF</li>
+        <li><span class="tick" style="background:#fff;color:var(--mint-dark)">✓</span> Safe conditions &amp; reasonable hours</li>
+        <li><span class="tick" style="background:#fff;color:var(--mint-dark)">✓</span> Workers rate employers too</li>
+        <li><span class="tick" style="background:#fff;color:var(--mint-dark)">✓</span> Report mistreatment — we act on it</li>
+      </ul>
+    </div>
+    <div>
+      <div class="eyebrow" style="color:var(--mint-dark)">Dignity, always</div>
+      <h2 class="h2" style="margin-bottom:1rem;">Safety works both ways.</h2>
+      <p class="lead" style="margin-bottom:1.6rem;">Workers are people, not chores. Every person on Khaya is treated with respect — fair pay, real contracts, safe working conditions and reasonable hours. No exploitation, nobody treated like a servant. Khaya only works when work is fair, and the good employers want exactly that.</p>
+      <a href="#" class="btn btn-mint btn-lg">How we protect workers →</a>
+    </div>
+  </div>
+</section>
+
+<!-- STORIES -->
+<section id="stories" style="background:var(--paper);">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">Real people</div>
+      <h2 class="h2">Loved by families & workers alike</h2>
+    </div>
+    <div class="testi">
+      <div class="tcard" style="background:var(--coral-soft);border-color:transparent;">
+        <div class="stars">★★★★★</div>
+        <p>"Finding a nanny I actually trust felt impossible — until Khaya. The vetting gave me total peace of mind."</p>
+        <div class="who"><div class="a" style="background:var(--coral)">S</div><div><b>Sarah M.</b><small>Mom · Sandton</small></div></div>
+      </div>
+      <div class="tcard" style="background:var(--mint-soft);border-color:transparent;">
+        <div class="stars">★★★★★</div>
+        <p>"Khaya treated me with respect from day one, helped with my clearance, and I had work within two weeks."</p>
+        <div class="who"><div class="a" style="background:var(--mint)">T</div><div><b>Thandi N.</b><small>Nanny · Joburg</small></div></div>
+      </div>
+      <div class="tcard" style="background:var(--berry-soft);border-color:transparent;">
+        <div class="stars">★★★★★</div>
+        <p>"Matched us with an incredible carer for my mother in 48 hours. The background check sealed it."</p>
+        <div class="who"><div class="a" style="background:var(--berry)">D</div><div><b>David K.</b><small>Son · Pretoria</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DUAL CTA -->
+<section>
+  <div class="wrap duo">
+    <div class="duo-card duo-emp">
+      <h3>Need a hand at home?</h3>
+      <p>Browse thousands of vetted, verified workers near you. Hire with zero worry.</p>
+      <a href="#" class="btn" style="background:#fff;color:var(--coral)">Find help →</a>
+      <span class="em">🏡</span>
+    </div>
+    <div class="duo-card duo-wrk">
+      <h3>Looking for work?</h3>
+      <p>Build a verified profile, get matched with employers who pay fairly and treat you with respect. Real contracts, safe conditions — never exploitation.</p>
+      <a href="#" class="btn" style="background:#fff;color:var(--mint-dark)">Start earning →</a>
+      <span class="em">💼</span>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section style="padding-top:0;">
+  <div class="final">
+    <h2>Trust, brought home.</h2>
+    <p>Join the families and workers building something better, together.</p>
+    <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;">
+      <a href="#" class="btn btn-coral btn-lg">Find help</a>
+      <a href="#" class="btn btn-ghost btn-lg">Find work</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a href="#" class="logo">
+          <svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="12" fill="#FF6B4A"/><path d="M20 9 L31.5 18.5 H8.5 Z" fill="#fff"/><rect x="11" y="18" width="18" height="13.5" rx="3" fill="#fff"/><path d="M20 28.6 C16.6 26 15 24.2 15 22.3 A2.1 2.1 0 0 1 20 21.6 A2.1 2.1 0 0 1 25 22.3 C25 24.2 23.4 26 20 28.6 Z" fill="#FF6B4A"/></svg>
+          khaya<span class="dot">.</span>
+        </a>
+        <p>South Africa's friendly, fully-vetted home & care marketplace. Fair, safe work for every worker. Trust, brought home.</p>
+      </div>
+      <div><h5>Hire</h5><ul><li><a href="#">Nannies</a></li><li><a href="#">Cleaners</a></li><li><a href="#">Gardeners</a></li><li><a href="#">Carers</a></li></ul></div>
+      <div><h5>Work</h5><ul><li><a href="#">Join as a worker</a></li><li><a href="#">Get verified</a></li><li><a href="#">How vetting works</a></li><li><a href="#">Your rights &amp; protection</a></li></ul></div>
+      <div><h5>Company</h5><ul><li><a href="#">About</a></li><li><a href="#">Safety</a></li><li><a href="#">Contact</a></li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 Khaya. Made with ❤️ in South Africa.</span>
+      <span>Privacy · Terms</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

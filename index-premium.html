@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Khaya — Trust, brought home. South Africa's vetted, background-checked home and care workforce. Nannies, domestic workers, gardeners, carers — every one verified.">
+<title>Khaya | South Africa's Trusted Workforce Solution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1E5F5B;--blue-dark:#143F3C;--blue-mid:#2A7A74;
+  --blue-light:#E1EFED;--blue-pale:#EEF6F4;
+  --gold:#C2603F;--gold-dark:#9E4A2E;--gold-mid:#D2774F;
+  --gold-light:#F8E7DE;--gold-pale:#FDF4EE;
+  --sun:#F4A82C;
+  --white:#FFFFFF;--off-white:#FBF6EE;
+  --gray:#6B6157;--gray-light:#F3ECE0;--border:#E8DECB;
+  --dark:#241C17;--text:#2D2620;
+  --shadow-blue:0 10px 40px rgba(30,95,91,0.18);
+  --shadow-gold:0 10px 40px rgba(194,96,63,0.22);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--gray-light);}
+::-webkit-scrollbar-thumb{background:var(--blue);border-radius:3px;}
+.page{display:none;}.page.active{display:block;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,107,181,0.1);transition:box-shadow 0.3s;}
+nav.scrolled{box-shadow:0 4px 30px rgba(15,30,53,0.12);}
+.nav-inner{max-width:1240px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:82px;}
+.logo-link{display:flex;align-items:center;text-decoration:none;flex-shrink:0;}
+.nav-links{list-style:none;display:flex;gap:2rem;align-items:center;}
+.nav-links a{text-decoration:none;color:var(--text);font-size:.88rem;font-weight:500;letter-spacing:.03em;transition:color 0.3s;position:relative;padding-bottom:2px;}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--blue);transition:width 0.3s;}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-links a:hover,.nav-links a.active{color:var(--blue);}
+.nav-cta-group{display:flex;gap:.75rem;align-items:center;}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:5px;}
+.mobile-toggle span{display:block;width:24px;height:2px;background:var(--text);}
+.btn-blue{background:var(--blue);color:white;padding:.85rem 2rem;border-radius:50px;text-decoration:none;font-size:.88rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;transition:all .3s;border:2px solid var(--blue);display:inline-block;cursor:pointer;}
+.btn-blue:hover{background:var(--blue-dark);border-color:var(--blue-dark);transform:translateY(-2px);box-shadow:var(--shadow-blue);}
+.btn-blue-outline{background:transparent;color:var(--blue);padding:.85rem 2rem;border-radius:50px;text-decoration:none;font-size:.88rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;transition:all .3s;border:2px solid var(--blue);display:inline-block;cursor:pointer;}
+.btn-blue-outline:hover{background:var(--blue);color:white;transform:translateY(-2px);}
+.btn-gold{background:var(--gold);color:var(--dark);padding:.85rem 2rem;border-radius:50px;text-decoration:none;font-size:.88rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;transition:all .3s;border:2px solid var(--gold);display:inline-block;cursor:pointer;}
+.btn-gold:hover{background:var(--gold-dark);border-color:var(--gold-dark);color:white;transform:translateY(-2px);box-shadow:var(--shadow-gold);}
+.btn-white{background:white;color:var(--blue);padding:.85rem 2rem;border-radius:50px;text-decoration:none;font-size:.88rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;transition:all .3s;border:2px solid white;display:inline-block;cursor:pointer;}
+.btn-white:hover{background:transparent;color:white;}
+.btn-white-gold{background:white;color:var(--gold-dark);padding:.85rem 2rem;border-radius:50px;text-decoration:none;font-size:.88rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;transition:all .3s;border:2px solid white;display:inline-block;cursor:pointer;}
+.btn-white-gold:hover{background:transparent;color:white;border-color:white;}
+.btn-sm{padding:.65rem 1.4rem;font-size:.82rem;}
+section{padding:6rem 0;}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem;}
+.container-sm{max-width:800px;margin:0 auto;padding:0 2rem;}
+.section-tag{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;padding:.3rem 1rem;border-radius:20px;}
+.tag-blue{background:var(--blue-light);color:var(--blue-dark);}
+.tag-gold{background:var(--gold-light);color:var(--gold-dark);}
+.section-title{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:var(--dark);line-height:1.2;margin-bottom:1.2rem;}
+.section-title.white{color:white;}.section-title.center{text-align:center;}
+.section-desc{font-size:1.05rem;line-height:1.85;color:var(--gray);max-width:640px;}
+.section-desc.center{text-align:center;margin:0 auto;}
+.section-header{text-align:center;margin-bottom:4rem;}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+.hero{min-height:100vh;padding-top:82px;position:relative;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(160deg,var(--dark) 0%,var(--blue-dark) 55%,var(--blue) 100%);overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-20%;right:-10%;width:70%;height:140%;background:radial-gradient(ellipse,rgba(240,165,0,0.08) 0%,transparent 70%);}
+.hero::after{content:'';position:absolute;bottom:-10%;left:-5%;width:50%;height:80%;background:radial-gradient(ellipse,rgba(26,107,181,0.2) 0%,transparent 70%);}
+.hero-inner{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:5rem 2rem;}
+.hero-tagline{display:inline-block;background:rgba(240,165,0,0.15);border:1px solid rgba(240,165,0,0.3);color:var(--gold);font-size:.8rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:.5rem 1.2rem;border-radius:30px;margin-bottom:2rem;}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:700;color:white;line-height:1.05;margin-bottom:1.5rem;}
+.hero h1 span{color:var(--gold);}
+.hero-sub{font-size:1.15rem;color:rgba(255,255,255,0.78);line-height:1.8;max-width:580px;margin-bottom:3rem;font-weight:300;}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:4rem;}
+.hero-stats{display:flex;gap:3rem;flex-wrap:wrap;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.12);}
+.hero-stat-num{font-family:'Fraunces',serif;font-size:2.5rem;font-weight:700;color:var(--gold);line-height:1;}
+.hero-stat-label{font-size:.82rem;color:rgba(255,255,255,0.6);margin-top:.3rem;text-transform:uppercase;letter-spacing:.1em;}
+.dual-cta{display:grid;grid-template-columns:1fr 1fr;}
+.dual-cta-employer{background:var(--blue);padding:4rem 3rem;}
+.dual-cta-worker{background:var(--gold);padding:4rem 3rem;}
+.dual-cta h2{font-family:'Fraunces',serif;font-size:2rem;font-weight:700;margin-bottom:1rem;}
+.dual-cta-employer h2{color:white;}
+.dual-cta-worker h2{color:var(--dark);}
+.dual-cta p{font-size:1rem;line-height:1.7;margin-bottom:2rem;}
+.dual-cta-employer p{color:rgba(255,255,255,0.82);}
+.dual-cta-worker p{color:rgba(15,30,53,0.75);}
+.trust-strip{background:var(--off-white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2rem 0;}
+.trust-items{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;align-items:center;}
+.trust-item{display:flex;align-items:center;gap:.7rem;font-size:.88rem;font-weight:600;color:var(--blue-dark);}
+.trust-item span{font-size:1.3rem;}
+.how-employer{background:var(--blue-pale);}.how-worker{background:var(--gold-pale);}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem;}
+.step-card{background:white;border-radius:16px;padding:2rem 1.5rem;box-shadow:0 2px 20px rgba(0,0,0,0.05);transition:transform .3s;}
+.step-card:hover{transform:translateY(-4px);}
+.step-num{font-family:'Fraunces',serif;font-size:3rem;font-weight:700;line-height:1;margin-bottom:1rem;}
+.step-num-blue{color:var(--blue-light);-webkit-text-stroke:2px var(--blue);}
+.step-num-gold{color:var(--gold-light);-webkit-text-stroke:2px var(--gold-dark);}
+.step-card h4{font-size:1rem;font-weight:600;color:var(--dark);margin-bottom:.5rem;}
+.step-card p{font-size:.88rem;color:var(--gray);line-height:1.6;}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
+.cat-card{background:white;border:2px solid var(--border);border-radius:16px;padding:1.8rem 1.5rem;text-align:center;transition:all .3s;cursor:pointer;}
+.cat-card:hover{border-color:var(--gold);box-shadow:var(--shadow-gold);transform:translateY(-3px);}
+.cat-icon{font-size:2rem;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;width:66px;height:66px;border-radius:50%;background:var(--gold-light);}
+.cat-card h4{font-size:.95rem;font-weight:600;color:var(--dark);margin-bottom:.3rem;}
+.cat-card p{font-size:.8rem;color:var(--gray);}
+.cat-badge{display:inline-block;margin-top:.8rem;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--gold-light);color:var(--gold-dark);padding:.2rem .7rem;border-radius:10px;}
+.vetting-section{background:var(--dark);color:white;}
+.vetting-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.vetting-tiers{display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem;}
+.tier{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:1.8rem;transition:border-color .3s;}
+.tier:hover{border-color:rgba(240,165,0,0.4);}
+.tier-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;}
+.tier-badge{background:var(--gold);color:var(--dark);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .8rem;border-radius:20px;}
+.tier-badge.silver{background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.8);}
+.tier-badge.gold-plus{background:linear-gradient(135deg,var(--gold),#FFD700);}
+.tier h4{font-size:1rem;font-weight:600;color:white;}
+.tier-checks{list-style:none;display:flex;flex-direction:column;gap:.4rem;}
+.tier-checks li{font-size:.85rem;color:rgba(255,255,255,0.7);display:flex;align-items:center;gap:.6rem;}
+.tier-checks li::before{content:'✓';color:var(--gold);font-weight:700;}
+.vetting-right h3{font-family:'Fraunces',serif;font-size:2.2rem;color:white;margin-bottom:1rem;}
+.vetting-right p{color:rgba(255,255,255,0.7);line-height:1.8;margin-bottom:2rem;}
+.vetting-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.vetting-stat{background:rgba(255,255,255,0.06);border-radius:12px;padding:1.5rem;text-align:center;}
+.vetting-stat-num{font-family:'Fraunces',serif;font-size:2.5rem;color:var(--gold);font-weight:700;}
+.vetting-stat-label{font-size:.78rem;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem;}
+.testi-employer{background:var(--blue-pale);}.testi-worker{background:var(--gold-pale);}
+.testi-card{background:white;border-radius:16px;padding:2.5rem;box-shadow:0 4px 24px rgba(0,0,0,0.06);display:flex;flex-direction:column;}
+.testi-card p{font-family:'Fraunces',serif;font-style:italic;font-size:1.1rem;line-height:1.7;color:var(--text);flex:1;margin-bottom:1.5rem;}
+.testi-author{display:flex;align-items:center;gap:1rem;}
+.testi-avatar{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;color:white;flex-shrink:0;}
+.avatar-blue{background:var(--blue);}.avatar-gold{background:var(--gold);color:var(--dark);}
+.testi-name{font-weight:600;font-size:.9rem;color:var(--dark);}.testi-role{font-size:.8rem;color:var(--gray);}
+.form-section-employer{background:var(--blue);}.form-section-worker{background:var(--gold);}
+.form-card{background:white;border-radius:20px;padding:3rem;box-shadow:0 20px 60px rgba(0,0,0,0.15);}
+.form-group{margin-bottom:1.3rem;}
+.form-group label{display:block;font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem;}
+.label-blue{color:var(--blue-dark);}.label-gold{color:var(--gold-dark);}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.9rem 1.1rem;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:.95rem;outline:none;transition:border-color .3s,box-shadow .3s;background:white;color:var(--text);}
+.input-blue{border:2px solid rgba(26,107,181,0.2);}
+.input-blue:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(26,107,181,0.1);}
+.input-gold{border:2px solid rgba(240,165,0,0.3);}
+.input-gold:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(240,165,0,0.12);}
+.form-group textarea{height:120px;resize:vertical;}
+.form-section-content{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start;}
+.form-intro h2{font-family:'Fraunces',serif;font-size:2.5rem;font-weight:700;margin-bottom:1.2rem;}
+.form-intro-employer h2,.form-intro-employer p{color:white;}
+.form-intro-worker h2{color:var(--dark);}.form-intro-worker p{color:rgba(15,30,53,0.75);}
+.form-intro p{font-size:1rem;line-height:1.8;margin-bottom:2rem;}
+.form-bullets{list-style:none;display:flex;flex-direction:column;gap:.8rem;}
+.form-bullets li{display:flex;align-items:flex-start;gap:.8rem;font-size:.92rem;}
+.bullet-blue{color:rgba(255,255,255,0.85);}
+.bullet-blue::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;}
+.bullet-gold{color:rgba(15,30,53,0.75);}
+.bullet-gold::before{content:'✓';color:var(--blue-dark);font-weight:700;flex-shrink:0;}
+.faq-item{border-bottom:1px solid var(--border);padding:1.3rem 0;cursor:pointer;}
+.faq-q{font-size:1rem;font-weight:600;color:var(--dark);display:flex;justify-content:space-between;align-items:center;gap:1rem;}
+.faq-q::after{content:'+';color:var(--blue);font-size:1.4rem;font-weight:300;flex-shrink:0;}
+.faq-item.open .faq-q::after{content:'−';}
+.faq-a{color:var(--gray);font-size:.92rem;line-height:1.8;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;}
+.faq-item.open .faq-a{max-height:200px;padding-top:.8rem;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.contact-info-item{display:flex;gap:1.2rem;align-items:flex-start;padding:1.5rem;background:white;border-radius:12px;border:1px solid var(--border);margin-bottom:1.2rem;}
+.contact-icon{width:44px;height:44px;background:var(--blue-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.contact-info-item h4{font-size:.9rem;font-weight:600;color:var(--dark);margin-bottom:.2rem;}
+.contact-info-item p,.contact-info-item a{font-size:.88rem;color:var(--gray);text-decoration:none;}
+.contact-info-item a:hover{color:var(--blue);}
+footer{background:var(--dark);color:white;padding:5rem 0 2rem;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
+.footer-tagline{font-size:.85rem;color:rgba(255,255,255,0.55);line-height:1.7;margin-top:1rem;}
+footer h4{font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1.3rem;}
+footer ul{list-style:none;}
+footer ul li{margin-bottom:.7rem;}
+footer ul li a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:.88rem;transition:color .3s;}
+footer ul li a:hover{color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-bottom p{color:rgba(255,255,255,0.4);font-size:.82rem;}
+.footer-divider{display:flex;gap:2rem;}
+.footer-divider a{color:rgba(255,255,255,0.4);font-size:.82rem;text-decoration:none;transition:color .3s;}
+.footer-divider a:hover{color:var(--gold);}
+.social-links{display:flex;gap:.8rem;margin-top:1.2rem;}
+.social-links a{width:38px;height:38px;border:1px solid rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);text-decoration:none;font-size:.9rem;transition:all .3s;}
+.social-links a:hover{background:var(--gold);border-color:var(--gold);color:var(--dark);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(25px);}to{opacity:1;transform:translateY(0);}}
+.fade-up{animation:fadeUp .7s ease forwards;}
+.fade-up-2{animation:fadeUp .7s .15s ease both;}
+.fade-up-3{animation:fadeUp .7s .3s ease both;}
+.fade-up-4{animation:fadeUp .7s .45s ease both;}
+@media(max-width:960px){
+  .grid-2,.grid-3,.grid-4,.steps,.cat-grid,.dual-cta,.vetting-grid,.footer-grid,.form-section-content,.contact-grid{grid-template-columns:1fr;}
+  .nav-links{display:none;flex-direction:column;position:absolute;top:82px;left:0;right:0;background:white;padding:1.5rem 2rem;border-bottom:1px solid var(--border);gap:1rem;box-shadow:0 10px 30px rgba(0,0,0,0.1);}
+  .nav-links.open{display:flex;}
+  .mobile-toggle{display:flex;}
+  .nav-cta-group{display:none;}
+}
+@media(max-width:600px){section{padding:4rem 0;}.hero h1{font-size:2.8rem;}.dual-cta-employer,.dual-cta-worker{padding:3rem 2rem;}}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo-link" onclick="showPage('home')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 64" height="50" style="display:block;flex-shrink:0;">
+  <rect x="0" y="6" width="52" height="52" rx="14" fill="#1E5F5B"/>
+  <rect x="12" y="30" width="28" height="24" rx="3" fill="#FBF6EE"/>
+  <path d="M26 13 L43 30 H9 Z" fill="#FBF6EE"/>
+  <circle cx="26" cy="38" r="6" fill="#F4A82C"/>
+  <path d="M22 54 V46 a4 4 0 0 1 8 0 V54 Z" fill="#1E5F5B"/>
+  <text x="66" y="26" font-family="'DM Sans',sans-serif" font-size="9" font-weight="600" fill="#A89A88" letter-spacing="3">SOUTH AFRICA</text>
+  <text x="64" y="50" font-family="'Fraunces','Georgia',serif" font-size="30" font-weight="600" fill="#1E5F5B" letter-spacing="-0.5">khaya<tspan fill="#C2603F">.</tspan></text>
+</svg></a>
+    <button class="mobile-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#" onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+      <li><a href="#" onclick="showPage('how')">How It Works</a></li>
+      <li><a href="#" onclick="showPage('categories')">Browse Jobs</a></li>
+      <li><a href="#" onclick="showPage('vetting')">Our Vetting</a></li>
+      <li><a href="#" onclick="showPage('about')">About</a></li>
+      <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+    </ul>
+    <div class="nav-cta-group">
+      <a href="#" onclick="showPage('find-talent')" class="btn-blue btn-sm">Find Talent</a>
+      <a href="#" onclick="showPage('find-work')" class="btn-gold btn-sm">Find Work</a>
+    </div>
+  </div>
+</nav>
+<div id="page-home" class="page active">
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tagline">South Africa's Trusted Workforce Solution</div>
+    <h1 class="fade-up">Trust the Person<br>in Your <span>Space.</span></h1>
+    <p class="hero-sub fade-up-2">Every worker on Khaya is rigorously vetted, background-checked, and reference-verified — so employers can hire with complete confidence. Vetted with Care | Hired for Impact.</p>
+    <div class="hero-ctas fade-up-3">
+      <a href="#" onclick="showPage('find-talent')" class="btn-white">Find Talent</a>
+      <a href="#" onclick="showPage('find-work')" class="btn-white-gold">Find Work</a>
+    </div>
+    <div class="hero-stats fade-up-4">
+      <div><div class="hero-stat-num">100%</div><div class="hero-stat-label">Vetted Workers</div></div>
+      <div><div class="hero-stat-num">7</div><div class="hero-stat-label">Job Categories</div></div>
+      <div><div class="hero-stat-num">3</div><div class="hero-stat-label">Vetting Tiers</div></div>
+      <div><div class="hero-stat-num">0</div><div class="hero-stat-label">Corners Cut</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="dual-cta">
+  <div class="dual-cta-employer">
+    <h2>Looking for Trusted Help?</h2>
+    <p>Browse verified, vetted workers across 7 categories. Every person on our platform has been background-checked, reference-verified, and interviewed. Hire with complete peace of mind.</p>
+    <a href="#" onclick="showPage('find-talent')" class="btn-white">Find Talent →</a>
+  </div>
+  <div class="dual-cta-worker">
+    <h2>Looking for Meaningful Work?</h2>
+    <p>Join Khaya and connect with employers who value your skills and treat you with dignity. Get vetted, build your profile, and start earning.</p>
+    <a href="#" onclick="showPage('find-work')" class="btn-blue">Find Work →</a>
+  </div>
+</div>
+
+<div class="trust-strip">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item"><span>🔍</span>Criminal Background Checks</div>
+      <div class="trust-item"><span>🪪</span>ID Verified via Home Affairs</div>
+      <div class="trust-item"><span>📞</span>Reference Calls Completed</div>
+      <div class="trust-item"><span>🏅</span>Skills Assessed</div>
+      <div class="trust-item"><span>⭐</span>Rated by Real Employers</div>
+      <div class="trust-item"><span>📋</span>Legal Contracts Included</div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag tag-gold">Browse by Category</div>
+      <h2 class="section-title center">Find the Right Person<br>for Every Role</h2>
+      <p class="section-desc center">From childcare to home maintenance — every worker is vetted, every placement protected.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card" onclick="showPage('categories')"><span class="cat-icon">👶</span><h4>Nannies &amp; Au Pairs</h4><p>Childcare, school runs, live-in &amp; live-out</p><div class="cat-badge">Child-Safe Verified</div></div>
+      <div class="cat-card" onclick="showPage('categories')"><span class="cat-icon">🏠</span><h4>Domestic Workers</h4><p>Cleaning, housekeeping, cooking, laundry</p><div class="cat-badge">Background Checked</div></div>
+      <div class="cat-card" onclick="showPage('categories')"><span class="cat-icon">🌿</span><h4>Gardeners</h4><p>Maintenance, landscaping, pool care</p><div class="cat-badge">Reference Verified</div></div>
+      <div class="cat-card" onclick="showPage('categories')"><span class="cat-icon">🔧</span><h4>Home Maintenance</h4><p>Plumbers, electricians, painters, handymen</p><div class="cat-badge">Trade Certified</div></div>
+      <div class="cat-card" onclick="showPage('categories')"><span class="cat-icon">❤️</span><h4>Elderly Care</h4><p>Companions, frail care, medical assistants</p><div class="cat-badge">Enhanced Vetting</div></div>
+      <div class="cat-card" onclick="showPage('categories')"><span class="cat-icon">🚗</span><h4>Drivers</h4><p>School runs, household, chauffeur, errands</p><div class="cat-badge">Licence Verified</div></div>
+      <div class="cat-card" onclick="showPage('categories')"><span class="cat-icon">🐾</span><h4>Animal Care</h4><p>Dog walking, pet sitting, grooming</p><div class="cat-badge">Reference Verified</div></div>
+      <div class="cat-card" style="background:var(--blue-pale);border-color:var(--blue);cursor:default;"><span class="cat-icon">➕</span><h4>More Coming Soon</h4><p>Office cleaning, caregivers, security &amp; more</p><div class="cat-badge" style="background:var(--blue-light);color:var(--blue-dark);">Launching Soon</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--off-white);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag tag-blue">Simple Process</div>
+      <h2 class="section-title center">Hiring Has Never Been<br>This Safe or This Easy</h2>
+    </div>
+    <div class="steps">
+      <div class="step-card"><div class="step-num step-num-blue">01</div><h4>Post Your Need</h4><p>Tell us what you're looking for — category, hours, location, and any special requirements.</p></div>
+      <div class="step-card"><div class="step-num step-num-blue">02</div><h4>We Match You</h4><p>We surface verified, vetted candidates who match your exact criteria and location.</p></div>
+      <div class="step-card"><div class="step-num step-num-blue">03</div><h4>Review Profiles</h4><p>Browse detailed profiles showing vetting status, reviews, ratings, and work history.</p></div>
+      <div class="step-card"><div class="step-num step-num-blue">04</div><h4>Hire with Confidence</h4><p>Get a legal contract, start working, and leave a review after every engagement.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:3rem;"><a href="#" onclick="showPage('how')" class="btn-blue">See Full Process</a></div>
+  </div>
+</section>
+
+<section class="vetting-section">
+  <div class="container">
+    <div class="vetting-grid">
+      <div>
+        <div class="section-tag tag-gold">Our Vetting System</div>
+        <div class="vetting-tiers">
+          <div class="tier"><div class="tier-header"><div class="tier-badge silver">Tier 1 — Basic Verified</div></div><h4>All Workers</h4><ul class="tier-checks"><li>SA ID verified against Home Affairs</li><li>Live selfie + ID photo match</li><li>Criminal record check (Afiswitch)</li><li>2 references called and verified</li><li>Active phone number confirmed</li></ul></div>
+          <div class="tier"><div class="tier-header"><div class="tier-badge">Tier 2 — Enhanced</div></div><h4>Home &amp; Childcare Workers</h4><ul class="tier-checks"><li>Everything in Tier 1</li><li>Sex offender register check</li><li>Skills assessment completed</li><li>Video orientation interview</li><li>Driving record (where applicable)</li></ul></div>
+          <div class="tier"><div class="tier-header"><div class="tier-badge gold-plus">Tier 3 — Premium Verified ⭐</div></div><h4>Top-Rated Workers</h4><ul class="tier-checks"><li>Everything in Tier 1 &amp; 2</li><li>First Aid Certificate</li><li>6+ months on platform</li><li>4.8+ star rating sustained</li><li>Annual re-vetting completed</li></ul></div>
+        </div>
+      </div>
+      <div class="vetting-right">
+        <h3>We Don't Cut Corners. Ever.</h3>
+        <p>Safety is not a feature — it's our foundation. Every worker goes through a structured, multi-layer vetting process before their profile goes live. We partner with Afiswitch and HURU for real-time criminal checks against the SAPS database.</p>
+        <p style="margin-top:1rem;">Workers placed with employers' loved ones and in their spaces deserve to be treated with dignity throughout the process. We ensure that.</p>
+        <div class="vetting-stat-grid" style="margin-top:2rem;">
+          <div class="vetting-stat"><div class="vetting-stat-num">3</div><div class="vetting-stat-label">Vetting Tiers</div></div>
+          <div class="vetting-stat"><div class="vetting-stat-num">5+</div><div class="vetting-stat-label">Checks Per Worker</div></div>
+          <div class="vetting-stat"><div class="vetting-stat-num">0</div><div class="vetting-stat-label">Tolerance for Risk</div></div>
+          <div class="vetting-stat"><div class="vetting-stat-num">SAPS</div><div class="vetting-stat-label">Database Verified</div></div>
+        </div>
+        <div style="margin-top:2.5rem;"><a href="#" onclick="showPage('vetting')" class="btn-gold">See Full Vetting Process</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testi-employer">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag tag-blue">Employer Stories</div>
+      <h2 class="section-title center">Employers Who Found Their Perfect Match</h2>
+    </div>
+    <div class="grid-3">
+      <div class="testi-card"><p>"Finding a trustworthy nanny felt impossible — until Khaya. The vetting process gave us complete peace of mind. We knew exactly who was coming into our space."</p><div class="testi-author"><div class="testi-avatar avatar-blue">S</div><div><div class="testi-name">Sarah M.</div><div class="testi-role">Employer — Sandton, JHB</div></div></div></div>
+      <div class="testi-card"><p>"We needed a reliable gardener after being let down twice. Khaya matched us in 48 hours. The background check gave us confidence we'd never had before."</p><div class="testi-author"><div class="testi-avatar avatar-blue">D</div><div><div class="testi-name">David K.</div><div class="testi-role">Employer — Bryanston, JHB</div></div></div></div>
+      <div class="testi-card"><p>"My elderly mother needed a carer. Khaya's enhanced vetting gave our whole organisation confidence. The carer they matched her with has been extraordinary."</p><div class="testi-author"><div class="testi-avatar avatar-blue">P</div><div><div class="testi-name">Patricia L.</div><div class="testi-role">Employer — Pretoria</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="testi-worker">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag tag-gold">Worker Stories</div>
+      <h2 class="section-title center">Workers Who Found Dignity and Opportunity</h2>
+    </div>
+    <div class="grid-3">
+      <div class="testi-card"><p>"Khaya treated me with respect from the start. They helped me get my police clearance, built my profile properly, and I had my first placement within two weeks."</p><div class="testi-author"><div class="testi-avatar avatar-gold">T</div><div><div class="testi-name">Thandi N.</div><div class="testi-role">Domestic Worker — Johannesburg</div></div></div></div>
+      <div class="testi-card"><p>"I was nervous about registering online but the process was so simple. Now I have three regular employers and earn a stable income. My Khaya badge means employers trust me immediately."</p><div class="testi-author"><div class="testi-avatar avatar-gold">M</div><div><div class="testi-name">Moses D.</div><div class="testi-role">Gardener — Sandton</div></div></div></div>
+      <div class="testi-card"><p>"After years of working informally, Khaya gave me a proper profile, a verified badge, and employers who actually value what I do. I finally feel like a professional."</p><div class="testi-author"><div class="testi-avatar avatar-gold">N</div><div><div class="testi-name">Nomsa B.</div><div class="testi-role">Au Pair — Midrand</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:linear-gradient(135deg,var(--blue-dark),var(--dark));text-align:center;">
+  <div class="container">
+    <div class="section-tag tag-gold" style="margin-bottom:1.5rem;">Get Started Today</div>
+    <h2 class="section-title white center" style="margin-bottom:1.2rem;">Ready to Experience<br>Hiring Done Right?</h2>
+    <p style="color:rgba(255,255,255,0.7);font-size:1.05rem;max-width:580px;margin:0 auto 3rem;line-height:1.8;">Join South African employers and workers already building trusted connections through Khaya.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="#" onclick="showPage('find-talent')" class="btn-white">Find Talent</a>
+      <a href="#" onclick="showPage('find-work')" class="btn-gold">Find Work</a>
+    </div>
+  </div>
+</section>
+</div>
+<div id="page-how" class="page">
+<section style="background:var(--blue);padding:5rem 0 4rem;">
+  <div class="container">
+    <div class="section-tag" style="background:rgba(255,255,255,0.15);color:white;margin-bottom:1rem;">How It Works</div>
+    <h1 class="section-title white">Simple. Transparent.<br>Built on Trust.</h1>
+    <p style="color:rgba(255,255,255,0.78);font-size:1.05rem;max-width:560px;margin-top:1rem;">Whether you're hiring or looking for work — we've made the process clear, fair, and fully supported every step of the way.</p>
+  </div>
+</section>
+<section class="how-employer">
+  <div class="container">
+    <div class="section-tag tag-blue">For Employers</div>
+    <h2 class="section-title" style="margin-bottom:3rem;">How to Find Trusted Talent</h2>
+    <div class="steps">
+      <div class="step-card"><div class="step-num step-num-blue">01</div><h4>Register &amp; Tell Us What You Need</h4><p>Create a free employer profile. Tell us what category of worker you need, your location, working hours, and any specific requirements.</p></div>
+      <div class="step-card"><div class="step-num step-num-blue">02</div><h4>We Surface Verified Matches</h4><p>Our matching system presents vetted workers in your area who fit your criteria. Filter by vetting tier, rating, experience, and availability.</p></div>
+      <div class="step-card"><div class="step-num step-num-blue">03</div><h4>Review Profiles &amp; Connect</h4><p>Every profile shows vetting status, background check results, star ratings, written reviews, and verified work history. Message directly.</p></div>
+      <div class="step-card"><div class="step-num step-num-blue">04</div><h4>Hire, Contract &amp; Rate</h4><p>Use our auto-generated legal employment contract. After the engagement, rate your worker to help the community grow stronger.</p></div>
+    </div>
+  </div>
+</section>
+<section class="how-worker">
+  <div class="container">
+    <div class="section-tag tag-gold">For Workers</div>
+    <h2 class="section-title" style="margin-bottom:3rem;">How to Find Meaningful Work</h2>
+    <div class="steps">
+      <div class="step-card"><div class="step-num step-num-gold">01</div><h4>Register Your Profile</h4><p>Sign up with your ID, phone number, and job category. It's free to register. We'll guide you through every step of building your profile.</p></div>
+      <div class="step-card"><div class="step-num step-num-gold">02</div><h4>Complete Your Vetting</h4><p>We guide you through getting your criminal clearance, submitting your ID, and providing reference contacts. We help where we can.</p></div>
+      <div class="step-card"><div class="step-num step-num-gold">03</div><h4>Earn Your Badge</h4><p>Once vetted, you receive your Khaya Verified badge. This tells employers immediately that you're trustworthy and professional.</p></div>
+      <div class="step-card"><div class="step-num step-num-gold">04</div><h4>Start Working &amp; Build Your Reputation</h4><p>Receive placement offers, accept work, collect 5-star reviews, and grow your profile into a powerful professional asset.</p></div>
+    </div>
+  </div>
+</section>
+<section style="background:var(--off-white);">
+  <div class="container container-sm">
+    <div class="section-header"><div class="section-tag tag-blue">Common Questions</div><h2 class="section-title center">FAQs</h2></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Is it free to register as a worker?</div><div class="faq-a">Yes — registering on Khaya is completely free for workers. The only costs involved are for the actual background check and criminal clearance certificate, which we help facilitate at the most affordable rates possible.</div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">How long does the vetting process take?</div><div class="faq-a">Basic vetting (Tier 1) typically takes 5–10 working days depending on how quickly the criminal check is processed. We'll keep you updated every step of the way via WhatsApp.</div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">How much does it cost employers to use Khaya?</div><div class="faq-a">Employers pay a placement fee per successful hire. We also offer a monthly subscription for employers making frequent placements. Full pricing is available on our Find Talent page.</div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">What happens if a worker doesn't work out?</div><div class="faq-a">We offer a replacement guarantee within a defined period. If a placed worker doesn't work out for legitimate reasons, we will rematch you at no additional cost.</div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Are workers protected on Khaya?</div><div class="faq-a">Absolutely. All contracts are BCEA-compliant, we help with UIF registration, and employers on our platform are rated by workers too. Exploitative behaviour gets flagged and investigated.</div></div>
+    <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q">Which cities are you currently operating in?</div><div class="faq-a">We are launching in Johannesburg and surrounding areas first — including Sandton, Midrand, Pretoria, and the East and West Rand. Cape Town and Durban will follow.</div></div>
+  </div>
+</section>
+</div>
+<div id="page-categories" class="page">
+<section style="background:var(--gold);padding:5rem 0 4rem;">
+  <div class="container">
+    <div class="section-tag" style="background:rgba(255,255,255,0.25);color:var(--dark);margin-bottom:1rem;">Browse Categories</div>
+    <h1 class="section-title" style="color:var(--dark);">Find the Right Person<br>for Every Role</h1>
+    <p style="color:rgba(15,30,53,0.72);font-size:1.05rem;max-width:560px;margin-top:1rem;">Every category has its own tailored vetting requirements — so the level of trust always matches the level of responsibility.</p>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div style="margin-bottom:4rem;">
+      <div class="section-tag tag-blue" style="margin-bottom:1.5rem;">👶 Nannies &amp; Au Pairs</div>
+      <div class="grid-2" style="align-items:start;gap:3rem;">
+        <div>
+          <h3 style="font-family:'Fraunces',serif;font-size:1.8rem;color:var(--dark);margin-bottom:1rem;">Trusted Childcare, Carefully Matched</h3>
+          <p style="color:var(--gray);line-height:1.8;margin-bottom:1rem;">Our most stringently vetted category. Anyone working with children undergoes our full Tier 2 Enhanced vetting including a sex offender register check, skills assessment, and in-person video interview.</p>
+          <p style="color:var(--gray);line-height:1.8;margin-bottom:1.5rem;">Available as live-in, live-out, full-time, part-time, after-school, or overnight care. Au pairs also available for school runs and light household duties.</p>
+          <a href="#" onclick="showPage('find-talent')" class="btn-blue">Find a Nanny or Au Pair</a>
+        </div>
+        <div style="background:var(--blue-pale);border-radius:16px;padding:2rem;">
+          <h4 style="font-weight:600;color:var(--dark);margin-bottom:1rem;">Vetting Includes:</h4>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem;">
+            <li style="display:flex;gap:.7rem;font-size:.9rem;color:var(--gray);"><span style="color:var(--blue);font-weight:700;">✓</span>Criminal background check (SAPS database)</li>
+            <li style="display:flex;gap:.7rem;font-size:.9rem;color:var(--gray);"><span style="color:var(--blue);font-weight:700;">✓</span>Sex offender register check</li>
+            <li style="display:flex;gap:.7rem;font-size:.9rem;color:var(--gray);"><span style="color:var(--blue);font-weight:700;">✓</span>Home Affairs ID verification</li>
+            <li style="display:flex;gap:.7rem;font-size:.9rem;color:var(--gray);"><span style="color:var(--blue);font-weight:700;">✓</span>3 references called and verified</li>
+            <li style="display:flex;gap:.7rem;font-size:.9rem;color:var(--gray);"><span style="color:var(--blue);font-weight:700;">✓</span>Child safety skills assessment</li>
+            <li style="display:flex;gap:.7rem;font-size:.9rem;color:var(--gray);"><span style="color:var(--blue);font-weight:700;">✓</span>Video interview conducted</li>
+            <li style="display:flex;gap:.7rem;font-size:.9rem;color:var(--gray);"><span style="color:var(--blue);font-weight:700;">✓</span>First Aid Certificate (Premium tier)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr style="border:none;border-top:1px solid var(--border);margin:3rem 0;">
+    <div style="margin-bottom:4rem;">
+      <div class="section-tag tag-gold" style="margin-bottom:1.5rem;">🏠 Domestic Workers &amp; Cleaners</div>
+      <div class="grid-2" style="align-items:start;gap:3rem;">
+        <div>
+          <h3 style="font-family:'Fraunces',serif;font-size:1.8rem;color:var(--dark);margin-bottom:1rem;">Reliable, Vetted Home Help</h3>
+          <p style="color:var(--gray);line-height:1.8;margin-bottom:1rem;">Full-time, part-time, live-in, live-out, or once-off deep cleaning. All domestic workers are Tier 1 verified with criminal checks and reference verification.</p>
+          <p style="color:var(--gray);line-height:1.8;margin-bottom:1.5rem;">Includes housekeepers, cooks, laundry specialists, and household managers for larger properties.</p>
+          <a href="#" onclick="showPage('find-talent')" class="btn-gold">Find a Domestic Worker</a>
+        </div>
+        <div style="background:var(--gold-pale);border-radius:16px;padding:2rem;">
+          <h4 style="font-weight:600;color:var(--dark);margin-bottom:1rem;">What's Available:</h4>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem;">
+            <li style="display:flex;gap:.7rem;font-size:.9rem;color:var(--gray);"><span style="color:var(--gold-dark);font-weight:700;">✓</span>General housekeeping &amp; cleaning</li>
+            <li style="display:flex;gap:.7rem;font-size:.9rem;color:var(--gray);"><span style="color:var(--gold-dark);font-weight:700;">✓</span>Cooking and meal preparation</li>
+            <li style="display:flex;gap:.7rem;font-size:.9rem;color:var(--gray);"><span style="color:var(--gold-dark);font-weight:700;">✓</span>Laundry and ironing</li>
+            <li style="display:flex;gap:.7rem;font-size:.9rem;color:var(--gray);"><span style="color:var(--gold-dark);font-weight:700;">✓</span>Live-in or live-out arrangements</li>
+            <li style="display:flex;gap:.7rem;font-size:.9rem;color:var(--gray);"><span style="color:var(--gold-dark);font-weight:700;">✓</span>Full-time or part-time</li>
+            <li style="display:flex;gap:.7rem;font-size:.9rem;color:var(--gray);"><span style="color:var(--gold-dark);font-weight:700;">✓</span>Once-off deep cleans</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr style="border:none;border-top:1px solid var(--border);margin:3rem 0;">
+    <div class="grid-3" style="margin-bottom:2rem;">
+      <div style="background:var(--off-white);border-radius:16px;padding:2rem;border:1px solid var(--border);"><div style="font-size:2rem;margin-bottom:1rem;">🌿</div><h4 style="font-family:'Fraunces',serif;font-size:1.3rem;margin-bottom:.7rem;color:var(--dark);">Gardeners</h4><p style="color:var(--gray);font-size:.9rem;line-height:1.7;margin-bottom:1.5rem;">Maintenance, lawn care, landscaping, pruning, pool cleaning, irrigation. Weekly or monthly service.</p><a href="#" onclick="showPage('find-talent')" class="btn-blue-outline btn-sm">Find a Gardener</a></div>
+      <div style="background:var(--off-white);border-radius:16px;padding:2rem;border:1px solid var(--border);"><div style="font-size:2rem;margin-bottom:1rem;">🔧</div><h4 style="font-family:'Fraunces',serif;font-size:1.3rem;margin-bottom:.7rem;color:var(--dark);">Home Maintenance</h4><p style="color:var(--gray);font-size:.9rem;line-height:1.7;margin-bottom:1.5rem;">Plumbers, electricians, painters, tilers, handymen, carpenters, roof repair, and more. Trade certificates verified.</p><a href="#" onclick="showPage('find-talent')" class="btn-blue-outline btn-sm">Find a Tradesperson</a></div>
+      <div style="background:var(--off-white);border-radius:16px;padding:2rem;border:1px solid var(--border);"><div style="font-size:2rem;margin-bottom:1rem;">❤️</div><h4 style="font-family:'Fraunces',serif;font-size:1.3rem;margin-bottom:.7rem;color:var(--dark);">Elderly Care</h4><p style="color:var(--gray);font-size:.9rem;line-height:1.7;margin-bottom:1.5rem;">Companions, frail care assistants, medication management, post-surgery recovery. Enhanced vetting applied.</p><a href="#" onclick="showPage('find-talent')" class="btn-blue-outline btn-sm">Find a Carer</a></div>
+      <div style="background:var(--off-white);border-radius:16px;padding:2rem;border:1px solid var(--border);"><div style="font-size:2rem;margin-bottom:1rem;">🚗</div><h4 style="font-family:'Fraunces',serif;font-size:1.3rem;margin-bottom:.7rem;color:var(--dark);">Drivers</h4><p style="color:var(--gray);font-size:.9rem;line-height:1.7;margin-bottom:1.5rem;">School runs, household errands, airport transfers, chauffeur services. Licence and driving record verified.</p><a href="#" onclick="showPage('find-talent')" class="btn-blue-outline btn-sm">Find a Driver</a></div>
+      <div style="background:var(--off-white);border-radius:16px;padding:2rem;border:1px solid var(--border);"><div style="font-size:2rem;margin-bottom:1rem;">🐾</div><h4 style="font-family:'Fraunces',serif;font-size:1.3rem;margin-bottom:.7rem;color:var(--dark);">Animal Care</h4><p style="color:var(--gray);font-size:.9rem;line-height:1.7;margin-bottom:1.5rem;">Dog walking, pet sitting while you travel, mobile grooming. All carers are background checked and animal-experienced.</p><a href="#" onclick="showPage('find-talent')" class="btn-blue-outline btn-sm">Find an Animal Carer</a></div>
+      <div style="background:var(--blue-pale);border-radius:16px;padding:2rem;border:2px dashed var(--blue);text-align:center;"><div style="font-size:2rem;margin-bottom:1rem;">➕</div><h4 style="font-family:'Fraunces',serif;font-size:1.3rem;margin-bottom:.7rem;color:var(--blue-dark);">More Coming Soon</h4><p style="color:var(--gray);font-size:.9rem;line-height:1.7;">Office cleaners, security, event staff and more launching in Phase 2.</p></div>
+    </div>
+  </div>
+</section>
+</div>
+<div id="page-vetting" class="page">
+<section class="vetting-section" style="padding:5rem 0 4rem;">
+  <div class="container">
+    <div class="section-tag tag-gold" style="margin-bottom:1rem;">Our Vetting System</div>
+    <h1 class="section-title white">We Don't Cut Corners.<br>Ever.</h1>
+    <p style="color:rgba(255,255,255,0.75);font-size:1.05rem;max-width:580px;margin-top:1rem;line-height:1.8;">Every single worker on Khaya goes through a structured, multi-layer vetting process. This is not a checkbox exercise — it's a genuine commitment to the safety of employers, children, and vulnerable people across South Africa.</p>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="grid-3">
+      <div style="background:white;border:2px solid var(--border);border-radius:20px;padding:2.5rem;display:flex;flex-direction:column;">
+        <div style="background:var(--gray-light);color:var(--gray);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .8rem;border-radius:20px;display:inline-block;margin-bottom:1.5rem;">Tier 1</div>
+        <h3 style="font-family:'Fraunces',serif;font-size:1.5rem;color:var(--dark);margin-bottom:.5rem;">Basic Verified</h3>
+        <p style="color:var(--gray);font-size:.88rem;margin-bottom:1.5rem;">Required for ALL workers before any profile goes live on Khaya.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:.8rem;flex:1;">
+          <li style="display:flex;gap:.8rem;font-size:.9rem;color:var(--text);"><span style="color:var(--blue);font-weight:700;font-size:1rem;">✓</span><div><strong>SA ID Verification</strong><br><span style="color:var(--gray);font-size:.82rem;">Verified against Home Affairs database in real time</span></div></li>
+          <li style="display:flex;gap:.8rem;font-size:.9rem;color:var(--text);"><span style="color:var(--blue);font-weight:700;font-size:1rem;">✓</span><div><strong>Live Selfie Match</strong><br><span style="color:var(--gray);font-size:.82rem;">Liveness check — the person listing is the person present</span></div></li>
+          <li style="display:flex;gap:.8rem;font-size:.9rem;color:var(--text);"><span style="color:var(--blue);font-weight:700;font-size:1rem;">✓</span><div><strong>Criminal Record Check</strong><br><span style="color:var(--gray);font-size:.82rem;">Fingerprint-based check via Afiswitch against SAPS database</span></div></li>
+          <li style="display:flex;gap:.8rem;font-size:.9rem;color:var(--text);"><span style="color:var(--blue);font-weight:700;font-size:1rem;">✓</span><div><strong>Reference Verification</strong><br><span style="color:var(--gray);font-size:.82rem;">Minimum 2 previous employer references — we call each one</span></div></li>
+          <li style="display:flex;gap:.8rem;font-size:.9rem;color:var(--text);"><span style="color:var(--blue);font-weight:700;font-size:1rem;">✓</span><div><strong>Phone Verification</strong><br><span style="color:var(--gray);font-size:.82rem;">Active SA number confirmed via OTP</span></div></li>
+        </ul>
+      </div>
+      <div style="background:white;border:2px solid var(--gold);border-radius:20px;padding:2.5rem;display:flex;flex-direction:column;box-shadow:var(--shadow-gold);">
+        <div style="background:var(--gold);color:var(--dark);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .8rem;border-radius:20px;display:inline-block;margin-bottom:1.5rem;">Tier 2 — Recommended</div>
+        <h3 style="font-family:'Fraunces',serif;font-size:1.5rem;color:var(--dark);margin-bottom:.5rem;">Enhanced Verified</h3>
+        <p style="color:var(--gray);font-size:.88rem;margin-bottom:1.5rem;">Required for all workers entering employer spaces, caring for children or elderly.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:.8rem;flex:1;">
+          <li style="display:flex;gap:.8rem;font-size:.9rem;color:var(--text);"><span style="color:var(--gold-dark);font-weight:700;font-size:1rem;">✓</span><div><strong>Everything in Tier 1</strong><br><span style="color:var(--gray);font-size:.82rem;">All basic checks completed first</span></div></li>
+          <li style="display:flex;gap:.8rem;font-size:.9rem;color:var(--text);"><span style="color:var(--gold-dark);font-weight:700;font-size:1rem;">✓</span><div><strong>Sex Offender Register Check</strong><br><span style="color:var(--gray);font-size:.82rem;">Critical for anyone working with children</span></div></li>
+          <li style="display:flex;gap:.8rem;font-size:.9rem;color:var(--text);"><span style="color:var(--gold-dark);font-weight:700;font-size:1rem;">✓</span><div><strong>Skills Assessment</strong><br><span style="color:var(--gray);font-size:.82rem;">Role-specific practical or written assessment</span></div></li>
+          <li style="display:flex;gap:.8rem;font-size:.9rem;color:var(--text);"><span style="color:var(--gold-dark);font-weight:700;font-size:1rem;">✓</span><div><strong>Video Orientation Interview</strong><br><span style="color:var(--gray);font-size:.82rem;">Brief interview with our team — attitude and communication assessed</span></div></li>
+          <li style="display:flex;gap:.8rem;font-size:.9rem;color:var(--text);"><span style="color:var(--gold-dark);font-weight:700;font-size:1rem;">✓</span><div><strong>Driving Record</strong><br><span style="color:var(--gray);font-size:.82rem;">For drivers, au pairs, and school-run workers</span></div></li>
+        </ul>
+      </div>
+      <div style="background:linear-gradient(160deg,var(--dark),var(--blue-dark));border-radius:20px;padding:2.5rem;display:flex;flex-direction:column;">
+        <div style="background:linear-gradient(135deg,var(--gold),#FFD700);color:var(--dark);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .8rem;border-radius:20px;display:inline-block;margin-bottom:1.5rem;">⭐ Tier 3 — Premium</div>
+        <h3 style="font-family:'Fraunces',serif;font-size:1.5rem;color:white;margin-bottom:.5rem;">Premium Verified</h3>
+        <p style="color:rgba(255,255,255,0.65);font-size:.88rem;margin-bottom:1.5rem;">Our highest trust level — earned through sustained excellence on the platform.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:.8rem;flex:1;">
+          <li style="display:flex;gap:.8rem;font-size:.9rem;"><span style="color:var(--gold);font-weight:700;font-size:1rem;">✓</span><div style="color:rgba(255,255,255,0.85);"><strong>Everything in Tier 1 &amp; 2</strong><br><span style="color:rgba(255,255,255,0.55);font-size:.82rem;">Full vetting stack completed</span></div></li>
+          <li style="display:flex;gap:.8rem;font-size:.9rem;"><span style="color:var(--gold);font-weight:700;font-size:1rem;">✓</span><div style="color:rgba(255,255,255,0.85);"><strong>First Aid Certificate</strong><br><span style="color:rgba(255,255,255,0.55);font-size:.82rem;">Valid certification required</span></div></li>
+          <li style="display:flex;gap:.8rem;font-size:.9rem;"><span style="color:var(--gold);font-weight:700;font-size:1rem;">✓</span><div style="color:rgba(255,255,255,0.85);"><strong>6+ Months on Platform</strong><br><span style="color:rgba(255,255,255,0.55);font-size:.82rem;">Proven track record of engagements</span></div></li>
+          <li style="display:flex;gap:.8rem;font-size:.9rem;"><span style="color:var(--gold);font-weight:700;font-size:1rem;">✓</span><div style="color:rgba(255,255,255,0.85);"><strong>4.8+ Star Rating Sustained</strong><br><span style="color:rgba(255,255,255,0.55);font-size:.82rem;">Consistently excellent reviews</span></div></li>
+          <li style="display:flex;gap:.8rem;font-size:.9rem;"><span style="color:var(--gold);font-weight:700;font-size:1rem;">✓</span><div style="color:rgba(255,255,255,0.85);"><strong>Annual Re-Vetting</strong><br><span style="color:rgba(255,255,255,0.55);font-size:.82rem;">Criminal check renewed every 12 months</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="background:var(--blue-pale);">
+  <div class="container container-sm" style="text-align:center;">
+    <div class="section-tag tag-blue">Safety First</div>
+    <h2 class="section-title center" style="margin-bottom:1.2rem;">Zero Tolerance Policy</h2>
+    <p class="section-desc center" style="margin-bottom:3rem;">Any worker with a conviction for violence, theft, sexual offences, or abuse against children or vulnerable persons is permanently banned from Khaya — no exceptions, no appeals.</p>
+    <div class="grid-3">
+      <div style="background:white;border-radius:12px;padding:2rem;border-left:4px solid var(--blue);"><div style="font-size:1.5rem;margin-bottom:.8rem;">🚫</div><h4 style="color:var(--dark);font-weight:600;margin-bottom:.5rem;">Instant Ban</h4><p style="color:var(--gray);font-size:.88rem;">Violence, theft, sexual offences — immediate permanent removal</p></div>
+      <div style="background:white;border-radius:12px;padding:2rem;border-left:4px solid var(--gold);"><div style="font-size:1.5rem;margin-bottom:.8rem;">⚠️</div><h4 style="color:var(--dark);font-weight:600;margin-bottom:.5rem;">Three Strikes</h4><p style="color:var(--gray);font-size:.88rem;">Minor conduct issues — structured warning system applies</p></div>
+      <div style="background:white;border-radius:12px;padding:2rem;border-left:4px solid var(--blue);"><div style="font-size:1.5rem;margin-bottom:.8rem;">📞</div><h4 style="color:var(--dark);font-weight:600;margin-bottom:.5rem;">24/7 Safety Line</h4><p style="color:var(--gray);font-size:.88rem;">Report any incident any time — we investigate every single one</p></div>
+    </div>
+  </div>
+</section>
+</div>
+<div id="page-about" class="page">
+<section style="background:linear-gradient(160deg,var(--dark),var(--blue-dark));padding:5rem 0 4rem;">
+  <div class="container">
+    <div class="section-tag tag-gold" style="margin-bottom:1rem;">About Khaya</div>
+    <h1 class="section-title white">Built to Solve a Real<br>South African Problem</h1>
+    <p style="color:rgba(255,255,255,0.75);font-size:1.05rem;max-width:580px;margin-top:1rem;line-height:1.8;">South Africa has one of the highest unemployment rates in the world — and one of the biggest trust gaps in workforce hiring. Khaya exists to fix both.</p>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="grid-2" style="align-items:center;gap:5rem;">
+      <div>
+        <div class="section-tag tag-blue">Our Mission</div>
+        <h2 class="section-title" style="text-align:left;font-size:2.2rem;">Creating Trust Between Employers and Workers</h2>
+        <p style="color:var(--gray);line-height:1.85;margin-bottom:1.5rem;font-size:1rem;">Every day in South Africa, employers take a risk inviting an unknown person into their space. And every day, capable, honest workers struggle to prove their trustworthiness to potential employers.</p>
+        <p style="color:var(--gray);line-height:1.85;margin-bottom:1.5rem;font-size:1rem;">Khaya bridges that gap. We've built a platform where workers can prove who they are, and employers can hire with genuine confidence.</p>
+        <p style="color:var(--gray);line-height:1.85;font-size:1rem;">We believe that good work deserves good opportunity — and that every South African employer deserves to feel safe in their own space.</p>
+      </div>
+      <div>
+        <div class="grid-2" style="gap:1.2rem;">
+          <div style="background:var(--blue-pale);border-radius:16px;padding:2rem;text-align:center;"><div style="font-family:'Fraunces',serif;font-size:3rem;color:var(--blue);font-weight:700;">60%</div><div style="font-size:.78rem;color:var(--gray);text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem;">Youth Unemployment in SA</div></div>
+          <div style="background:var(--gold-pale);border-radius:16px;padding:2rem;text-align:center;"><div style="font-family:'Fraunces',serif;font-size:3rem;color:var(--gold-dark);font-weight:700;">8M+</div><div style="font-size:.78rem;color:var(--gray);text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem;">Domestic Workers in SA</div></div>
+          <div style="background:var(--gold-pale);border-radius:16px;padding:2rem;text-align:center;"><div style="font-family:'Fraunces',serif;font-size:3rem;color:var(--gold-dark);font-weight:700;">0</div><div style="font-size:.78rem;color:var(--gray);text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem;">Trusted Vetting Platforms</div></div>
+          <div style="background:var(--blue-pale);border-radius:16px;padding:2rem;text-align:center;"><div style="font-family:'Fraunces',serif;font-size:3rem;color:var(--blue);font-weight:700;">1</div><div style="font-size:.78rem;color:var(--gray);text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem;">Solution — Khaya</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="background:var(--off-white);">
+  <div class="container">
+    <div class="section-header"><div class="section-tag tag-gold">Our Values</div><h2 class="section-title center">What We Stand For</h2></div>
+    <div class="grid-3">
+      <div style="background:white;border-radius:16px;padding:2.5rem;border-top:4px solid var(--blue);"><div style="font-size:2rem;margin-bottom:1rem;">🛡️</div><h4 style="font-family:'Fraunces',serif;font-size:1.3rem;color:var(--dark);margin-bottom:.7rem;">Safety Without Compromise</h4><p style="color:var(--gray);font-size:.9rem;line-height:1.7;">We will never cut corners on vetting. The safety of children, the elderly, and every employer's space is non-negotiable.</p></div>
+      <div style="background:white;border-radius:16px;padding:2.5rem;border-top:4px solid var(--gold);"><div style="font-size:2rem;margin-bottom:1rem;">🤝</div><h4 style="font-family:'Fraunces',serif;font-size:1.3rem;color:var(--dark);margin-bottom:.7rem;">Dignity for Every Worker</h4><p style="color:var(--gray);font-size:.9rem;line-height:1.7;">Every person on our platform deserves to be treated with respect, paid fairly, and given the opportunity to build a better life.</p></div>
+      <div style="background:white;border-radius:16px;padding:2.5rem;border-top:4px solid var(--blue);"><div style="font-size:2rem;margin-bottom:1rem;">🌍</div><h4 style="font-family:'Fraunces',serif;font-size:1.3rem;color:var(--dark);margin-bottom:.7rem;">Real Impact for SA</h4><p style="color:var(--gray);font-size:.9rem;line-height:1.7;">Every placement is a job created, a livelihood supported, and a step toward solving South Africa's unemployment crisis at scale.</p></div>
+    </div>
+  </div>
+</section>
+</div>
+<div id="page-find-talent" class="page">
+<section class="form-section-employer">
+  <div class="container">
+    <div class="form-section-content">
+      <div class="form-intro form-intro-employer">
+        <div class="section-tag" style="background:rgba(255,255,255,0.2);color:white;margin-bottom:1rem;">Find Talent</div>
+        <h2>Find Your Perfect Hire.</h2>
+        <p>Tell us what you need and we'll match you with vetted, verified workers in your area — fast.</p>
+        <ul class="form-bullets">
+          <li class="bullet-blue">Every worker background-checked against SAPS</li>
+          <li class="bullet-blue">ID verified via Home Affairs</li>
+          <li class="bullet-blue">References called by our team</li>
+          <li class="bullet-blue">Legal employment contract included</li>
+          <li class="bullet-blue">Replacement guarantee on all placements</li>
+          <li class="bullet-blue">Both employer and worker rated after every engagement</li>
+        </ul>
+      </div>
+      <div class="form-card">
+        <h3 style="font-family:'Fraunces',serif;font-size:1.8rem;color:var(--dark);margin-bottom:.3rem;">Register as an Employer</h3>
+        <p style="color:var(--gray);font-size:.88rem;margin-bottom:2rem;">We'll be in touch within 24 hours to discuss your requirements.</p>
+        <form onsubmit="handleForm(event,'employer')">
+          <div class="grid-2" style="gap:1rem;">
+            <div class="form-group"><label class="label-blue">Your Name</label><input type="text" class="input-blue" placeholder="First &amp; last name" required></div>
+            <div class="form-group"><label class="label-blue">Phone Number</label><input type="tel" class="input-blue" placeholder="e.g. 082 000 0000" required></div>
+          </div>
+          <div class="form-group"><label class="label-blue">Email Address</label><input type="email" class="input-blue" placeholder="your@email.com" required></div>
+          <div class="form-group"><label class="label-blue">Suburb / Area</label><input type="text" class="input-blue" placeholder="e.g. Sandton, Johannesburg"></div>
+          <div class="form-group"><label class="label-blue">What Type of Worker Do You Need?</label>
+            <select class="input-blue"><option value="">— Select a category —</option><option>Nanny / Au Pair</option><option>Domestic Worker / Cleaner</option><option>Gardener</option><option>Home Maintenance / Tradesperson</option><option>Elderly Carer</option><option>Driver</option><option>Animal Carer</option><option>Multiple / Not Sure Yet</option></select>
+          </div>
+          <div class="form-group"><label class="label-blue">Full-Time or Part-Time?</label>
+            <select class="input-blue"><option>Full-Time (5 days/week)</option><option>Part-Time (3 days/week)</option><option>Part-Time (1–2 days/week)</option><option>Once-Off / Ad Hoc</option><option>Live-In</option></select>
+          </div>
+          <div class="form-group"><label class="label-blue">Tell Us More (optional)</label><textarea class="input-blue" placeholder="Any special requirements, children's ages, pets, specific skills needed..."></textarea></div>
+          <button type="submit" class="btn-blue" style="width:100%;border:none;cursor:pointer;padding:1.1rem;font-size:.9rem;">Submit — Find My Match</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+<div id="page-find-work" class="page">
+<section class="form-section-worker">
+  <div class="container">
+    <div class="form-section-content">
+      <div class="form-intro form-intro-worker">
+        <div class="section-tag" style="background:rgba(255,255,255,0.3);color:var(--dark);margin-bottom:1rem;">Find Work</div>
+        <h2>Your Skills. Your Badge. Your Future.</h2>
+        <p>Join Khaya and connect with employers who value your work and treat you with dignity.</p>
+        <ul class="form-bullets">
+          <li class="bullet-gold">Free to register — no hidden fees</li>
+          <li class="bullet-gold">We guide you through the vetting process</li>
+          <li class="bullet-gold">Your Khaya badge builds employer trust instantly</li>
+          <li class="bullet-gold">Legal contracts protect your rights</li>
+          <li class="bullet-gold">UIF registration assistance included</li>
+          <li class="bullet-gold">Build your rating and grow your income</li>
+        </ul>
+      </div>
+      <div class="form-card">
+        <h3 style="font-family:'Fraunces',serif;font-size:1.8rem;color:var(--dark);margin-bottom:.3rem;">Register as a Worker</h3>
+        <p style="color:var(--gray);font-size:.88rem;margin-bottom:2rem;">It's free to join. We'll contact you to guide you through vetting.</p>
+        <form onsubmit="handleForm(event,'worker')">
+          <div class="grid-2" style="gap:1rem;">
+            <div class="form-group"><label class="label-gold">Your Full Name</label><input type="text" class="input-gold" placeholder="First &amp; last name" required></div>
+            <div class="form-group"><label class="label-gold">Phone / WhatsApp</label><input type="tel" class="input-gold" placeholder="e.g. 082 000 0000" required></div>
+          </div>
+          <div class="form-group"><label class="label-gold">Email Address</label><input type="email" class="input-gold" placeholder="your@email.com"></div>
+          <div class="form-group"><label class="label-gold">South African ID Number</label><input type="text" class="input-gold" placeholder="13-digit ID number" maxlength="13"></div>
+          <div class="form-group"><label class="label-gold">Area / Suburb You Live In</label><input type="text" class="input-gold" placeholder="e.g. Soweto, Johannesburg"></div>
+          <div class="form-group"><label class="label-gold">What Type of Work Do You Do?</label>
+            <select class="input-gold"><option value="">— Select your category —</option><option>Nanny / Au Pair / Childminder</option><option>Domestic Worker / Cleaner / Housekeeper</option><option>Gardener / Landscaper</option><option>Plumber / Electrician / Handyman</option><option>Painter / Tiler / Carpenter</option><option>Elderly Carer / Companion</option><option>Driver / Chauffeur</option><option>Animal Carer / Dog Walker</option><option>Cook / Household Chef</option><option>Other</option></select>
+          </div>
+          <div class="form-group"><label class="label-gold">Years of Experience</label>
+            <select class="input-gold"><option>Less than 1 year</option><option>1–2 years</option><option>3–5 years</option><option>5–10 years</option><option>10+ years</option></select>
+          </div>
+          <div class="form-group"><label class="label-gold">Tell Us About Yourself (optional)</label><textarea class="input-gold" placeholder="Previous experience, certificates, languages spoken, availability..."></textarea></div>
+          <button type="submit" class="btn-blue" style="width:100%;border:none;cursor:pointer;padding:1.1rem;font-size:.9rem;background:var(--dark);">Submit — Start My Khaya Journey</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+<div id="page-contact" class="page">
+<section style="background:var(--blue);padding:5rem 0 4rem;">
+  <div class="container">
+    <div class="section-tag" style="background:rgba(255,255,255,0.2);color:white;margin-bottom:1rem;">Get in Touch</div>
+    <h1 class="section-title white">We're Here to Help</h1>
+    <p style="color:rgba(255,255,255,0.78);max-width:520px;margin-top:1rem;font-size:1.05rem;line-height:1.8;">Whether you have a question about a placement, need help with vetting, or just want to say hello — we'd love to hear from you.</p>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <h2 style="font-family:'Fraunces',serif;font-size:2rem;color:var(--dark);margin-bottom:2rem;">Contact Details</h2>
+        <div class="contact-info-item"><div class="contact-icon">📍</div><div><h4>Head Office</h4><p>Sandton, Johannesburg<br>Gauteng, South Africa</p></div></div>
+        <div class="contact-info-item"><div class="contact-icon">📞</div><div><h4>Phone / WhatsApp</h4><a href="tel:+27000000000">+27 (0) 00 000 0000</a></div></div>
+        <div class="contact-info-item"><div class="contact-icon">✉️</div><div><h4>Email</h4><a href="mailto:hello@trusthire.co.za">hello@trusthire.co.za</a></div></div>
+        <div class="contact-info-item"><div class="contact-icon">🕐</div><div><h4>Office Hours</h4><p>Monday–Friday: 8am–5pm SAST<br>Saturday: 9am–1pm SAST</p></div></div>
+        <div style="margin-top:1.5rem;">
+          <p style="font-size:.88rem;font-weight:600;color:var(--dark);margin-bottom:1rem;text-transform:uppercase;letter-spacing:.08em;">Follow Us</p>
+          <div style="display:flex;gap:1rem;">
+            <a href="https://www.instagram.com/trusthire" target="_blank" style="width:42px;height:42px;background:var(--blue-light);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.1rem;">📷</a>
+            <a href="https://www.facebook.com/trusthire" target="_blank" style="width:42px;height:42px;background:var(--blue-light);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.1rem;">👍</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2 style="font-family:'Fraunces',serif;font-size:2rem;color:var(--dark);margin-bottom:2rem;">Send a Message</h2>
+        <form onsubmit="handleForm(event,'contact')">
+          <div class="form-group"><label class="label-blue">Your Name</label><input type="text" class="input-blue" placeholder="Full name" required></div>
+          <div class="form-group"><label class="label-blue">Email</label><input type="email" class="input-blue" placeholder="your@email.com" required></div>
+          <div class="form-group"><label class="label-blue">I am a...</label>
+            <select class="input-blue"><option>Employer looking to hire</option><option>Worker looking for placements</option><option>Media / Press enquiry</option><option>Partnership enquiry</option><option>Other</option></select>
+          </div>
+          <div class="form-group"><label class="label-blue">Message</label><textarea class="input-blue" placeholder="How can we help you?" style="height:150px;"></textarea></div>
+          <button type="submit" class="btn-blue" style="width:100%;border:none;cursor:pointer;padding:1.1rem;">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 64" height="56" style="display:block;">
+  <rect x="0" y="6" width="52" height="52" rx="14" fill="#1E5F5B"/>
+  <rect x="12" y="30" width="28" height="24" rx="3" fill="#FBF6EE"/>
+  <path d="M26 13 L43 30 H9 Z" fill="#FBF6EE"/>
+  <circle cx="26" cy="38" r="6" fill="#F4A82C"/>
+  <path d="M22 54 V46 a4 4 0 0 1 8 0 V54 Z" fill="#1E5F5B"/>
+  <text x="66" y="26" font-family="'DM Sans',sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.5)" letter-spacing="3">SOUTH AFRICA</text>
+  <text x="64" y="50" font-family="'Fraunces','Georgia',serif" font-size="30" font-weight="600" fill="#FBF6EE" letter-spacing="-0.5">khaya<tspan fill="#F4A82C">.</tspan></text>
+</svg>
+        <p class="footer-tagline">Trust, brought home.<br>South Africa's vetted home &amp; care workforce.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/trusthire" target="_blank">📷</a>
+          <a href="https://www.facebook.com/trusthire" target="_blank">👍</a>
+        </div>
+      </div>
+      <div><h4>For Employers</h4><ul>
+        <li><a href="#" onclick="showPage('find-talent')">Find Talent</a></li>
+        <li><a href="#" onclick="showPage('how')">How It Works</a></li>
+        <li><a href="#" onclick="showPage('vetting')">Our Vetting</a></li>
+        <li><a href="#" onclick="showPage('categories')">Browse Categories</a></li>
+      </ul></div>
+      <div><h4>For Workers</h4><ul>
+        <li><a href="#" onclick="showPage('find-work')">Find Work</a></li>
+        <li><a href="#" onclick="showPage('how')">How to Register</a></li>
+        <li><a href="#" onclick="showPage('vetting')">Getting Vetted</a></li>
+        <li><a href="#" onclick="showPage('about')">Our Mission</a></li>
+      </ul></div>
+      <div><h4>Company</h4><ul>
+        <li><a href="#" onclick="showPage('about')">About Khaya</a></li>
+        <li><a href="#" onclick="showPage('contact')">Contact Us</a></li>
+        <li><a href="mailto:hello@trusthire.co.za">hello@trusthire.co.za</a></li>
+        <li><a href="tel:+27000000000">+27 (0) 00 000 0000</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Khaya (Pty) Ltd. All rights reserved. Registered in South Africa.</p>
+      <div class="footer-divider">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">POPIA Compliance</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  const page=document.getElementById('page-'+id);
+  if(page)page.classList.add('active');
+  const nav=document.getElementById('nav-'+id);
+  if(nav)nav.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('navLinks').classList.remove('open');
+}
+function toggleMenu(){document.getElementById('navLinks').classList.toggle('open');}
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);});
+function toggleFaq(el){el.classList.toggle('open');}
+function handleForm(e,type){
+  e.preventDefault();
+  const msgs={
+    employer:"Thank you! We'll be in touch within 24 hours to discuss your requirements. Welcome to Khaya.",
+    worker:"Thank you for registering! We'll contact you via WhatsApp to guide you through the next steps. Welcome to Khaya.",
+    contact:"Thank you for your message! We'll respond within one business day."
+  };
+  alert(msgs[type]||'Thank you! We will be in touch soon.');
+  e.target.reset();
+}
+</script>
+</body>
+</html>
