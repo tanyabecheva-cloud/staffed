@@ -215,6 +215,24 @@ footer li a:hover{color:var(--coral);}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--ink-soft);font-size:.96rem;line-height:1.6;}
 .faq-a div{padding:0 1.4rem 1.3rem;}
 .faq-item.open .faq-a{max-height:280px;}
+
+/* PRICING */
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;align-items:start;}
+.price-card{background:#fff;border:2px solid var(--line);border-radius:var(--r-lg);padding:2.2rem 1.8rem;position:relative;}
+.price-card.feat{border-color:var(--coral);box-shadow:var(--sh-coral);}
+.price-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--coral);color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:.35rem 1rem;border-radius:var(--pill);white-space:nowrap;}
+.price-card h3{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.2rem;margin-bottom:.2rem;}
+.price-card .who2{color:var(--ink-soft);font-size:.86rem;margin-bottom:1.2rem;}
+.price-amt{font-family:'Poppins',sans-serif;font-weight:800;font-size:2.3rem;color:var(--ink);line-height:1;margin-bottom:.25rem;}
+.price-amt small{font-size:.9rem;font-weight:600;color:var(--ink-soft);}
+.price-sub{font-size:.8rem;color:var(--ink-soft);margin-bottom:1.4rem;}
+.price-list{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.6rem;}
+.price-list li{display:flex;gap:.6rem;font-size:.88rem;color:var(--ink-soft);line-height:1.4;}
+.price-list li::before{content:'\2713';color:var(--mint);font-weight:800;flex-shrink:0;}
+.price-free{max-width:760px;margin:1.8rem auto 0;background:var(--mint);color:#fff;border-radius:var(--r-lg);padding:1.7rem 2rem;text-align:center;}
+.price-free h3{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.3rem;margin-bottom:.3rem;}
+.price-free p{opacity:.95;font-size:.94rem;line-height:1.5;max-width:560px;margin:0 auto;}
+@media(max-width:900px){.pricing{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -235,6 +253,7 @@ footer li a:hover{color:var(--coral);}
       <a href="#cats">Categories</a>
       <a href="#safety">Safety</a>
       <a href="#stories">Stories</a>
+      <a href="#pricing">Pricing</a>
     </div>
     <div class="nav-cta">
       <a href="#get-started" onclick="khayaTab('worker');return false;" class="btn btn-ghost">Find work</a>
@@ -342,16 +361,16 @@ footer li a:hover{color:var(--coral);}
     <div>
       <div class="eyebrow">Safety, seriously</div>
       <h2 class="h2" style="margin-bottom:1rem;">We check, so you don't have to worry.</h2>
-      <p class="lead" style="margin-bottom:1.6rem;">Before anyone shows up on Khaya, they pass a proper, multi-step vetting process. Because this is your home, your kids, your gran. No corners cut. Ever.</p>
+      <p class="lead" style="margin-bottom:1.6rem;">Before anyone shows up on Khaya, they pass a proper, multi-step vetting process. Because this is your home, your kids, your gran. No corners cut. Ever. Our criminal checks run through AFISwitch &mdash; the system accredited to search the official SAPS criminal database.</p>
       <a href="#" class="btn btn-ink btn-lg">See how we vet →</a>
     </div>
     <div class="safe-card">
       <ul class="checks">
-        <li><span class="tick">✓</span> Criminal record check (SAPS database)</li>
+        <li><span class="tick">✓</span> Criminal record check via AFISwitch (SAPS database)</li>
         <li><span class="tick">✓</span> ID verified against Home Affairs</li>
         <li><span class="tick">✓</span> Live selfie + ID photo match</li>
         <li><span class="tick">✓</span> Real reference calls completed</li>
-        <li><span class="tick">✓</span> Sex-offender check for childcare roles</li>
+        <li><span class="tick">✓</span> Sex-offender register check for childcare roles</li>
         <li><span class="tick">✓</span> Re-vetted every year</li>
       </ul>
     </div>
@@ -425,6 +444,65 @@ footer li a:hover{color:var(--coral);}
   </div>
 </section>
 
+<!-- PRICING -->
+<section style="background:var(--paper);" id="pricing">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">Pricing</div>
+      <h2 class="h2">Simple, honest pricing</h2>
+      <p class="lead">You only pay when you successfully hire &mdash; no upfront fees, no hidden costs, and workers never pay a cent.</p>
+    </div>
+    <div class="pricing">
+      <div class="price-card">
+        <h3>Standard placement</h3>
+        <div class="who2">Cleaners, gardeners, drivers, pet care</div>
+        <div class="price-amt">R1,499<small> once-off</small></div>
+        <div class="price-sub">Paid only when you hire</div>
+        <ul class="price-list">
+          <li>AFISwitch criminal &amp; SAPS check</li>
+          <li>Home Affairs ID + reference checks</li>
+          <li>Ready-to-sign BCEA contract</li>
+          <li>First-week check-in call</li>
+          <li>90-day replacement guarantee</li>
+        </ul>
+        <a href="#get-started" onclick="khayaTab('employer');return false;" class="btn btn-ghost" style="width:100%;justify-content:center;">Find help</a>
+      </div>
+      <div class="price-card feat">
+        <div class="price-badge">Most popular</div>
+        <h3>Enhanced placement</h3>
+        <div class="who2">Nannies, au pairs, elderly carers</div>
+        <div class="price-amt">R2,499<small> once-off</small></div>
+        <div class="price-sub">Paid only when you hire</div>
+        <ul class="price-list">
+          <li>Everything in Standard</li>
+          <li>Sex-offender register check</li>
+          <li>Skills assessment</li>
+          <li>Video orientation interview</li>
+          <li>First-aid certified options</li>
+        </ul>
+        <a href="#get-started" onclick="khayaTab('employer');return false;" class="btn btn-coral" style="width:100%;justify-content:center;">Find help</a>
+      </div>
+      <div class="price-card">
+        <h3>Khaya Care</h3>
+        <div class="who2">Optional ongoing support</div>
+        <div class="price-amt">R149<small>/month</small></div>
+        <div class="price-sub">Cancel anytime</div>
+        <ul class="price-list">
+          <li>Ongoing check-ins, both sides</li>
+          <li>Monthly payroll &amp; UIF admin</li>
+          <li>Contract updates &amp; renewals</li>
+          <li>Priority rematch if needed</li>
+        </ul>
+        <a href="#get-started" onclick="khayaTab('employer');return false;" class="btn btn-ghost" style="width:100%;justify-content:center;">Add Khaya Care</a>
+      </div>
+    </div>
+    <div class="price-free">
+      <h3>&#128075; Workers always join free</h3>
+      <p>It's 100% free for workers to apply, get verified and find work. We only charge for the criminal check at cost &mdash; and help you get it. We never take a cut of your wages. Ever.</p>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section id="faq">
   <div class="wrap">
@@ -436,7 +514,7 @@ footer li a:hover{color:var(--coral);}
 <div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">Is it free?</button><div class="faq-a"><div>Browsing is free, and it is completely free for workers to apply and get verified. Employers only pay a placement fee when you successfully hire someone.</div></div></div>
 <div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">What if the match doesn't work out?</button><div class="faq-a"><div>We check in with both sides after every placement. If the fit isn't right, we step in and find you a better match &mdash; free, within your guarantee period. You're never stuck.</div></div></div>
 <div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">How do you check in after I hire someone?</button><div class="faq-a"><div>We call both the family and the worker in the first week, then send quick check-in messages both ways &mdash; making sure everyone's happy, the pay and treatment are fair, and catching any problem early.</div></div></div>
-<div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">How are workers vetted?</button><div class="faq-a"><div>Every worker passes a criminal-record check (SAPS database), Home Affairs ID verification, a live selfie match and real reference calls. Anyone working with children also gets a sex-offender register check.</div></div></div>
+<div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">How are workers vetted?</button><div class="faq-a"><div>Every worker passes an AFISwitch criminal-record check against the live SAPS database, Home Affairs ID verification, a live selfie match and real reference calls. Anyone working with children is also checked against the National Register for Sex Offenders.</div></div></div>
 <div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">How are workers protected?</button><div class="faq-a"><div>Fair pay (at least the national minimum wage), proper BCEA contracts, help registering for UIF, safe working conditions, and the right to rate employers. No exploitation, ever.</div></div></div>
 <div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">What about my privacy?</button><div class="faq-a"><div>We're POPIA-compliant: we only collect what we genuinely need, we never sell your data, and you can view, correct or delete your information any time. See the Privacy Notice in the form section.</div></div></div>
 <div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">Which areas do you cover?</button><div class="faq-a"><div>We're launching in Johannesburg and Pretoria first &mdash; Sandton, Midrand, the East and West Rand &mdash; with Cape Town and Durban next.</div></div></div>

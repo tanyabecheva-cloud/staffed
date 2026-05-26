@@ -11,13 +11,14 @@ which Khaya helps facilitate (or fronts and recoups in the placement fee).
 ### 1. Placement fee (one-off, paid only on successful hire)
 | Tier | Roles | Price* | Includes |
 |---|---|---|---|
-| **Standard** | Cleaners, gardeners, drivers, pet care | **R1,499** | AFISwitch/SAPS criminal check, Home Affairs ID + reference checks, BCEA contract, first-week check-in, **90-day replacement guarantee** |
-| **Enhanced** | Nannies, au pairs, elderly carers | **R2,499** | Everything in Standard + sex-offender register check, skills assessment, video interview |
+| **Standard** | Cleaners, gardeners, drivers, pet care | **R899** | AFISwitch/SAPS criminal check, Home Affairs ID + reference checks, BCEA contract, first-week check-in, **90-day replacement guarantee** |
+| **Enhanced** | Nannies, au pairs, elderly carers | **R1,499** | Everything in Standard + sex-offender register check, skills assessment, video interview |
 
-\* Validate against willingness-to-pay. Anchor: traditional agencies charge R2,500–R8,000
-(often "one month's salary"). Khaya undercuts them while offering more (tech + guarantee).
+\* Deliberately the cheapest credible option: SweepSouth charges ~R1,999 for a nanny placement
+and traditional agencies R2,500–R8,000. Khaya undercuts all of them (Enhanced R1,499 < SweepSouth)
+while offering more (deeper vetting + worker guarantee + ongoing check-ins).
 
-### 2. Khaya Care (optional monthly subscription) — **~R149/month**
+### 2. Khaya Care (optional monthly subscription) — **~R99/month**
 Ongoing check-ins (both sides), monthly payroll & UIF admin, contract updates/renewals,
 priority rematch. This is the **recurring-revenue engine** and monetises the check-in service.
 
@@ -36,7 +37,7 @@ Employer + worker connect, then go off-platform to dodge fees. Mitigate by:
 3. Tie the replacement guarantee to staying on-platform.
 
 ## Unit economics (rough, per Standard placement)
-- Revenue: R1,499. Cost: criminal+ID check ~R335 + ops/matching time. Gross margin healthy.
+- Revenue: R899 (Standard) / R1,499 (Enhanced). Cost: criminal+ID ~R335 + ops. Margin holds even after the cut.
 - Real upside is **Khaya Care attach rate** — every subscriber is recurring margin.
 
 ## To validate before scaling
