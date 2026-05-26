@@ -175,6 +175,36 @@ footer li a:hover{color:var(--coral);}
   .cats,.steps,.testi{grid-template-columns:1fr;}
   section{padding:4rem 0;}
 }
+
+/* GET STARTED / FORMS */
+.gs{background:var(--paper);}
+.tabs{display:inline-flex;background:#fff;border:2px solid var(--line);border-radius:var(--pill);padding:5px;gap:5px;margin-bottom:2rem;}
+.tab{border:0;background:none;font-family:'Poppins',sans-serif;font-weight:600;font-size:.96rem;padding:.7rem 1.4rem;border-radius:var(--pill);cursor:pointer;color:var(--ink-soft);transition:all .2s;}
+.tab.active{background:var(--coral);color:#fff;}
+.tab.active.mint{background:var(--mint);}
+.form-card{max-width:700px;margin:0 auto;background:#fff;border:2px solid var(--line);border-radius:var(--r-lg);padding:2.4rem;box-shadow:var(--sh);}
+.form-card h3{font-weight:800;font-size:1.5rem;margin-bottom:.4rem;}
+.form-card .fc-sub{color:var(--ink-soft);margin-bottom:1.6rem;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.fg{margin-bottom:1rem;display:flex;flex-direction:column;}
+.fg.full{grid-column:1/-1;}
+.fg label{font-family:'Poppins',sans-serif;font-weight:600;font-size:.84rem;margin-bottom:.4rem;}
+.fg input,.fg select,.fg textarea{font-family:'Inter',sans-serif;font-size:.98rem;padding:.85rem 1rem;border:2px solid var(--line);border-radius:14px;outline:none;background:#fff;color:var(--ink);transition:border-color .2s;width:100%;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--coral);}
+.fg textarea{min-height:96px;resize:vertical;}
+.consent{display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;color:var(--ink-soft);margin:1.1rem 0 1.4rem;line-height:1.5;cursor:pointer;}
+.consent input{margin-top:3px;width:18px;height:18px;flex-shrink:0;accent-color:var(--coral);}
+.hp{position:absolute!important;left:-9999px;}
+.privacy{max-width:700px;margin:1.6rem auto 0;background:var(--mint-soft);border-radius:var(--r);padding:1.4rem 1.6rem;font-size:.9rem;color:var(--ink-soft);line-height:1.65;}
+.privacy b{color:var(--ink);}
+.privacy a{color:var(--mint-dark);font-weight:600;}
+.laws{max-width:700px;margin:1.4rem auto 0;}
+.laws h4{font-family:'Poppins',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.9rem;text-align:center;}
+.laws ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.7rem;}
+.laws li{font-size:.85rem;line-height:1.45;background:#fff;border:2px solid var(--line);border-radius:14px;padding:.85rem 1rem;color:var(--ink-soft);}
+.laws li b{display:block;font-family:'Poppins',sans-serif;color:var(--ink);margin-bottom:.15rem;}
+.laws li a{color:var(--coral);font-weight:600;}
+@media(max-width:560px){.grid2,.laws ul{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -197,8 +227,8 @@ footer li a:hover{color:var(--coral);}
       <a href="#stories">Stories</a>
     </div>
     <div class="nav-cta">
-      <a href="#" class="btn btn-ghost">Find work</a>
-      <a href="#" class="btn btn-coral">Find help</a>
+      <a href="#get-started" onclick="khayaTab('worker');return false;" class="btn btn-ghost">Find work</a>
+      <a href="#get-started" onclick="khayaTab('employer');return false;" class="btn btn-coral">Find help</a>
       <button class="burger" onclick="document.getElementById('navlinks').classList.toggle('open')"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -213,8 +243,8 @@ footer li a:hover{color:var(--coral);}
       <h1>Trusted help<br>for your home,<br><span class="hl">made easy.</span></h1>
       <p class="sub">Nannies, cleaners, gardeners, carers & more — every single one vetted, verified and reviewed. Book the good ones in minutes.</p>
       <div class="hero-ctas">
-        <a href="#" class="btn btn-coral btn-lg">Find help 🏠</a>
-        <a href="#" class="btn btn-ghost btn-lg">I'm looking for work</a>
+        <a href="#get-started" onclick="khayaTab('employer');return false;" class="btn btn-coral btn-lg">Find help 🏠</a>
+        <a href="#get-started" onclick="khayaTab('worker');return false;" class="btn btn-ghost btn-lg">I'm looking for work</a>
       </div>
       <div class="hero-proof">
         <div class="avatars">
@@ -356,14 +386,92 @@ footer li a:hover{color:var(--coral);}
     <div class="duo-card duo-emp">
       <h3>Need a hand at home?</h3>
       <p>Browse thousands of vetted, verified workers near you. Hire with zero worry.</p>
-      <a href="#" class="btn" style="background:#fff;color:var(--coral)">Find help →</a>
+      <a href="#get-started" onclick="khayaTab('employer');return false;" class="btn" style="background:#fff;color:var(--coral)">Find help →</a>
       <span class="em">🏡</span>
     </div>
     <div class="duo-card duo-wrk">
       <h3>Looking for work?</h3>
       <p>Build a verified profile, get matched with employers who pay fairly and treat you with respect. Real contracts, safe conditions — never exploitation.</p>
-      <a href="#" class="btn" style="background:#fff;color:var(--mint-dark)">Start earning →</a>
+      <a href="#get-started" onclick="khayaTab('worker');return false;" class="btn" style="background:#fff;color:var(--mint-dark)">Start earning →</a>
       <span class="em">💼</span>
+    </div>
+  </div>
+</section>
+
+<!-- GET STARTED -->
+<section class="gs" id="get-started">
+  <div class="wrap">
+    <div class="sec-head center" style="margin-bottom:1.4rem;">
+      <div class="eyebrow">Get started</div>
+      <h2 class="h2">Let's begin</h2>
+      <p class="lead">Send us your details and our team starts the process — vetting, matching and contracts. Free to start, for families and workers alike.</p>
+    </div>
+    <div style="text-align:center;">
+      <div class="tabs">
+        <button class="tab active" id="tab-employer" onclick="khayaTab('employer')">I need help at home</button>
+        <button class="tab" id="tab-worker" onclick="khayaTab('worker')">I'm looking for work</button>
+      </div>
+    </div>
+
+    <!-- TODO: get a free key at web3forms.com and paste it into BOTH access_key fields below -->
+    <form id="form-employer" class="form-card" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="YOUR-WEB3FORMS-KEY">
+      <input type="hidden" name="subject" value="New Khaya employer enquiry">
+      <input type="hidden" name="from_name" value="Khaya website">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+      <h3>Find trusted help &#127968;</h3>
+      <p class="fc-sub">Tell us what you need. We'll match you with vetted, verified workers and handle the paperwork.</p>
+      <div class="grid2">
+        <div class="fg"><label>Your name</label><input name="Name" required></div>
+        <div class="fg"><label>Email</label><input type="email" name="Email" required></div>
+        <div class="fg"><label>Phone / WhatsApp</label><input name="Phone" required></div>
+        <div class="fg"><label>Area / suburb</label><input name="Area" placeholder="e.g. Sandton, JHB" required></div>
+        <div class="fg"><label>Who do you need?</label><select name="Role" required><option value="" disabled selected>Choose...</option><option>Nanny / au pair</option><option>Cleaner / domestic</option><option>Gardener</option><option>Home fixer (plumber / electrician / handyman)</option><option>Elderly carer</option><option>Driver</option><option>Pet care</option><option>Other</option></select></div>
+        <div class="fg"><label>Arrangement</label><select name="Arrangement"><option value="" disabled selected>Choose...</option><option>Live-out</option><option>Live-in</option><option>Once-off</option><option>Not sure yet</option></select></div>
+        <div class="fg"><label>Hours</label><select name="Hours"><option value="" disabled selected>Choose...</option><option>Full-time</option><option>Part-time</option><option>A few days a week</option><option>Once-off</option></select></div>
+        <div class="fg"><label>When?</label><select name="When"><option value="" disabled selected>Choose...</option><option>As soon as possible</option><option>Within a month</option><option>Just exploring</option></select></div>
+        <div class="fg full"><label>Anything else?</label><textarea name="Notes" placeholder="Your home, children's ages, special needs, languages..."></textarea></div>
+      </div>
+      <label class="consent"><input type="checkbox" name="POPIA consent" value="Yes" required> I agree to Khaya processing my personal information to match me with vetted workers, as set out in the Privacy Notice below. <b>(POPIA)</b></label>
+      <button class="btn btn-coral btn-lg" type="submit" style="width:100%;justify-content:center;">Start matching &#8594;</button>
+    </form>
+
+    <form id="form-worker" class="form-card" style="display:none;" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="YOUR-WEB3FORMS-KEY">
+      <input type="hidden" name="subject" value="New Khaya worker application">
+      <input type="hidden" name="from_name" value="Khaya website">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+      <h3>Find work with dignity &#128188;</h3>
+      <p class="fc-sub">Join Khaya, get verified, and connect with employers who pay fairly and treat you with respect. It is free to apply.</p>
+      <div class="grid2">
+        <div class="fg"><label>Your full name</label><input name="Name" required></div>
+        <div class="fg"><label>Phone / WhatsApp</label><input name="Phone" required></div>
+        <div class="fg"><label>Email (optional)</label><input type="email" name="Email"></div>
+        <div class="fg"><label>Area / suburb</label><input name="Area" placeholder="e.g. Tembisa" required></div>
+        <div class="fg"><label>What work do you do?</label><select name="Work" required><option value="" disabled selected>Choose...</option><option>Nanny / au pair</option><option>Cleaner / domestic</option><option>Gardener</option><option>Home fixer / trade</option><option>Elderly carer</option><option>Driver</option><option>Pet care</option><option>Other</option></select></div>
+        <div class="fg"><label>Experience</label><select name="Experience"><option value="" disabled selected>Choose...</option><option>Less than 1 year</option><option>1-3 years</option><option>3-5 years</option><option>5+ years</option></select></div>
+        <div class="fg"><label>Do you have a valid SA ID?</label><select name="HasID" required><option value="" disabled selected>Choose...</option><option>Yes</option><option>No</option></select></div>
+        <div class="fg"><label>Police clearance?</label><select name="Clearance"><option value="" disabled selected>Choose...</option><option>Yes, I have one</option><option>No, not yet</option><option>I need help getting one</option></select></div>
+        <div class="fg full"><label>Tell us about yourself</label><textarea name="About" placeholder="Your experience, references, languages, availability..."></textarea></div>
+      </div>
+      <label class="consent"><input type="checkbox" name="POPIA consent" value="Yes" required> I agree to Khaya processing my personal information &mdash; including running ID, criminal-record and reference checks &mdash; to verify me and match me with employers, as set out in the Privacy Notice below. I understand I can withdraw this consent. <b>(POPIA)</b></label>
+      <button class="btn btn-mint btn-lg" type="submit" style="width:100%;justify-content:center;">Apply to join &#8594;</button>
+    </form>
+
+    <div class="privacy">
+      <b>&#128274; Your privacy &amp; your rights.</b> We only collect what we genuinely need to match and verify you &mdash; nothing more (POPIA's &ldquo;minimality&rdquo; principle). We never sell your data. You can ask to see, correct or delete your information any time at <b>privacy@khaya.co.za</b>, you may withdraw your consent, and you have the right to lodge a complaint with the <a href="https://inforegulator.org.za/" target="_blank" rel="noopener">Information Regulator</a>. Workers are never charged to apply and are protected by South African labour law.
+    </div>
+
+    <div class="laws">
+      <h4>The laws we follow</h4>
+      <ul>
+        <li><b>POPIA (Act 4 of 2013)</b>How we lawfully collect &amp; protect your personal information. <a href="https://popia.co.za/act/" target="_blank" rel="noopener">Read the Act &#8599;</a></li>
+        <li><b>Basic Conditions of Employment Act</b>Fair hours, leave and written contracts. <a href="https://www.labour.gov.za/" target="_blank" rel="noopener">Dept. of Employment &amp; Labour &#8599;</a></li>
+        <li><b>National Minimum Wage Act</b>Fair pay &mdash; at least R30.23/hour (from 1 March 2026). <a href="https://www.labour.gov.za/DocumentCenter/Sectoral%20determinations/National%20Minimum%20Wage/National%20Minimum%20Wage%20Act.pdf" target="_blank" rel="noopener">Read the Act &#8599;</a></li>
+        <li><b>Sectoral Determination 7</b>Specific protections for domestic workers. <a href="https://www.labour.gov.za/" target="_blank" rel="noopener">Dept. of Employment &amp; Labour &#8599;</a></li>
+        <li><b>Labour Relations Act</b>Fair treatment and fair dispute resolution. <a href="https://www.labour.gov.za/" target="_blank" rel="noopener">Dept. of Employment &amp; Labour &#8599;</a></li>
+        <li><b>Children's Act &amp; Sex Offender Register</b>Extra safety checks for anyone working with children. <a href="https://www.gov.za/documents/acts" target="_blank" rel="noopener">Official Acts portal &#8599;</a></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -374,8 +482,8 @@ footer li a:hover{color:var(--coral);}
     <h2>Trust, brought home.</h2>
     <p>Join the families and workers building something better, together.</p>
     <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;">
-      <a href="#" class="btn btn-coral btn-lg">Find help</a>
-      <a href="#" class="btn btn-ghost btn-lg">Find work</a>
+      <a href="#get-started" onclick="khayaTab('employer');return false;" class="btn btn-coral btn-lg">Find help</a>
+      <a href="#get-started" onclick="khayaTab('worker');return false;" class="btn btn-ghost btn-lg">Find work</a>
     </div>
   </div>
 </section>
@@ -402,5 +510,17 @@ footer li a:hover{color:var(--coral);}
   </div>
 </footer>
 
+<script>
+function khayaTab(w){
+  var emp = w==='employer';
+  document.getElementById('form-employer').style.display = emp?'block':'none';
+  document.getElementById('form-worker').style.display = emp?'none':'block';
+  var te=document.getElementById('tab-employer'), tw=document.getElementById('tab-worker');
+  te.classList.toggle('active', emp);
+  tw.classList.toggle('active', !emp);
+  tw.classList.toggle('mint', !emp);
+  document.getElementById('get-started').scrollIntoView({behavior:'smooth'});
+}
+</script>
 </body>
 </html>
