@@ -205,6 +205,16 @@ footer li a:hover{color:var(--coral);}
 .laws li b{display:block;font-family:'Poppins',sans-serif;color:var(--ink);margin-bottom:.15rem;}
 .laws li a{color:var(--coral);font-weight:600;}
 @media(max-width:560px){.grid2,.laws ul{grid-template-columns:1fr;}}
+
+/* FAQ */
+.faq{max-width:760px;margin:0 auto;}
+.faq-item{border:2px solid var(--line);border-radius:var(--r);margin-bottom:.8rem;background:#fff;overflow:hidden;}
+.faq-q{width:100%;text-align:left;background:none;border:0;cursor:pointer;font-family:'Poppins',sans-serif;font-weight:600;font-size:1.02rem;color:var(--ink);padding:1.2rem 1.4rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;}
+.faq-q::after{content:'+';font-size:1.5rem;color:var(--coral);font-weight:400;flex-shrink:0;}
+.faq-item.open .faq-q::after{content:'\2212';}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--ink-soft);font-size:.96rem;line-height:1.6;}
+.faq-a div{padding:0 1.4rem 1.3rem;}
+.faq-item.open .faq-a{max-height:280px;}
 </style>
 </head>
 <body>
@@ -415,6 +425,25 @@ footer li a:hover{color:var(--coral);}
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">Good to know</div>
+      <h2 class="h2">Questions, answered</h2>
+    </div>
+    <div class="faq">
+<div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">Is it free?</button><div class="faq-a"><div>Browsing is free, and it is completely free for workers to apply and get verified. Employers only pay a placement fee when you successfully hire someone.</div></div></div>
+<div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">What if the match doesn't work out?</button><div class="faq-a"><div>We check in with both sides after every placement. If the fit isn't right, we step in and find you a better match &mdash; free, within your guarantee period. You're never stuck.</div></div></div>
+<div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">How do you check in after I hire someone?</button><div class="faq-a"><div>We call both the family and the worker in the first week, then send quick check-in messages both ways &mdash; making sure everyone's happy, the pay and treatment are fair, and catching any problem early.</div></div></div>
+<div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">How are workers vetted?</button><div class="faq-a"><div>Every worker passes a criminal-record check (SAPS database), Home Affairs ID verification, a live selfie match and real reference calls. Anyone working with children also gets a sex-offender register check.</div></div></div>
+<div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">How are workers protected?</button><div class="faq-a"><div>Fair pay (at least the national minimum wage), proper BCEA contracts, help registering for UIF, safe working conditions, and the right to rate employers. No exploitation, ever.</div></div></div>
+<div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">What about my privacy?</button><div class="faq-a"><div>We're POPIA-compliant: we only collect what we genuinely need, we never sell your data, and you can view, correct or delete your information any time. See the Privacy Notice in the form section.</div></div></div>
+<div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">Which areas do you cover?</button><div class="faq-a"><div>We're launching in Johannesburg and Pretoria first &mdash; Sandton, Midrand, the East and West Rand &mdash; with Cape Town and Durban next.</div></div></div>
+    </div>
+  </div>
+</section>
+
 <!-- GET STARTED -->
 <section class="gs" id="get-started">
   <div class="wrap">
@@ -437,7 +466,7 @@ footer li a:hover{color:var(--coral);}
       <input type="hidden" name="from_name" value="Khaya website">
       <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
       <h3>Find trusted help &#127968;</h3>
-      <p class="fc-sub">Tell us what you need. We'll match you with vetted, verified workers and handle the paperwork.</p>
+      <p class="fc-sub">Tell us what you need. We'll match you with vetted, verified workers and handle the paperwork. And we check in afterwards to make sure the fit works.</p>
       <div class="grid2">
         <div class="fg"><label>Your name</label><input name="Name" required></div>
         <div class="fg"><label>Email</label><input type="email" name="Email" required></div>
@@ -459,7 +488,7 @@ footer li a:hover{color:var(--coral);}
       <input type="hidden" name="from_name" value="Khaya website">
       <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
       <h3>Find work with dignity &#128188;</h3>
-      <p class="fc-sub">Join Khaya, get verified, and connect with employers who pay fairly and treat you with respect. It is free to apply.</p>
+      <p class="fc-sub">Join Khaya, get verified, and connect with employers who pay fairly and treat you with respect. We keep checking in to make sure you're treated right. It is free to apply.</p>
       <div class="grid2">
         <div class="fg"><label>Your full name</label><input name="Name" required></div>
         <div class="fg"><label>Phone / WhatsApp</label><input name="Phone" required></div>
@@ -538,6 +567,7 @@ function khayaTab(w){
   tw.classList.toggle('mint', !emp);
   document.getElementById('get-started').scrollIntoView({behavior:'smooth'});
 }
+function khayaFaq(el){el.parentElement.classList.toggle('open');}
 </script>
 </body>
 </html>
