@@ -22,6 +22,12 @@ while offering more (deeper vetting + worker guarantee + ongoing check-ins).
 Ongoing check-ins (both sides), monthly payroll & UIF admin, contract updates/renewals,
 priority rematch. This is the **recurring-revenue engine** and monetises the check-in service.
 
+### 2b. Emergency backup cover (sick-day cover) — UNIQUE
+If a placed worker is sick or away, Khaya sends a vetted stand-in **same-day**.
+- **Pay-as-you-go: R299/day** emergency call-out (+ the stand-in's daily wage).
+- **Free to arrange with Khaya Care** (member pays only the stand-in's wage).
+No competitor offers this. It's a core reason to subscribe to Khaya Care.
+
 ### 3. Workers — **free**
 Free to apply, get verified, find work. Pay only the ~R300 clearance cost at cost. No wage cut.
 
@@ -42,4 +48,4 @@ Employer + worker connect, then go off-platform to dodge fees. Mitigate by:
 
 ## To validate before scaling
 Willingness-to-pay at these prices, Khaya Care attach rate, disintermediation leakage %,
-and whether Enhanced's deeper vetting cost still leaves margin at R2,499.
+and whether Enhanced's deeper vetting cost still leaves margin at R1,499.
