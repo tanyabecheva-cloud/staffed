@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Join Khaya — free for workers. Get verified, find dignified work with employers who pay fairly and treat you with respect. Register now.">
+<title>Join Khaya — Free work registration for domestic & care workers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --coral:#FF6B4A;--coral-dark:#EF4E2C;--coral-soft:#FFF1EC;
+  --mint:#10B981;--mint-dark:#0C9268;--mint-soft:#E7FBF3;
+  --sun:#FFC23C;--sun-soft:#FFF5DC;
+  --ink:#1C1726;--ink-soft:#6A6377;
+  --white:#fff;--paper:#FFFAF7;--line:#F0E8E2;
+  --r:18px;--r-lg:30px;--pill:999px;
+  --sh:0 14px 34px rgba(28,23,38,.10);--sh-coral:0 16px 38px rgba(255,107,74,.30);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'Poppins',sans-serif;}
+a{text-decoration:none;color:inherit;}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px;}
+.wrap-sm{max-width:740px;margin:0 auto;padding:0 22px;}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:'Poppins',sans-serif;font-weight:600;font-size:1rem;padding:.95rem 1.8rem;border-radius:var(--pill);border:none;cursor:pointer;transition:transform .18s,box-shadow .18s,background .18s;}
+.btn:hover{transform:translateY(-2px);}
+.btn-mint{background:var(--mint);color:#fff;box-shadow:0 14px 32px rgba(16,185,129,.32);}
+.btn-mint:hover{background:var(--mint-dark);}
+.btn-ghost{background:#fff;color:var(--ink);border:2px solid var(--line);font-size:.9rem;padding:.6rem 1.1rem;}
+.btn-ghost:hover{border-color:var(--ink);}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:72px;}
+.logo{display:flex;align-items:center;gap:.55rem;font-family:'Poppins',sans-serif;font-weight:800;font-size:1.4rem;}
+.logo .dot{color:var(--coral);}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,var(--mint-soft),var(--paper));padding:3.4rem 0 3rem;}
+.pill-tag{display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:var(--mint-dark);font-family:'Poppins';font-weight:700;font-size:.82rem;padding:.45rem 1rem;border-radius:var(--pill);margin-bottom:1.2rem;box-shadow:var(--sh);}
+.hero h1{font-weight:800;font-size:clamp(2.1rem,5vw,3.3rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:1rem;}
+.hero h1 .hl{color:var(--coral);}
+.hero p{font-size:1.15rem;color:var(--ink-soft);line-height:1.55;max-width:560px;margin-bottom:1.6rem;}
+.hero .mini{display:flex;gap:1.4rem;flex-wrap:wrap;margin-top:.4rem;}
+.hero .mini span{font-family:'Poppins';font-weight:600;font-size:.92rem;display:flex;align-items:center;gap:.4rem;}
+
+/* WHY */
+section{padding:3.4rem 0;}
+.eyebrow{font-family:'Poppins';font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:.7rem;text-align:center;}
+.h2{font-weight:800;font-size:clamp(1.7rem,3.6vw,2.4rem);letter-spacing:-.02em;text-align:center;margin-bottom:2.2rem;}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;}
+.why-card{background:#fff;border:2px solid var(--line);border-radius:var(--r-lg);padding:1.6rem;}
+.why-card .ic{width:54px;height:54px;border-radius:16px;background:var(--mint-soft);display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:.9rem;}
+.why-card h3{font-weight:700;font-size:1.08rem;margin-bottom:.3rem;}
+.why-card p{color:var(--ink-soft);font-size:.92rem;line-height:1.5;}
+
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;}
+.step{text-align:center;padding:1rem;}
+.step .n{width:54px;height:54px;border-radius:50%;background:var(--coral);color:#fff;font-family:'Poppins';font-weight:800;font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;}
+.step h3{font-weight:700;font-size:1.1rem;margin-bottom:.3rem;}
+.step p{color:var(--ink-soft);font-size:.92rem;line-height:1.5;}
+
+/* FORM */
+.form-wrap{background:var(--paper);}
+.form-card{background:#fff;border:2px solid var(--line);border-radius:var(--r-lg);padding:2.2rem;box-shadow:var(--sh);}
+.form-card h2{font-weight:800;font-size:1.7rem;text-align:center;margin-bottom:.4rem;}
+.form-card .fc-sub{text-align:center;color:var(--ink-soft);margin-bottom:1.8rem;}
+.fsec{font-family:'Poppins';font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--coral);margin:1.6rem 0 .9rem;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.fg{margin-bottom:1rem;display:flex;flex-direction:column;}
+.fg.full{grid-column:1/-1;}
+.fg label{font-family:'Poppins';font-weight:600;font-size:.84rem;margin-bottom:.4rem;}
+.fg .hint{font-weight:400;color:var(--ink-soft);font-size:.78rem;}
+.fg input,.fg select,.fg textarea{font-family:'Inter';font-size:.98rem;padding:.85rem 1rem;border:2px solid var(--line);border-radius:14px;outline:none;background:#fff;color:var(--ink);transition:border-color .2s;width:100%;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--mint);}
+.fg textarea{min-height:90px;resize:vertical;}
+.hp{position:absolute!important;left:-9999px;}
+/* consent box */
+.consent-box{background:var(--mint-soft);border-radius:var(--r);padding:1.4rem 1.5rem;margin-top:1rem;}
+.consent-box .ct{font-family:'Poppins';font-weight:700;font-size:1rem;margin-bottom:.9rem;}
+.consent{display:flex;gap:.75rem;align-items:flex-start;font-size:.9rem;color:var(--ink);margin-bottom:.9rem;line-height:1.45;cursor:pointer;}
+.consent:last-child{margin-bottom:0;}
+.consent input{margin-top:2px;width:19px;height:19px;flex-shrink:0;accent-color:var(--mint);}
+.consent .req{color:var(--coral);font-weight:700;}
+.consent .opt{color:var(--ink-soft);font-weight:600;font-size:.8rem;}
+.submit-row{margin-top:1.6rem;}
+.privacy{font-size:.84rem;color:var(--ink-soft);line-height:1.6;margin-top:1.4rem;text-align:center;}
+.privacy a{color:var(--mint-dark);font-weight:600;}
+.laws{margin-top:1.4rem;display:grid;grid-template-columns:1fr 1fr;gap:.6rem;}
+.laws a{font-size:.82rem;background:#fff;border:2px solid var(--line);border-radius:12px;padding:.7rem .9rem;color:var(--ink-soft);}
+.laws a b{display:block;font-family:'Poppins';color:var(--ink);font-size:.85rem;}
+.laws a:hover{border-color:var(--mint);}
+
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:2.4rem 0;text-align:center;font-size:.88rem;}
+footer a{color:var(--sun);}
+@media(max-width:820px){.why-grid,.steps,.grid2,.laws{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="index.html" class="logo">
+      <svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="12" fill="#FF6B4A"/><path d="M20 9 L31.5 18.5 H8.5 Z" fill="#fff"/><rect x="11" y="18" width="18" height="13.5" rx="3" fill="#fff"/><path d="M20 28.6 C16.6 26 15 24.2 15 22.3 A2.1 2.1 0 0 1 20 21.6 A2.1 2.1 0 0 1 25 22.3 C25 24.2 23.4 26 20 28.6 Z" fill="#FF6B4A"/></svg>
+      khaya<span class="dot">.</span>
+    </a>
+    <a href="index.html" class="btn btn-ghost">Looking to hire? →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="pill-tag">🟢 Free to join — always</span>
+    <h1>Real work.<br>Real respect.<br><span class="hl">Get verified, get hired.</span></h1>
+    <p>We're building Khaya's network of trusted workers right now. Register today, get verified, and be first in line when families start hiring — with fair pay and contracts, guaranteed.</p>
+    <a href="#register" class="btn btn-mint">Register now — it's free</a>
+    <div class="mini">
+      <span>✓ Free forever</span>
+      <span>✓ Fair pay guaranteed</span>
+      <span>✓ We help with your clearance</span>
+    </div>
+  </div>
+</header>
+
+<!-- WHY -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Why join Khaya</div>
+    <h2 class="h2">A platform that's actually on your side</h2>
+    <div class="why-grid">
+      <div class="why-card"><div class="ic">💚</div><h3>Free, always</h3><p>It never costs you a cent to join, get verified or find work. We never take a cut of your wages.</p></div>
+      <div class="why-card"><div class="ic">💰</div><h3>Fair pay, on time</h3><p>Every job comes with fair pay (above minimum wage) and a proper BCEA contract — guaranteed.</p></div>
+      <div class="why-card"><div class="ic">🛡️</div><h3>Respect &amp; protection</h3><p>Safe conditions, reasonable hours, and you get to rate employers too. No exploitation, ever.</p></div>
+      <div class="why-card"><div class="ic">🏅</div><h3>Your Verified badge</h3><p>Once vetted, your badge tells employers instantly that you're trusted and professional.</p></div>
+      <div class="why-card"><div class="ic">🤝</div><h3>We help you get ready</h3><p>We guide you through your police clearance and ID checks — and help where we can.</p></div>
+      <div class="why-card"><div class="ic">📈</div><h3>Build your reputation</h3><p>Collect reviews and grow a profile that brings you more work, month after month.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section style="background:var(--paper);">
+  <div class="wrap">
+    <div class="eyebrow">How it works</div>
+    <h2 class="h2">Three simple steps</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Register</h3><p>Fill in the form below. It takes a few minutes and it's completely free.</p></div>
+      <div class="step"><div class="n">2</div><h3>Get verified</h3><p>We guide you through your ID, criminal clearance and references, then you get your badge.</p></div>
+      <div class="step"><div class="n">3</div><h3>Start working</h3><p>Get matched with families who value your skills — and start earning with dignity.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER FORM -->
+<section class="form-wrap" id="register">
+  <div class="wrap-sm">
+    <!-- TODO: paste your free Web3Forms key (web3forms.com) into access_key below -->
+    <form class="form-card" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="YOUR-WEB3FORMS-KEY">
+      <input type="hidden" name="subject" value="New Khaya worker registration">
+      <input type="hidden" name="from_name" value="Khaya worker page">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+
+      <h2>Register as a worker</h2>
+      <p class="fc-sub">Free to join. We're building our network now — be first in line.</p>
+
+      <div class="fsec">About you</div>
+      <div class="grid2">
+        <div class="fg"><label>Full name</label><input name="Full name" required></div>
+        <div class="fg"><label>Phone / WhatsApp</label><input name="Phone" required></div>
+        <div class="fg"><label>Email <span class="hint">(optional)</span></label><input type="email" name="Email"></div>
+        <div class="fg"><label>Area / suburb</label><input name="Area" placeholder="e.g. Tembisa, JHB" required></div>
+        <div class="fg"><label>Home language</label><input name="Language" placeholder="e.g. isiZulu, English"></div>
+        <div class="fg"><label>Do you have a valid SA ID?</label><select name="Has SA ID" required><option value="" disabled selected>Choose…</option><option>Yes</option><option>No</option></select></div>
+      </div>
+
+      <div class="fsec">Your work</div>
+      <div class="grid2">
+        <div class="fg"><label>Main type of work</label><select name="Work type" required><option value="" disabled selected>Choose…</option><option>Nanny / au pair</option><option>Cleaner / domestic</option><option>Gardener</option><option>Elderly carer</option><option>Driver</option><option>Pet care</option><option>Home fixer / trade</option><option>Other</option></select></div>
+        <div class="fg"><label>Years of experience</label><select name="Experience"><option value="" disabled selected>Choose…</option><option>Less than 1 year</option><option>1–3 years</option><option>3–5 years</option><option>5+ years</option></select></div>
+        <div class="fg"><label>Availability</label><select name="Availability"><option value="" disabled selected>Choose…</option><option>Full-time</option><option>Part-time</option><option>Live-in</option><option>Once-off / temp</option><option>Weekends</option></select></div>
+        <div class="fg"><label>Driver's licence?</label><select name="Drivers licence"><option value="" disabled selected>Choose…</option><option>Yes, with PDP</option><option>Yes, no PDP</option><option>No</option></select></div>
+        <div class="fg"><label>Police clearance?</label><select name="Police clearance"><option value="" disabled selected>Choose…</option><option>Yes, I have one</option><option>No, not yet</option><option>I need help getting one</option></select></div>
+        <div class="fg"><label>References available?</label><select name="References"><option value="" disabled selected>Choose…</option><option>Yes</option><option>No</option></select></div>
+        <div class="fg full"><label>Tell us about yourself <span class="hint">(experience, skills, what you're looking for)</span></label><textarea name="About"></textarea></div>
+      </div>
+
+      <div class="consent-box">
+        <div class="ct">🔒 Your permissions</div>
+        <label class="consent"><input type="checkbox" name="Consent: info true" value="Yes" required><span><span class="req">Required.</span> I confirm the information I've given is true and correct.</span></label>
+        <label class="consent"><input type="checkbox" name="Consent: process data (POPIA)" value="Yes" required><span><span class="req">Required.</span> I give Khaya permission to collect and process my personal information to verify me and match me with work, as explained in the Privacy Notice. <b>(POPIA)</b></span></label>
+        <label class="consent"><input type="checkbox" name="Consent: criminal check" value="Yes" required><span><span class="req">Required.</span> I give permission for Khaya to run a <b>criminal background check</b> on me through AFISwitch / the SAPS database.</span></label>
+        <label class="consent"><input type="checkbox" name="Consent: ID & references" value="Yes" required><span><span class="req">Required.</span> I give permission for Khaya to verify my identity with Home Affairs and to contact my references.</span></label>
+        <label class="consent"><input type="checkbox" name="Consent: contact me" value="Yes"><span><span class="opt">Optional.</span> Khaya may contact me about work opportunities by WhatsApp, SMS or email.</span></label>
+        <label class="consent"><input type="checkbox" name="Consent: free training" value="Yes"><span><span class="opt">Optional.</span> I'd like to hear about free training (first aid, childcare and more) when it's available.</span></label>
+      </div>
+
+      <div class="submit-row">
+        <button class="btn btn-mint" type="submit" style="width:100%;justify-content:center;">Register as a worker →</button>
+      </div>
+
+      <p class="privacy">We only collect what we need, we keep it secure, and we <b>never sell your data</b> or take a cut of your wages. You can ask to see, change or delete your information any time, withdraw your consent, or complain to the <a href="https://inforegulator.org.za/" target="_blank" rel="noopener">Information Regulator</a>. Your ID number and documents are collected securely later, when your vetting starts.</p>
+
+      <div class="laws">
+        <a href="https://popia.co.za/act/" target="_blank" rel="noopener"><b>POPIA</b>How we protect your information</a>
+        <a href="https://www.labour.gov.za/" target="_blank" rel="noopener"><b>BCEA &amp; minimum wage</b>Your rights as a worker</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    khaya<span style="color:var(--coral)">.</span> &nbsp;·&nbsp; Trust, brought home. &nbsp;·&nbsp; Free for workers, always.<br>
+    <span style="font-size:.82rem;opacity:.7;">© 2026 Khaya · <a href="index.html">Looking to hire?</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

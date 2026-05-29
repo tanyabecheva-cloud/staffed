@@ -233,6 +233,37 @@ footer li a:hover{color:var(--coral);}
 .price-free h3{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.3rem;margin-bottom:.3rem;}
 .price-free p{opacity:.95;font-size:.94rem;line-height:1.5;max-width:560px;margin:0 auto;}
 @media(max-width:900px){.pricing{grid-template-columns:1fr;}}
+
+/* WAGE GUIDE */
+.wage-grid{max-width:780px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:.7rem;}
+.wage-row{display:flex;justify-content:space-between;align-items:center;gap:1rem;background:#fff;border:2px solid var(--line);border-radius:14px;padding:.9rem 1.2rem;}
+.wage-row span{font-family:'Poppins',sans-serif;font-weight:600;font-size:.92rem;}
+.wage-row b{font-family:'Poppins',sans-serif;color:var(--coral);font-size:.95rem;white-space:nowrap;}
+.wage-note{text-align:center;max-width:620px;margin:1.4rem auto 0;font-size:.86rem;color:var(--ink-soft);line-height:1.55;}
+@media(max-width:560px){.wage-grid{grid-template-columns:1fr;}}
+/* CHECKLISTS */
+.checks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.check-card{background:#fff;border:2px solid var(--line);border-radius:var(--r-lg);padding:1.8rem;}
+.check-card .ch{width:54px;height:54px;border-radius:16px;background:var(--coral);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
+.check-card .ch svg{width:30px;height:30px;fill:#fff;}
+.check-card h3{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:.9rem;}
+.check-list{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
+.check-list li{display:flex;gap:.55rem;font-size:.9rem;color:var(--ink-soft);}
+.check-list li::before{content:'\2713';color:var(--mint);font-weight:800;}
+@media(max-width:900px){.checks-grid{grid-template-columns:1fr;}}
+/* BADGE LADDER */
+.ladder{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.6rem;max-width:860px;margin:0 auto;}
+.badge-chip{font-family:'Poppins',sans-serif;font-weight:700;font-size:.85rem;padding:.6rem 1.1rem;border-radius:var(--pill);color:#fff;}
+.ladder .arrow{color:var(--ink-soft);font-weight:700;}
+.ladder-note{text-align:center;max-width:580px;margin:1.6rem auto 0;color:var(--ink-soft);font-size:.92rem;line-height:1.55;}
+/* ROADMAP */
+.road-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;}
+.road-card{background:#fff;border:2px dashed var(--border);border-radius:var(--r);padding:1.5rem;}
+.road-card .soon{display:inline-block;font-family:'Poppins',sans-serif;font-weight:700;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--coral);background:var(--coral-soft);padding:.25rem .7rem;border-radius:var(--pill);margin-bottom:.8rem;}
+.road-card h4{font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;margin-bottom:.3rem;}
+.road-card p{font-size:.85rem;color:var(--ink-soft);line-height:1.45;}
+@media(max-width:900px){.road-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.road-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -254,6 +285,7 @@ footer li a:hover{color:var(--coral);}
       <a href="#safety">Safety</a>
       <a href="#stories">Stories</a>
       <a href="#pricing">Pricing</a>
+      <a href="#rates">Rates</a>
     </div>
     <div class="nav-cta">
       <a href="#get-started" onclick="khayaTab('worker');return false;" class="btn btn-ghost">Find work</a>
@@ -323,6 +355,22 @@ footer li a:hover{color:var(--coral);}
   </div>
 </section>
 
+<!-- CHECKLISTS -->
+<section style="background:var(--paper);">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">Clear expectations</div>
+      <h2 class="h2">No surprises. Everyone knows the job.</h2>
+      <p class="lead">Every placement comes with a task checklist agreed up front &mdash; so the work is clear and fair, and never turns into "just one more thing".</p>
+    </div>
+    <div class="checks-grid">
+      <div class="check-card"><div class="ch"><svg viewBox="0 0 32 32"><rect x="14.5" y="3" width="3" height="13" rx="1.5"/><path d="M9 15h14l2 13H7Z"/></svg></div><h3>Cleaner / housekeeper</h3><ul class="check-list"><li>Floors: sweep, mop, vacuum</li><li>Dusting &amp; surfaces</li><li>Bathrooms &amp; kitchen</li><li>Laundry &amp; ironing</li><li>Bed-changing</li><li>Deep-clean add-ons (oven, windows)</li></ul></div>
+      <div class="check-card"><div class="ch"><svg viewBox="0 0 32 32"><circle cx="16" cy="9" r="4.5"/><path d="M7 27a9 9 0 0 1 18 0 1 1 0 0 1-1 1H8a1 1 0 0 1-1-1Z"/></svg></div><h3>Nanny / au pair</h3><ul class="check-list"><li>School runs &amp; pick-ups</li><li>Meals &amp; snacks</li><li>Homework help</li><li>Bath &amp; bedtime routine</li><li>Play &amp; learning</li><li>Tidy the kids' spaces</li></ul></div>
+      <div class="check-card"><div class="ch"><svg viewBox="0 0 32 32"><path d="M10 20h12l-1.4 7.5a1 1 0 0 1-1 .85H12.4a1 1 0 0 1-1-.85Z"/><path d="M16 20C16 14 13 11 8 11c0 6 3 9 8 9Z"/><path d="M16 20c0-6 3-9 8-9 0 6-3 9-8 9Z"/></svg></div><h3>Gardener</h3><ul class="check-list"><li>Mowing &amp; edging</li><li>Weeding &amp; beds</li><li>Plant &amp; tree care</li><li>Trimming &amp; pruning</li><li>Pool &amp; outdoor cleaning</li><li>Watering &amp; irrigation</li></ul></div>
+    </div>
+  </div>
+</section>
+
 <!-- HOW -->
 <section class="how" id="how">
   <div class="wrap">
@@ -334,6 +382,22 @@ footer li a:hover{color:var(--coral);}
       <div class="step"><div class="n" style="background:#FFC2A8;color:var(--ink)">1</div><h3>Tell us what you need</h3><p>Pick a category, your area and hours. Takes about 60 seconds — no awkward phone calls.</p></div>
       <div class="step"><div class="n" style="background:#FF8552">2</div><h3>Meet your matches</h3><p>Browse real profiles with photos, ratings, reviews and a big green Verified badge. Chat right in the app.</p></div>
       <div class="step"><div class="n" style="background:#DE441E">3</div><h3>Book & relax</h3><p>Get a ready-made legal contract, hire with confidence, and rate them after. Easy.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ONLY ON KHAYA -->
+<section style="background:var(--ink);color:#fff;">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow" style="color:var(--sun);">Only on Khaya</div>
+      <h2 class="h2" style="color:#fff;">Things no one else gives you</h2>
+      <p class="lead" style="color:rgba(255,255,255,.75);">The stuff that actually keeps your home running &mdash; and treats workers right.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n" style="background:#FF8552">&#128679;</div><h3>Sick-day backup cover</h3><p>If your regular worker is ever sick or away, we send a vetted stand-in the same day. Emergency rate R299/day &mdash; or no call-out fee with Khaya Care.</p></div>
+      <div class="step"><div class="n" style="background:#FF6B4A">&#129309;</div><h3>Fair-Work Guarantee</h3><p>Every worker is guaranteed fair pay, on time, a real contract and safe conditions &mdash; or we step in. We're the only ones who protect the worker too.</p></div>
+      <div class="step"><div class="n" style="background:#DE441E">&#128260;</div><h3>90-day rematch</h3><p>If the fit isn't right, we find you a better match &mdash; free, within your guarantee period.</p></div>
     </div>
   </div>
 </section>
@@ -374,6 +438,20 @@ footer li a:hover{color:var(--coral);}
         <li><span class="tick">✓</span> Re-vetted every year</li>
       </ul>
     </div>
+  </div>
+</section>
+
+<!-- BADGE LADDER -->
+<section>
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">Status ladder</div>
+      <h2 class="h2">How workers earn trust</h2>
+    </div>
+    <div class="ladder">
+      <span class="badge-chip" style="background:#FFC2A8;color:var(--ink)">Verified</span> <span class="arrow">&#8594;</span> <span class="badge-chip" style="background:#FF9466">Background Checked</span> <span class="arrow">&#8594;</span> <span class="badge-chip" style="background:#FF7A50">Trusted Worker</span> <span class="arrow">&#8594;</span> <span class="badge-chip" style="background:#FF6B4A">Gold Status</span> <span class="arrow">&#8594;</span> <span class="badge-chip" style="background:#DE441E">Emergency-Ready</span>
+    </div>
+    <p class="ladder-note">Workers level up through ratings, reliability, completed training and clean check-ins &mdash; so the best rise to the top, and you can see exactly how trusted someone is at a glance.</p>
   </div>
 </section>
 
@@ -450,13 +528,13 @@ footer li a:hover{color:var(--coral);}
     <div class="sec-head center">
       <div class="eyebrow">Pricing</div>
       <h2 class="h2">Simple, honest pricing</h2>
-      <p class="lead">You only pay when you successfully hire &mdash; no upfront fees, no hidden costs, and workers never pay a cent.</p>
+      <p class="lead">Lower than the agencies and the big apps &mdash; you only pay when you successfully hire, with no hidden costs, and workers never pay a cent.</p>
     </div>
     <div class="pricing">
       <div class="price-card">
         <h3>Standard placement</h3>
         <div class="who2">Cleaners, gardeners, drivers, pet care</div>
-        <div class="price-amt">R1,499<small> once-off</small></div>
+        <div class="price-amt">R899<small> once-off</small></div>
         <div class="price-sub">Paid only when you hire</div>
         <ul class="price-list">
           <li>AFISwitch criminal &amp; SAPS check</li>
@@ -471,7 +549,7 @@ footer li a:hover{color:var(--coral);}
         <div class="price-badge">Most popular</div>
         <h3>Enhanced placement</h3>
         <div class="who2">Nannies, au pairs, elderly carers</div>
-        <div class="price-amt">R2,499<small> once-off</small></div>
+        <div class="price-amt">R1,499<small> once-off</small></div>
         <div class="price-sub">Paid only when you hire</div>
         <ul class="price-list">
           <li>Everything in Standard</li>
@@ -485,9 +563,10 @@ footer li a:hover{color:var(--coral);}
       <div class="price-card">
         <h3>Khaya Care</h3>
         <div class="who2">Optional ongoing support</div>
-        <div class="price-amt">R149<small>/month</small></div>
+        <div class="price-amt">R99<small>/month</small></div>
         <div class="price-sub">Cancel anytime</div>
         <ul class="price-list">
+          <li>Sick-day backup cover (no call-out fee)</li>
           <li>Ongoing check-ins, both sides</li>
           <li>Monthly payroll &amp; UIF admin</li>
           <li>Contract updates &amp; renewals</li>
@@ -503,6 +582,28 @@ footer li a:hover{color:var(--coral);}
   </div>
 </section>
 
+<!-- WAGE GUIDE -->
+<section id="rates">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">Fair pay, in the open</div>
+      <h2 class="h2">What's a fair wage?</h2>
+      <p class="lead">We publish honest rate guides so workers aren't lowballed and families know what's fair. Every rate sits above the national minimum wage of R30.23/hour.</p>
+    </div>
+    <div class="wage-grid">
+      <div class="wage-row"><span>Nanny / au pair</span><b>R40&ndash;R150/hr</b></div>
+      <div class="wage-row"><span>Cleaner / housekeeper</span><b>R35&ndash;R100/hr</b></div>
+      <div class="wage-row"><span>Gardener</span><b>R35&ndash;R120/hr</b></div>
+      <div class="wage-row"><span>Elderly carer</span><b>R50&ndash;R250/hr</b></div>
+      <div class="wage-row"><span>Driver</span><b>R40&ndash;R300/hr</b></div>
+      <div class="wage-row"><span>Pet care</span><b>R40&ndash;R150/hr</b></div>
+      <div class="wage-row"><span>Home fixer / trade</span><b>R80&ndash;R350/hr</b></div>
+      <div class="wage-row"><span>Minimum wage (legal floor)</span><b>R30.23/hr</b></div>
+    </div>
+    <p class="wage-note">These are typical hourly wages the <b>worker earns</b> &mdash; separate from Khaya's once-off placement fee. Final pay is always agreed between you and the worker, in a proper BCEA contract.</p>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section id="faq">
   <div class="wrap">
@@ -514,7 +615,8 @@ footer li a:hover{color:var(--coral);}
 <div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">Is it free?</button><div class="faq-a"><div>Browsing is free, and it is completely free for workers to apply and get verified. Employers only pay a placement fee when you successfully hire someone.</div></div></div>
 <div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">What if the match doesn't work out?</button><div class="faq-a"><div>We check in with both sides after every placement. If the fit isn't right, we step in and find you a better match &mdash; free, within your guarantee period. You're never stuck.</div></div></div>
 <div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">How do you check in after I hire someone?</button><div class="faq-a"><div>We call both the family and the worker in the first week, then send quick check-in messages both ways &mdash; making sure everyone's happy, the pay and treatment are fair, and catching any problem early.</div></div></div>
-<div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">How are workers vetted?</button><div class="faq-a"><div>Every worker passes an AFISwitch criminal-record check against the live SAPS database, Home Affairs ID verification, a live selfie match and real reference calls. Anyone working with children is also checked against the National Register for Sex Offenders.</div></div></div>
+<div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">What happens if my worker is sick?</button><div class="faq-a"><div>With Khaya Care you are covered &mdash; if your regular worker is sick or away, we send you a vetted stand-in the same day so your home keeps running. Emergency cover is R299/day &mdash; or free to arrange with Khaya Care (you just pay the stand-in's daily wage). No scrambling, no lost workday.</div></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">How are workers vetted?</button><div class="faq-a"><div>Every worker passes an AFISwitch criminal-record check against the live SAPS database, Home Affairs ID verification, a live selfie match and real reference calls. Anyone working with children is also checked against the National Register for Sex Offenders.</div></div></div>
 <div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">How are workers protected?</button><div class="faq-a"><div>Fair pay (at least the national minimum wage), proper BCEA contracts, help registering for UIF, safe working conditions, and the right to rate employers. No exploitation, ever.</div></div></div>
 <div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">What about my privacy?</button><div class="faq-a"><div>We're POPIA-compliant: we only collect what we genuinely need, we never sell your data, and you can view, correct or delete your information any time. See the Privacy Notice in the form section.</div></div></div>
 <div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">Which areas do you cover?</button><div class="faq-a"><div>We're launching in Johannesburg and Pretoria first &mdash; Sandton, Midrand, the East and West Rand &mdash; with Cape Town and Durban next.</div></div></div>
@@ -596,6 +698,23 @@ footer li a:hover{color:var(--coral);}
         <li><b>Labour Relations Act</b>Fair treatment and fair dispute resolution. <a href="https://www.labour.gov.za/" target="_blank" rel="noopener">Dept. of Employment &amp; Labour &#8599;</a></li>
         <li><b>Children's Act &amp; Sex Offender Register</b>Extra safety checks for anyone working with children. <a href="https://www.gov.za/documents/acts" target="_blank" rel="noopener">Official Acts portal &#8599;</a></li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section style="background:var(--paper);">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow">The roadmap</div>
+      <h2 class="h2">Where Khaya is going</h2>
+      <p class="lead">We're starting with vetted home &amp; care placement, done right. Here's what's coming next.</p>
+    </div>
+    <div class="road-grid">
+      <div class="road-card"><span class="soon">Coming soon</span><h4>Worker Passport</h4><p>A verified digital profile &mdash; ratings, skills, history &mdash; that workers own and keep for life.</p></div>
+      <div class="road-card"><span class="soon">Coming soon</span><h4>Smart matching</h4><p>Better matches the more we learn &mdash; by skills, location, availability and fit.</p></div>
+      <div class="road-card"><span class="soon">Coming soon</span><h4>Skills &amp; training</h4><p>First-aid, childcare and upskilling courses, with partners &mdash; so workers earn more.</p></div>
+      <div class="road-card"><span class="soon">Coming soon</span><h4>Payroll &amp; payslips</h4><p>Fair pay made effortless, with trusted payment partners.</p></div>
     </div>
   </div>
 </section>
