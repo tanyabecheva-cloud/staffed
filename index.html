@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Khaya — the friendly way to find trusted, vetted help for your home. Nannies, cleaners, gardeners, carers & more. Every person background-checked. Trust, brought home.">
-<title>Khaya — Trusted help for your home, made easy</title>
+<meta name="description" content="Staffed — the friendly way to find trusted, vetted help for your home. Nannies, cleaners, gardeners, carers & more. Every person background-checked. Trust, brought home.">
+<title>Staffed — Trusted help for your home, made easy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -268,10 +268,113 @@ footer li a:hover{color:var(--coral);}
 /* ANNOUNCE BAR */
 .announce{background:var(--ink);color:#fff;text-align:center;font-family:'Poppins',sans-serif;font-weight:600;font-size:.88rem;padding:.65rem 1rem;line-height:1.4;}
 .announce a{color:var(--sun);text-decoration:underline;cursor:pointer;}
+
+/* WORKER FORM — sections, categories, skills, references, preferences */
+.form-sec{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.08rem;margin:1.9rem 0 .2rem;padding-top:1.5rem;border-top:2px solid var(--line);display:flex;align-items:center;gap:.5rem;}
+.form-sec:first-of-type{border-top:0;padding-top:0;margin-top:.4rem;}
+.form-sec .num{width:26px;height:26px;border-radius:50%;background:var(--mint);color:#fff;font-size:.82rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.form-sec-hint{color:var(--ink-soft);font-size:.86rem;margin-bottom:1rem;line-height:1.5;}
+
+/* category multi-pick */
+.cat-pick{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:.4rem;}
+.cat-pick label{display:flex;align-items:center;gap:.6rem;border:2px solid var(--line);border-radius:14px;padding:.75rem .9rem;cursor:pointer;font-size:.92rem;font-weight:500;transition:border-color .15s,background .15s;}
+.cat-pick label:hover{border-color:var(--mint);}
+.cat-pick label:has(input:checked){border-color:var(--mint);background:var(--mint-soft);}
+.cat-pick input{width:18px;height:18px;accent-color:var(--mint);flex-shrink:0;}
+
+/* rating legend */
+.rate-legend{background:var(--berry-soft);border-radius:16px;padding:1.1rem 1.3rem;margin-bottom:1.1rem;font-size:.86rem;line-height:1.5;}
+.rate-legend b{font-family:'Poppins',sans-serif;}
+.rate-legend ul{list-style:none;margin-top:.6rem;display:grid;gap:.35rem;}
+.rate-legend li{display:flex;gap:.6rem;align-items:flex-start;}
+.rate-legend .rn{width:24px;height:24px;border-radius:7px;background:var(--berry);color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:.8rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+
+/* skills blocks (injected by JS) */
+#skill-wrap:empty{display:none;}
+.skill-block{border:2px solid var(--line);border-radius:16px;padding:.4rem 1.3rem 1rem;margin-bottom:1rem;background:var(--paper);}
+.skill-block h5{font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;margin:1rem 0 .3rem;}
+.skill-row{display:flex;justify-content:space-between;align-items:center;gap:.8rem;padding:.62rem 0;border-bottom:1px solid var(--line);flex-wrap:wrap;}
+.skill-row:last-child{border-bottom:0;}
+.skill-row .sk-name{font-size:.92rem;font-weight:500;}
+.rating{display:inline-flex;gap:.35rem;}
+.rate-opt{position:relative;}
+.rate-opt input{position:absolute;opacity:0;width:100%;height:100%;left:0;top:0;margin:0;cursor:pointer;}
+.rate-opt label{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;border:2px solid var(--line);font-family:'Poppins',sans-serif;font-weight:600;font-size:.9rem;color:var(--ink-soft);cursor:pointer;transition:all .15s;}
+.rate-opt input:checked + label{background:var(--mint);border-color:var(--mint);color:#fff;}
+.rate-opt input:focus-visible + label{outline:2px solid var(--berry);outline-offset:2px;}
+
+/* references */
+.ref-block{border:2px solid var(--line);border-radius:16px;padding:1.2rem 1.3rem;margin-bottom:1rem;}
+.ref-block h5{font-family:'Poppins',sans-serif;font-weight:700;font-size:.98rem;margin-bottom:.9rem;display:flex;align-items:center;gap:.5rem;}
+.ref-block h5 .tag{font-size:.7rem;font-weight:600;color:var(--mint-dark);background:var(--mint-soft);padding:.2rem .6rem;border-radius:var(--pill);}
+.ref-block h5 .tag.opt{color:var(--ink-soft);background:var(--line);}
+
+/* preference chips (multi-select checkboxes) */
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;}
+.chips label{display:inline-flex;align-items:center;gap:.45rem;border:2px solid var(--line);border-radius:var(--pill);padding:.5rem .9rem;cursor:pointer;font-size:.88rem;font-weight:500;transition:border-color .15s,background .15s;}
+.chips label:has(input:checked){border-color:var(--mint);background:var(--mint-soft);}
+.chips input{width:16px;height:16px;accent-color:var(--mint);}
+@media(max-width:560px){.cat-pick{grid-template-columns:1fr;}.skill-row{align-items:flex-start;}}
+
+/* LAUNCH PROMO MODAL */
+.modal-ov{position:fixed;inset:0;z-index:1000;background:rgba(28,23,38,.55);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:1.2rem;}
+.modal-ov.show{display:flex;}
+.modal{background:#fff;border-radius:26px;max-width:560px;width:100%;box-shadow:0 30px 70px rgba(28,23,38,.32);position:relative;max-height:94vh;overflow-y:auto;animation:pop .3s ease;}
+@keyframes pop{from{transform:translateY(18px) scale(.97);opacity:0}to{transform:none;opacity:1}}
+.modal-top{background:linear-gradient(135deg,var(--coral),var(--sun));color:#fff;padding:1.9rem 1.8rem 1.5rem;text-align:center;position:relative;border-radius:26px 26px 0 0;}
+.modal-top .em{font-size:2.5rem;line-height:1;}
+.modal-top h3{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.55rem;margin:.4rem 0 .25rem;}
+.modal-top p{opacity:.96;font-size:.95rem;line-height:1.4;max-width:400px;margin:0 auto;}
+.modal-x{position:absolute;top:1rem;right:1.1rem;background:rgba(255,255,255,.25);border:0;color:#fff;width:34px;height:34px;border-radius:50%;font-size:1.2rem;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center;}
+.modal-x:hover{background:rgba(255,255,255,.42);}
+.modal-body{padding:1.4rem;display:grid;gap:1rem;}
+.promo{border-radius:18px;padding:1.3rem 1.4rem;}
+.promo .pill{display:inline-block;font-family:'Poppins',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;padding:.28rem .75rem;border-radius:var(--pill);margin-bottom:.6rem;color:#fff;}
+.promo h4{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.18rem;margin-bottom:.4rem;line-height:1.2;}
+.promo p{font-size:.9rem;color:var(--ink-soft);line-height:1.5;margin-bottom:1rem;}
+.promo .btn{width:100%;justify-content:center;}
+.promo-worker{background:var(--mint-soft);}
+.promo-worker .pill{background:var(--mint-dark);}
+.promo-emp{background:var(--coral-soft);}
+.promo-emp .pill{background:var(--coral-dark);}
+.promo .code{font-family:'Poppins',sans-serif;font-weight:800;letter-spacing:.06em;font-size:.95rem;background:#fff;border:2px dashed var(--coral);color:var(--coral-dark);border-radius:10px;padding:.4rem .8rem;display:inline-block;margin:0 0 1rem;}
+.modal-foot{text-align:center;padding:0 1.5rem 1.5rem;}
+.modal-foot button{background:none;border:0;color:var(--ink-soft);font-size:.85rem;cursor:pointer;text-decoration:underline;}
+.modal-foot button:hover{color:var(--ink);}
 </style>
 </head>
 <body>
-<div class="announce">🚀 Launching soon — we're building our trusted workforce. <a href="#get-started" onclick="khayaTab('worker');return false;">Workers, register now →</a></div>
+<div class="announce">🎉 Launch offer — free background checks for the first 200 workers · 15% off for founding families. <a onclick="staffedModal(true);return false;">See the offer →</a></div>
+
+<!-- LAUNCH PROMO MODAL -->
+<div class="modal-ov" id="launch-modal" role="dialog" aria-modal="true" aria-label="Staffed launch offer">
+  <div class="modal">
+    <div class="modal-top">
+      <button class="modal-x" onclick="staffedModal(false)" aria-label="Close">&times;</button>
+      <div class="em">🎉</div>
+      <h3>Staffed is launching!</h3>
+      <p>We're building South Africa's most trusted home &amp; care network &mdash; and the first to join get the founding perks.</p>
+    </div>
+    <div class="modal-body">
+      <div class="promo promo-worker">
+        <span class="pill">First 200 workers</span>
+        <h4>Your background check is on us &mdash; free.</h4>
+        <p>To celebrate launch, Staffed pays for your full AFISwitch / SAPS criminal check (normally R150+) for the first 200 workers who sign up. Get verified for free and go to the front of the hiring queue.</p>
+        <button class="btn btn-mint" onclick="staffedPromoGo('worker')">Sign up free &#8594;</button>
+      </div>
+      <div class="promo promo-emp">
+        <span class="pill">Founding families · first 100</span>
+        <h4>15% off Staffed Care &mdash; locked in for life.</h4>
+        <div class="code">Code: FOUNDING15</div>
+        <p>Claim your founding spot today &mdash; <b>pay nothing now</b>. We'll put you first in the matching queue and message you the moment vetted workers go live in your area. Your 15% founding discount on Staffed Care is locked in for good, and you only ever pay when you actually hire. No workers wasted, no risk &mdash; just first dibs.</p>
+        <button class="btn btn-coral" onclick="staffedPromoGo('employer')">Claim founding spot &#8594;</button>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button onclick="staffedModal(false)">Maybe later</button>
+    </div>
+  </div>
+</div>
 
 <nav>
   <div class="wrap nav-in">
@@ -282,7 +385,7 @@ footer li a:hover{color:var(--coral);}
         <rect x="11" y="18" width="18" height="13.5" rx="3" fill="#fff"/>
         <path d="M20 28.6 C16.6 26 15 24.2 15 22.3 A2.1 2.1 0 0 1 20 21.6 A2.1 2.1 0 0 1 25 22.3 C25 24.2 23.4 26 20 28.6 Z" fill="#FF6B4A"/>
       </svg>
-      khaya<span class="dot">.</span>
+      staffed<span class="dot">.</span>
     </a>
     <div class="nav-links" id="navlinks">
       <a href="#how">How it works</a>
@@ -293,8 +396,8 @@ footer li a:hover{color:var(--coral);}
       <a href="#rates">Rates</a>
     </div>
     <div class="nav-cta">
-      <a href="#get-started" onclick="khayaTab('worker');return false;" class="btn btn-ghost">Find work</a>
-      <a href="#get-started" onclick="khayaTab('employer');return false;" class="btn btn-coral">Find help</a>
+      <a href="#get-started" onclick="staffedTab('worker');return false;" class="btn btn-ghost">Find work</a>
+      <a href="#get-started" onclick="staffedTab('employer');return false;" class="btn btn-coral">Find help</a>
       <button class="burger" onclick="document.getElementById('navlinks').classList.toggle('open')"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -309,8 +412,8 @@ footer li a:hover{color:var(--coral);}
       <h1>Trusted help<br>for your home,<br><span class="hl">made easy.</span></h1>
       <p class="sub">Nannies, cleaners, gardeners, carers & more — every single one vetted, verified and reviewed. Book the good ones in minutes.</p>
       <div class="hero-ctas">
-        <a href="#get-started" onclick="khayaTab('employer');return false;" class="btn btn-coral btn-lg">Find help 🏠</a>
-        <a href="#get-started" onclick="khayaTab('worker');return false;" class="btn btn-ghost btn-lg">I'm looking for work</a>
+        <a href="#get-started" onclick="staffedTab('employer');return false;" class="btn btn-coral btn-lg">Find help 🏠</a>
+        <a href="#get-started" onclick="staffedTab('worker');return false;" class="btn btn-ghost btn-lg">I'm looking for work</a>
       </div>
       <div class="hero-proof">
         <div class="avatars">
@@ -391,16 +494,16 @@ footer li a:hover{color:var(--coral);}
   </div>
 </section>
 
-<!-- ONLY ON KHAYA -->
+<!-- ONLY ON STAFFED -->
 <section style="background:var(--ink);color:#fff;">
   <div class="wrap">
     <div class="sec-head center">
-      <div class="eyebrow" style="color:var(--sun);">Only on Khaya</div>
+      <div class="eyebrow" style="color:var(--sun);">Only on Staffed</div>
       <h2 class="h2" style="color:#fff;">Things no one else gives you</h2>
       <p class="lead" style="color:rgba(255,255,255,.75);">The stuff that actually keeps your home running &mdash; and treats workers right.</p>
     </div>
     <div class="steps">
-      <div class="step"><div class="n" style="background:#FF8552">&#128679;</div><h3>Sick-day backup cover</h3><p>If your regular worker is ever sick or away, we send a vetted stand-in the same day. Emergency rate R299/day &mdash; or no call-out fee with Khaya Care.</p></div>
+      <div class="step"><div class="n" style="background:#FF8552">&#128679;</div><h3>Sick-day backup cover</h3><p>If your regular worker is ever sick or away, we send a vetted stand-in the same day. Emergency rate R299/day &mdash; or no call-out fee with Staffed Care.</p></div>
       <div class="step"><div class="n" style="background:#FF6B4A">&#129309;</div><h3>Fair-Work Guarantee</h3><p>Every worker is guaranteed fair pay, on time, a real contract and safe conditions &mdash; or we step in. We're the only ones who protect the worker too.</p></div>
       <div class="step"><div class="n" style="background:#DE441E">&#128260;</div><h3>90-day rematch</h3><p>If the fit isn't right, we find you a better match &mdash; free, within your guarantee period.</p></div>
     </div>
@@ -430,7 +533,7 @@ footer li a:hover{color:var(--coral);}
     <div>
       <div class="eyebrow">Safety, seriously</div>
       <h2 class="h2" style="margin-bottom:1rem;">We check, so you don't have to worry.</h2>
-      <p class="lead" style="margin-bottom:1.6rem;">Before anyone shows up on Khaya, they pass a proper, multi-step vetting process. Because this is your home, your kids, your gran. No corners cut. Ever. Our criminal checks run through AFISwitch &mdash; the system accredited to search the official SAPS criminal database.</p>
+      <p class="lead" style="margin-bottom:1.6rem;">Before anyone shows up on Staffed, they pass a proper, multi-step vetting process. Because this is your home, your kids, your gran. No corners cut. Ever. Our criminal checks run through AFISwitch &mdash; the system accredited to search the official SAPS criminal database.</p>
       <a href="#" class="btn btn-ink btn-lg">See how we vet →</a>
     </div>
     <div class="safe-card">
@@ -476,7 +579,7 @@ footer li a:hover{color:var(--coral);}
     <div>
       <div class="eyebrow" style="color:var(--mint-dark)">Dignity, always</div>
       <h2 class="h2" style="margin-bottom:1rem;">Safety works both ways.</h2>
-      <p class="lead" style="margin-bottom:1.6rem;">Workers are people, not chores. Every person on Khaya is treated with respect — fair pay, real contracts, safe working conditions and reasonable hours. No exploitation, nobody treated like a servant. Khaya only works when work is fair, and the good employers want exactly that.</p>
+      <p class="lead" style="margin-bottom:1.6rem;">Workers are people, not chores. Every person on Staffed is treated with respect — fair pay, real contracts, safe working conditions and reasonable hours. No exploitation, nobody treated like a servant. Staffed only works when work is fair, and the good employers want exactly that.</p>
       <a href="#" class="btn btn-mint btn-lg">How we protect workers →</a>
     </div>
   </div>
@@ -492,12 +595,12 @@ footer li a:hover{color:var(--coral);}
     <div class="testi">
       <div class="tcard" style="background:var(--coral-soft);border-color:transparent;">
         <div class="stars">★★★★★</div>
-        <p>"Finding a nanny I actually trust felt impossible — until Khaya. The vetting gave me total peace of mind."</p>
+        <p>"Finding a nanny I actually trust felt impossible — until Staffed. The vetting gave me total peace of mind."</p>
         <div class="who"><div class="a" style="background:var(--coral)">S</div><div><b>Sarah M.</b><small>Mom · Sandton</small></div></div>
       </div>
       <div class="tcard" style="background:var(--mint-soft);border-color:transparent;">
         <div class="stars">★★★★★</div>
-        <p>"Khaya treated me with respect from day one, helped with my clearance, and I had work within two weeks."</p>
+        <p>"Staffed treated me with respect from day one, helped with my clearance, and I had work within two weeks."</p>
         <div class="who"><div class="a" style="background:var(--mint)">T</div><div><b>Thandi N.</b><small>Nanny · Joburg</small></div></div>
       </div>
       <div class="tcard" style="background:var(--berry-soft);border-color:transparent;">
@@ -515,13 +618,13 @@ footer li a:hover{color:var(--coral);}
     <div class="duo-card duo-emp">
       <h3>Need a hand at home?</h3>
       <p>Browse thousands of vetted, verified workers near you. Hire with zero worry.</p>
-      <a href="#get-started" onclick="khayaTab('employer');return false;" class="btn" style="background:#fff;color:var(--coral)">Find help →</a>
+      <a href="#get-started" onclick="staffedTab('employer');return false;" class="btn" style="background:#fff;color:var(--coral)">Find help →</a>
       <span class="em">🏡</span>
     </div>
     <div class="duo-card duo-wrk">
       <h3>Looking for work?</h3>
       <p>Build a verified profile, get matched with employers who pay fairly and treat you with respect. Real contracts, safe conditions — never exploitation.</p>
-      <a href="#get-started" onclick="khayaTab('worker');return false;" class="btn" style="background:#fff;color:var(--mint-dark)">Start earning →</a>
+      <a href="#get-started" onclick="staffedTab('worker');return false;" class="btn" style="background:#fff;color:var(--mint-dark)">Start earning →</a>
       <span class="em">💼</span>
     </div>
   </div>
@@ -548,7 +651,7 @@ footer li a:hover{color:var(--coral);}
           <li>First-week check-in call</li>
           <li>90-day replacement guarantee</li>
         </ul>
-        <a href="#get-started" onclick="khayaTab('employer');return false;" class="btn btn-ghost" style="width:100%;justify-content:center;">Find help</a>
+        <a href="#get-started" onclick="staffedTab('employer');return false;" class="btn btn-ghost" style="width:100%;justify-content:center;">Find help</a>
       </div>
       <div class="price-card feat">
         <div class="price-badge">Most popular</div>
@@ -563,10 +666,10 @@ footer li a:hover{color:var(--coral);}
           <li>Video orientation interview</li>
           <li>First-aid certified options</li>
         </ul>
-        <a href="#get-started" onclick="khayaTab('employer');return false;" class="btn btn-coral" style="width:100%;justify-content:center;">Find help</a>
+        <a href="#get-started" onclick="staffedTab('employer');return false;" class="btn btn-coral" style="width:100%;justify-content:center;">Find help</a>
       </div>
       <div class="price-card">
-        <h3>Khaya Care</h3>
+        <h3>Staffed Care</h3>
         <div class="who2">Optional ongoing support</div>
         <div class="price-amt">R99<small>/month</small></div>
         <div class="price-sub">Cancel anytime</div>
@@ -577,7 +680,7 @@ footer li a:hover{color:var(--coral);}
           <li>Contract updates &amp; renewals</li>
           <li>Priority rematch if needed</li>
         </ul>
-        <a href="#get-started" onclick="khayaTab('employer');return false;" class="btn btn-ghost" style="width:100%;justify-content:center;">Add Khaya Care</a>
+        <a href="#get-started" onclick="staffedTab('employer');return false;" class="btn btn-ghost" style="width:100%;justify-content:center;">Add Staffed Care</a>
       </div>
     </div>
     <div class="price-free">
@@ -605,7 +708,7 @@ footer li a:hover{color:var(--coral);}
       <div class="wage-row"><span>Home fixer / trade</span><b>R80&ndash;R350/hr</b></div>
       <div class="wage-row"><span>Minimum wage (legal floor)</span><b>R30.23/hr</b></div>
     </div>
-    <p class="wage-note">These are typical hourly wages the <b>worker earns</b> &mdash; separate from Khaya's once-off placement fee. Final pay is always agreed between you and the worker, in a proper BCEA contract.</p>
+    <p class="wage-note">These are typical hourly wages the <b>worker earns</b> &mdash; separate from Staffed's once-off placement fee. Final pay is always agreed between you and the worker, in a proper BCEA contract.</p>
   </div>
 </section>
 
@@ -617,14 +720,14 @@ footer li a:hover{color:var(--coral);}
       <h2 class="h2">Questions, answered</h2>
     </div>
     <div class="faq">
-<div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">Is it free?</button><div class="faq-a"><div>Browsing is free, and it is completely free for workers to apply and get verified. Employers only pay a placement fee when you successfully hire someone.</div></div></div>
-<div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">What if the match doesn't work out?</button><div class="faq-a"><div>We check in with both sides after every placement. If the fit isn't right, we step in and find you a better match &mdash; free, within your guarantee period. You're never stuck.</div></div></div>
-<div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">How do you check in after I hire someone?</button><div class="faq-a"><div>We call both the family and the worker in the first week, then send quick check-in messages both ways &mdash; making sure everyone's happy, the pay and treatment are fair, and catching any problem early.</div></div></div>
-<div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">What happens if my worker is sick?</button><div class="faq-a"><div>With Khaya Care you are covered &mdash; if your regular worker is sick or away, we send you a vetted stand-in the same day so your home keeps running. Emergency cover is R299/day &mdash; or free to arrange with Khaya Care (you just pay the stand-in's daily wage). No scrambling, no lost workday.</div></div></div>
-      <div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">How are workers vetted?</button><div class="faq-a"><div>Every worker passes an AFISwitch criminal-record check against the live SAPS database, Home Affairs ID verification, a live selfie match and real reference calls. Anyone working with children is also checked against the National Register for Sex Offenders.</div></div></div>
-<div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">How are workers protected?</button><div class="faq-a"><div>Fair pay (at least the national minimum wage), proper BCEA contracts, help registering for UIF, safe working conditions, and the right to rate employers. No exploitation, ever.</div></div></div>
-<div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">What about my privacy?</button><div class="faq-a"><div>We're POPIA-compliant: we only collect what we genuinely need, we never sell your data, and you can view, correct or delete your information any time. See the Privacy Notice in the form section.</div></div></div>
-<div class="faq-item"><button class="faq-q" onclick="khayaFaq(this)">Which areas do you cover?</button><div class="faq-a"><div>We're launching in Johannesburg and Pretoria first &mdash; Sandton, Midrand, the East and West Rand &mdash; with Cape Town and Durban next.</div></div></div>
+<div class="faq-item"><button class="faq-q" onclick="staffedFaq(this)">Is it free?</button><div class="faq-a"><div>Browsing is free, and it is completely free for workers to apply and get verified. Employers only pay a placement fee when you successfully hire someone.</div></div></div>
+<div class="faq-item"><button class="faq-q" onclick="staffedFaq(this)">What if the match doesn't work out?</button><div class="faq-a"><div>We check in with both sides after every placement. If the fit isn't right, we step in and find you a better match &mdash; free, within your guarantee period. You're never stuck.</div></div></div>
+<div class="faq-item"><button class="faq-q" onclick="staffedFaq(this)">How do you check in after I hire someone?</button><div class="faq-a"><div>We call both the family and the worker in the first week, then send quick check-in messages both ways &mdash; making sure everyone's happy, the pay and treatment are fair, and catching any problem early.</div></div></div>
+<div class="faq-item"><button class="faq-q" onclick="staffedFaq(this)">What happens if my worker is sick?</button><div class="faq-a"><div>With Staffed Care you are covered &mdash; if your regular worker is sick or away, we send you a vetted stand-in the same day so your home keeps running. Emergency cover is R299/day &mdash; or free to arrange with Staffed Care (you just pay the stand-in's daily wage). No scrambling, no lost workday.</div></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="staffedFaq(this)">How are workers vetted?</button><div class="faq-a"><div>Every worker passes an AFISwitch criminal-record check against the live SAPS database, Home Affairs ID verification, a live selfie match and real reference calls. Anyone working with children is also checked against the National Register for Sex Offenders.</div></div></div>
+<div class="faq-item"><button class="faq-q" onclick="staffedFaq(this)">How are workers protected?</button><div class="faq-a"><div>Fair pay (at least the national minimum wage), proper BCEA contracts, help registering for UIF, safe working conditions, and the right to rate employers. No exploitation, ever.</div></div></div>
+<div class="faq-item"><button class="faq-q" onclick="staffedFaq(this)">What about my privacy?</button><div class="faq-a"><div>We're POPIA-compliant: we only collect what we genuinely need, we never sell your data, and you can view, correct or delete your information any time. See the Privacy Notice in the form section.</div></div></div>
+<div class="faq-item"><button class="faq-q" onclick="staffedFaq(this)">Which areas do you cover?</button><div class="faq-a"><div>We're launching in Johannesburg and Pretoria first &mdash; Sandton, Midrand, the East and West Rand &mdash; with Cape Town and Durban next.</div></div></div>
     </div>
   </div>
 </section>
@@ -639,16 +742,16 @@ footer li a:hover{color:var(--coral);}
     </div>
     <div style="text-align:center;">
       <div class="tabs">
-        <button class="tab active" id="tab-employer" onclick="khayaTab('employer')">I need help at home</button>
-        <button class="tab" id="tab-worker" onclick="khayaTab('worker')">I'm looking for work</button>
+        <button class="tab active" id="tab-employer" onclick="staffedTab('employer')">I need help at home</button>
+        <button class="tab" id="tab-worker" onclick="staffedTab('worker')">I'm looking for work</button>
       </div>
     </div>
 
     <!-- TODO: get a free key at web3forms.com and paste it into BOTH access_key fields below -->
     <form id="form-employer" class="form-card" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="98669c0d-7374-4219-868e-000b66273cbe">
-      <input type="hidden" name="subject" value="New Khaya employer enquiry">
-      <input type="hidden" name="from_name" value="Khaya website">
+      <input type="hidden" name="subject" value="New Staffed employer enquiry">
+      <input type="hidden" name="from_name" value="Staffed website">
       <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
       <h3>Find trusted help &#127968;</h3>
       <p class="fc-sub">Tell us what you need. We'll match you with vetted, verified workers and handle the paperwork. And we check in afterwards to make sure the fit works.</p>
@@ -661,37 +764,141 @@ footer li a:hover{color:var(--coral);}
         <div class="fg"><label>Arrangement</label><select name="Arrangement"><option value="" disabled selected>Choose...</option><option>Live-out</option><option>Live-in</option><option>Once-off</option><option>Not sure yet</option></select></div>
         <div class="fg"><label>Hours</label><select name="Hours"><option value="" disabled selected>Choose...</option><option>Full-time</option><option>Part-time</option><option>A few days a week</option><option>Once-off</option></select></div>
         <div class="fg"><label>When?</label><select name="When"><option value="" disabled selected>Choose...</option><option>As soon as possible</option><option>Within a month</option><option>Just exploring</option></select></div>
+        <div class="fg"><label>Founding code (optional)</label><input name="Founding code" placeholder="e.g. FOUNDING15"></div>
         <div class="fg full"><label>Anything else?</label><textarea name="Notes" placeholder="Your home, children's ages, special needs, languages..."></textarea></div>
       </div>
-      <label class="consent"><input type="checkbox" name="POPIA consent" value="Yes" required> I agree to Khaya processing my personal information to match me with vetted workers, as set out in the Privacy Notice below. <b>(POPIA)</b></label>
+      <label class="consent"><input type="checkbox" name="POPIA consent" value="Yes" required> I agree to Staffed processing my personal information to match me with vetted workers, as set out in the Privacy Notice below. <b>(POPIA)</b></label>
       <button class="btn btn-coral btn-lg" type="submit" style="width:100%;justify-content:center;">Start matching &#8594;</button>
     </form>
 
-    <form id="form-worker" class="form-card" style="display:none;" action="https://api.web3forms.com/submit" method="POST">
+    <form id="form-worker" class="form-card" style="display:none;" action="https://api.web3forms.com/submit" method="POST" onsubmit="return staffedValidate()">
       <input type="hidden" name="access_key" value="98669c0d-7374-4219-868e-000b66273cbe">
-      <input type="hidden" name="subject" value="New Khaya worker application">
-      <input type="hidden" name="from_name" value="Khaya website">
+      <input type="hidden" name="subject" value="New Staffed worker application">
+      <input type="hidden" name="from_name" value="Staffed website">
       <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
       <h3>Find work with dignity &#128188;</h3>
-      <p class="fc-sub">Join Khaya, get verified, and connect with employers who pay fairly and treat you with respect. We're building our network now &mdash; register free to be first in line.</p>
+      <p class="fc-sub">Join Staffed, get verified, and connect with employers who pay fairly and treat you with respect. We're building our network now &mdash; register free to be first in line.</p>
+
+      <!-- 1. ABOUT YOU -->
+      <div class="form-sec"><span class="num">1</span> About you</div>
       <div class="grid2">
         <div class="fg"><label>Your full name</label><input name="Name" required></div>
         <div class="fg"><label>Phone / WhatsApp</label><input name="Phone" required></div>
         <div class="fg"><label>Email (optional)</label><input type="email" name="Email"></div>
-        <div class="fg"><label>Area / suburb</label><input name="Area" placeholder="e.g. Tembisa" required></div>
-        <div class="fg"><label>What work do you do?</label><select name="Work" required><option value="" disabled selected>Choose...</option><option>Nanny / au pair</option><option>Cleaner / domestic</option><option>Gardener</option><option>Home fixer / trade</option><option>Elderly carer</option><option>Driver</option><option>Pet care</option><option>Other</option></select></div>
-        <div class="fg"><label>Experience</label><select name="Experience"><option value="" disabled selected>Choose...</option><option>Less than 1 year</option><option>1-3 years</option><option>3-5 years</option><option>5+ years</option></select></div>
+        <div class="fg"><label>Area / suburb you live in</label><input name="Area" placeholder="e.g. Tembisa" required></div>
+        <div class="fg"><label>Years of experience</label><select name="Experience" required><option value="" disabled selected>Choose...</option><option>Less than 1 year</option><option>1-3 years</option><option>3-5 years</option><option>5+ years</option></select></div>
         <div class="fg"><label>Do you have a valid SA ID?</label><select name="HasID" required><option value="" disabled selected>Choose...</option><option>Yes</option><option>No</option></select></div>
         <div class="fg"><label>Police clearance?</label><select name="Clearance"><option value="" disabled selected>Choose...</option><option>Yes, I have one</option><option>No, not yet</option><option>I need help getting one</option></select></div>
-        <div class="fg full"><label>Tell us about yourself</label><textarea name="About" placeholder="Your experience, references, languages, availability..."></textarea></div>
       </div>
-      <label class="consent"><input type="checkbox" name="Consent: process data" value="Yes" required> I agree to Khaya processing my personal information to verify me and match me with work, as set out in our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>. I can withdraw this anytime. <b>(POPIA)</b></label>
-      <label class="consent"><input type="checkbox" name="Consent: criminal check" value="Yes" required> I give permission for Khaya to run a criminal background check (AFISwitch / SAPS) and verify my ID and references. <b>(POPIA)</b></label>
+
+      <!-- 2. CATEGORIES -->
+      <div class="form-sec"><span class="num">2</span> What work do you want to do?</div>
+      <p class="form-sec-hint">Pick every category that fits you &mdash; you can choose more than one. Each one adds a short list of skills for you to rate.</p>
+      <div class="cat-pick" id="cat-pick">
+        <label><input type="checkbox" name="Categories" value="Nanny / au pair" onchange="staffedSkills()"> &#128118; Nanny / au pair</label>
+        <label><input type="checkbox" name="Categories" value="Cleaner / domestic" onchange="staffedSkills()"> &#129529; Cleaner / domestic</label>
+        <label><input type="checkbox" name="Categories" value="Gardener" onchange="staffedSkills()"> &#127793; Gardener</label>
+        <label><input type="checkbox" name="Categories" value="Home fixer / trade" onchange="staffedSkills()"> &#128295; Home fixer / trade</label>
+        <label><input type="checkbox" name="Categories" value="Elderly carer" onchange="staffedSkills()"> &#10084;&#65039; Elderly carer</label>
+        <label><input type="checkbox" name="Categories" value="Driver" onchange="staffedSkills()"> &#128663; Driver</label>
+        <label><input type="checkbox" name="Categories" value="Pet care" onchange="staffedSkills()"> &#128054; Pet care</label>
+      </div>
+
+      <!-- 3. SKILLS (injected by JS based on categories above) -->
+      <div class="form-sec"><span class="num">3</span> Rate your skills</div>
+      <p class="form-sec-hint">Be honest &mdash; this helps us match you to the right homes, and good employers value a worker who knows their level. Rate each skill from 1 to 5:</p>
+      <div class="rate-legend">
+        <b>How the 1&ndash;5 rating works</b>
+        <ul>
+          <li><span class="rn">1</span> <span><b>Beginner</b> &mdash; I've just started, I still need someone to guide me.</span></li>
+          <li><span class="rn">2</span> <span><b>Basic</b> &mdash; I can do it with a little help or supervision.</span></li>
+          <li><span class="rn">3</span> <span><b>Competent</b> &mdash; I can do it well on my own, no help needed.</span></li>
+          <li><span class="rn">4</span> <span><b>Advanced</b> &mdash; I'm very skilled and can handle tricky situations.</span></li>
+          <li><span class="rn">5</span> <span><b>Expert</b> &mdash; This is a real strength &mdash; I could teach someone else.</span></li>
+        </ul>
+      </div>
+      <div id="skill-wrap"></div>
+      <p class="form-sec-hint" id="skill-empty">&#8593; Pick at least one category above and your skills to rate will appear here.</p>
+
+      <!-- 4. REFERENCES -->
+      <div class="form-sec"><span class="num">4</span> References</div>
+      <p class="form-sec-hint">Give us <b>at least two</b> people we can call who you've worked for before. We call every reference as part of vetting &mdash; real references help you get hired faster.</p>
+
+      <div class="ref-block">
+        <h5>Reference 1 <span class="tag">Required</span></h5>
+        <div class="grid2">
+          <div class="fg"><label>Name</label><input name="Ref 1 — Name" required></div>
+          <div class="fg"><label>Phone / contact</label><input name="Ref 1 — Contact" required></div>
+          <div class="fg"><label>How long you worked there</label><input name="Ref 1 — Duration" placeholder="e.g. 2 years, 2021–2023" required></div>
+          <div class="fg"><label>What you did for them</label><input name="Ref 1 — Role" placeholder="e.g. live-out nanny for 2 kids" required></div>
+        </div>
+      </div>
+
+      <div class="ref-block">
+        <h5>Reference 2 <span class="tag">Required</span></h5>
+        <div class="grid2">
+          <div class="fg"><label>Name</label><input name="Ref 2 — Name" required></div>
+          <div class="fg"><label>Phone / contact</label><input name="Ref 2 — Contact" required></div>
+          <div class="fg"><label>How long you worked there</label><input name="Ref 2 — Duration" placeholder="e.g. 18 months" required></div>
+          <div class="fg"><label>What you did for them</label><input name="Ref 2 — Role" placeholder="e.g. weekly deep cleaning" required></div>
+        </div>
+      </div>
+
+      <div class="ref-block">
+        <h5>Reference 3 <span class="tag opt">Optional</span></h5>
+        <div class="grid2">
+          <div class="fg"><label>Name</label><input name="Ref 3 — Name"></div>
+          <div class="fg"><label>Phone / contact</label><input name="Ref 3 — Contact"></div>
+          <div class="fg"><label>How long you worked there</label><input name="Ref 3 — Duration"></div>
+          <div class="fg"><label>What you did for them</label><input name="Ref 3 — Role"></div>
+        </div>
+      </div>
+
+      <!-- 5. PREFERENCES -->
+      <div class="form-sec"><span class="num">5</span> Your work preferences</div>
+      <p class="form-sec-hint">Tell us what works for you, so we only send you matches that fit your life.</p>
+
+      <div class="fg full"><label>Hours you're open to <small style="font-weight:400;color:var(--ink-soft)">(tick all that apply)</small></label>
+        <div class="chips">
+          <label><input type="checkbox" name="Preferred hours" value="Full-time"> Full-time</label>
+          <label><input type="checkbox" name="Preferred hours" value="Part-time"> Part-time</label>
+          <label><input type="checkbox" name="Preferred hours" value="A few days a week"> A few days a week</label>
+          <label><input type="checkbox" name="Preferred hours" value="Weekends"> Weekends</label>
+          <label><input type="checkbox" name="Preferred hours" value="Once-off / ad hoc"> Once-off</label>
+          <label><input type="checkbox" name="Preferred hours" value="Flexible"> Flexible</label>
+        </div>
+      </div>
+
+      <div class="fg full" style="margin-top:1rem;"><label>Days you can work</label>
+        <div class="chips">
+          <label><input type="checkbox" name="Available days" value="Mon"> Mon</label>
+          <label><input type="checkbox" name="Available days" value="Tue"> Tue</label>
+          <label><input type="checkbox" name="Available days" value="Wed"> Wed</label>
+          <label><input type="checkbox" name="Available days" value="Thu"> Thu</label>
+          <label><input type="checkbox" name="Available days" value="Fri"> Fri</label>
+          <label><input type="checkbox" name="Available days" value="Sat"> Sat</label>
+          <label><input type="checkbox" name="Available days" value="Sun"> Sun</label>
+        </div>
+      </div>
+
+      <div class="grid2" style="margin-top:1rem;">
+        <div class="fg"><label>Live-in or live-out?</label><select name="Live-in / live-out" required><option value="" disabled selected>Choose...</option><option>Live-out only</option><option>Live-in only</option><option>Either works</option></select></div>
+        <div class="fg"><label>Can start</label><select name="Can start" required><option value="" disabled selected>Choose...</option><option>Immediately</option><option>Within 2 weeks</option><option>Within a month</option><option>Just exploring</option></select></div>
+        <div class="fg full"><label>Areas / suburbs you're willing to work in</label><input name="Preferred locations" placeholder="e.g. Sandton, Midrand, Fourways — or 'anywhere I can reach by taxi'" required></div>
+        <div class="fg"><label>Own transport?</label><select name="Own transport"><option value="" disabled selected>Choose...</option><option>Yes, own car</option><option>Driver's licence, no car</option><option>Public transport / taxi</option><option>None</option></select></div>
+        <div class="fg"><label>Expected pay (optional)</label><input name="Expected pay" placeholder="e.g. R3,500/month or R45/hr"></div>
+        <div class="fg full"><label>Languages you speak</label><input name="Languages" placeholder="e.g. isiZulu, English, Sesotho" required></div>
+      </div>
+
+      <div class="fg full" style="margin-top:.4rem;"><label>Anything else we should know?</label><textarea name="About" placeholder="Tell us anything that makes you a great match — certificates, first-aid, special experience..."></textarea></div>
+
+      <label class="consent"><input type="checkbox" name="Consent: process data" value="Yes" required> I agree to Staffed processing my personal information to verify me and match me with work, as set out in our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>. I can withdraw this anytime. <b>(POPIA)</b></label>
+      <label class="consent"><input type="checkbox" name="Consent: criminal check" value="Yes" required> I give permission for Staffed to run a criminal background check (AFISwitch / SAPS) and verify my ID, references and skills. <b>(POPIA)</b></label>
       <button class="btn btn-mint btn-lg" type="submit" style="width:100%;justify-content:center;">Apply to join &#8594;</button>
     </form>
 
     <div class="privacy">
-      <b>&#128274; Your privacy &amp; your rights.</b> We only collect what we genuinely need to match and verify you &mdash; nothing more (POPIA's &ldquo;minimality&rdquo; principle). We never sell your data. You can ask to see, correct or delete your information any time at <b>privacy@khaya.co.za</b>, you may withdraw your consent, and you have the right to lodge a complaint with the <a href="https://inforegulator.org.za/" target="_blank" rel="noopener">Information Regulator</a>. Workers are never charged to apply and are protected by South African labour law. Read our full <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.
+      <b>&#128274; Your privacy &amp; your rights.</b> We only collect what we genuinely need to match and verify you &mdash; nothing more (POPIA's &ldquo;minimality&rdquo; principle). We never sell your data. You can ask to see, correct or delete your information any time at <b>privacy@staffed.co.za</b>, you may withdraw your consent, and you have the right to lodge a complaint with the <a href="https://inforegulator.org.za/" target="_blank" rel="noopener">Information Regulator</a>. Workers are never charged to apply and are protected by South African labour law. Read our full <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.
     </div>
 
     <div class="laws">
@@ -713,7 +920,7 @@ footer li a:hover{color:var(--coral);}
   <div class="wrap">
     <div class="sec-head center">
       <div class="eyebrow">The roadmap</div>
-      <h2 class="h2">Where Khaya is going</h2>
+      <h2 class="h2">Where Staffed is going</h2>
       <p class="lead">We're starting with vetted home &amp; care placement, done right. Here's what's coming next.</p>
     </div>
     <div class="road-grid">
@@ -731,8 +938,8 @@ footer li a:hover{color:var(--coral);}
     <h2>Trust, brought home.</h2>
     <p>Join the families and workers building something better, together.</p>
     <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;">
-      <a href="#get-started" onclick="khayaTab('employer');return false;" class="btn btn-coral btn-lg">Find help</a>
-      <a href="#get-started" onclick="khayaTab('worker');return false;" class="btn btn-ghost btn-lg">Find work</a>
+      <a href="#get-started" onclick="staffedTab('employer');return false;" class="btn btn-coral btn-lg">Find help</a>
+      <a href="#get-started" onclick="staffedTab('worker');return false;" class="btn btn-ghost btn-lg">Find work</a>
     </div>
   </div>
 </section>
@@ -744,7 +951,7 @@ footer li a:hover{color:var(--coral);}
       <div>
         <a href="#" class="logo">
           <svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="12" fill="#FF6B4A"/><path d="M20 9 L31.5 18.5 H8.5 Z" fill="#fff"/><rect x="11" y="18" width="18" height="13.5" rx="3" fill="#fff"/><path d="M20 28.6 C16.6 26 15 24.2 15 22.3 A2.1 2.1 0 0 1 20 21.6 A2.1 2.1 0 0 1 25 22.3 C25 24.2 23.4 26 20 28.6 Z" fill="#FF6B4A"/></svg>
-          khaya<span class="dot">.</span>
+          staffed<span class="dot">.</span>
         </a>
         <p>South Africa's friendly, fully-vetted home & care marketplace. Fair, safe work for every worker. Trust, brought home.</p>
       </div>
@@ -753,14 +960,14 @@ footer li a:hover{color:var(--coral);}
       <div><h5>Company</h5><ul><li><a href="#">About</a></li><li><a href="#">Safety</a></li><li><a href="#">Contact</a></li></ul></div>
     </div>
     <div class="f-bottom">
-      <span>© 2026 Khaya. Made with ❤️ in South Africa.</span>
+      <span>© 2026 Staffed. Made with ❤️ in South Africa.</span>
       <span><a href="privacy.html" style="color:inherit;">Privacy</a> · Terms</span>
     </div>
   </div>
 </footer>
 
 <script>
-function khayaTab(w){
+function staffedTab(w){
   var emp = w==='employer';
   document.getElementById('form-employer').style.display = emp?'block':'none';
   document.getElementById('form-worker').style.display = emp?'none':'block';
@@ -770,7 +977,78 @@ function khayaTab(w){
   tw.classList.toggle('mint', !emp);
   document.getElementById('get-started').scrollIntoView({behavior:'smooth'});
 }
-function khayaFaq(el){el.parentElement.classList.toggle('open');}
+function staffedFaq(el){el.parentElement.classList.toggle('open');}
+
+/* ---- Skills per category. Each ticked category reveals its list to self-rate 1–5. ---- */
+var STAFFED_SKILLS = {
+  'Nanny / au pair': ['Newborn & baby care','Toddler care','School-age care','Homework & learning support','Cooking for children','Bath & bedtime routines','School runs / driving kids','First aid & CPR','Special-needs experience'],
+  'Cleaner / domestic': ['General housekeeping','Deep cleaning','Laundry & ironing','Kitchen & oven cleaning','Bathroom sanitising','Floor care (mop & polish)','Window cleaning','Organising & decluttering'],
+  'Gardener': ['Lawn mowing & edging','Planting & flower beds','Pruning & trimming','Irrigation & watering','Pool maintenance','Landscaping','Weed & pest control','Tree care'],
+  'Home fixer / trade': ['Plumbing','Electrical','Painting','Carpentry','Tiling','General repairs / handyman','Appliance repair','Welding'],
+  'Elderly carer': ['Personal care & bathing','Mobility & transfers','Medication reminders','Cooking for dietary needs','Companionship','Dementia / Alzheimer’s care','Basic nursing / wound care','First aid & CPR'],
+  'Driver': ['Defensive driving','School runs','Long-distance trips','Vehicle checks & maintenance','Route & GPS knowledge','Professional permit (PrDP)','Errands & loading'],
+  'Pet care': ['Dog walking','Pet sitting','Grooming','Feeding & medication','Basic training','Handling multiple pets','Overnight care']
+};
+
+function staffedSkills(){
+  var wrap = document.getElementById('skill-wrap');
+  var empty = document.getElementById('skill-empty');
+  /* remember any ratings already chosen so re-rendering doesn't wipe them */
+  var saved = {};
+  wrap.querySelectorAll('input[type=radio]:checked').forEach(function(r){ saved[r.name] = r.value; });
+
+  var picked = [];
+  document.querySelectorAll('#cat-pick input[type=checkbox]:checked').forEach(function(c){ picked.push(c.value); });
+
+  wrap.innerHTML = '';
+  picked.forEach(function(cat){
+    var skills = STAFFED_SKILLS[cat] || [];
+    var block = document.createElement('div');
+    block.className = 'skill-block';
+    var html = '<h5>'+cat+'</h5>';
+    skills.forEach(function(skill){
+      var nm = 'Skill ['+cat+'] '+skill;
+      html += '<div class="skill-row"><span class="sk-name">'+skill+'</span><span class="rating">';
+      for(var i=1;i<=5;i++){
+        var id = (nm+i).replace(/[^a-z0-9]/gi,'');
+        var chk = (saved[nm]===String(i)) ? ' checked' : '';
+        html += '<span class="rate-opt"><input type="radio" id="'+id+'" name="'+nm+'" value="'+i+'"'+chk+'><label for="'+id+'">'+i+'</label></span>';
+      }
+      html += '</span></div>';
+    });
+    block.innerHTML = html;
+    wrap.appendChild(block);
+  });
+  empty.style.display = picked.length ? 'none' : 'block';
+}
+
+function staffedValidate(){
+  var cats = document.querySelectorAll('#cat-pick input[type=checkbox]:checked').length;
+  if(!cats){ alert('Please pick at least one work category so we can match you.'); return false; }
+  var hours = document.querySelectorAll('input[name="Preferred hours"]:checked').length;
+  if(!hours){ alert('Please tick at least one option for the hours you can work.'); return false; }
+  var days = document.querySelectorAll('input[name="Available days"]:checked').length;
+  if(!days){ alert('Please tick at least one day you can work.'); return false; }
+  return true;
+}
+
+/* ---- Launch promo modal ---- */
+function staffedModal(open){
+  var ov=document.getElementById('launch-modal');
+  if(open){ ov.classList.add('show'); }
+  else{ ov.classList.remove('show'); try{localStorage.setItem('staffed_promo_seen','1');}catch(e){} }
+}
+function staffedPromoGo(which){
+  if(which==='employer'){ var f=document.querySelector('#form-employer [name="Founding code"]'); if(f){f.value='FOUNDING15';} }
+  staffedModal(false);
+  staffedTab(which);
+}
+window.addEventListener('load',function(){
+  var seen=null; try{seen=localStorage.getItem('staffed_promo_seen');}catch(e){}
+  if(!seen){ setTimeout(function(){staffedModal(true);},1100); }
+});
+document.addEventListener('click',function(e){ if(e.target.id==='launch-modal'){staffedModal(false);} });
+document.addEventListener('keydown',function(e){ if(e.key==='Escape'){staffedModal(false);} });
 </script>
 </body>
 </html>
