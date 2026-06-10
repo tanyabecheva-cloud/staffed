@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Staffed — the friendly way to find trusted, vetted help for your home. Nannies, cleaners, gardeners, carers & more. Every person background-checked. Trust, brought home.">
-<title>Staffed — Trusted help for your home, made easy</title>
+<meta name="description" content="Khaya Solutions — the friendly way to find trusted, vetted help for your home. Nannies, cleaners, gardeners, carers & more. Every person background-checked. Trust, brought home.">
+<title>Khaya Solutions — Trusted help for your home, made easy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -321,7 +321,7 @@ footer li a:hover{color:var(--coral);}
 .modal-ov.show{display:flex;}
 .modal{background:#fff;border-radius:26px;max-width:560px;width:100%;box-shadow:0 30px 70px rgba(28,23,38,.32);position:relative;max-height:94vh;overflow-y:auto;animation:pop .3s ease;}
 @keyframes pop{from{transform:translateY(18px) scale(.97);opacity:0}to{transform:none;opacity:1}}
-.modal-top{background:linear-gradient(135deg,var(--coral),var(--sun));color:#fff;padding:1.9rem 1.8rem 1.5rem;text-align:center;position:relative;border-radius:26px 26px 0 0;}
+.modal-top{background:linear-gradient(135deg,var(--coral-dark),var(--coral));color:#fff;padding:1.9rem 1.8rem 1.5rem;text-align:center;position:relative;border-radius:26px 26px 0 0;}
 .modal-top .em{font-size:2.5rem;line-height:1;}
 .modal-top h3{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.55rem;margin:.4rem 0 .25rem;}
 .modal-top p{opacity:.96;font-size:.95rem;line-height:1.4;max-width:400px;margin:0 auto;}
@@ -330,12 +330,12 @@ footer li a:hover{color:var(--coral);}
 .modal-body{padding:1.4rem;display:grid;gap:1rem;}
 .promo{border-radius:18px;padding:1.3rem 1.4rem;}
 .promo .pill{display:inline-block;font-family:'Poppins',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;padding:.28rem .75rem;border-radius:var(--pill);margin-bottom:.6rem;color:#fff;}
-.promo h4{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.18rem;margin-bottom:.4rem;line-height:1.2;}
-.promo p{font-size:.9rem;color:var(--ink-soft);line-height:1.5;margin-bottom:1rem;}
+.promo h4{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.18rem;margin-bottom:.4rem;line-height:1.2;color:#3A3540;}
+.promo p{font-size:.9rem;color:#6A6377;line-height:1.5;margin-bottom:1rem;}
 .promo .btn{width:100%;justify-content:center;}
-.promo-worker{background:var(--mint-soft);}
-.promo-worker .pill{background:var(--mint-dark);}
-.promo-emp{background:var(--coral-soft);}
+.promo-worker{background:var(--coral-soft);}
+.promo-worker .pill{background:var(--coral);}
+.promo-emp{background:#fff;border:2px solid var(--coral);}
 .promo-emp .pill{background:var(--coral-dark);}
 .promo .code{font-family:'Poppins',sans-serif;font-weight:800;letter-spacing:.06em;font-size:.95rem;background:#fff;border:2px dashed var(--coral);color:var(--coral-dark);border-radius:10px;padding:.4rem .8rem;display:inline-block;margin:0 0 1rem;}
 .modal-foot{text-align:center;padding:0 1.5rem 1.5rem;}
@@ -347,26 +347,26 @@ footer li a:hover{color:var(--coral);}
 <div class="announce">🎉 Launch offer — free background checks for the first 200 workers · 15% off for founding families. <a onclick="staffedModal(true);return false;">See the offer →</a></div>
 
 <!-- LAUNCH PROMO MODAL -->
-<div class="modal-ov" id="launch-modal" role="dialog" aria-modal="true" aria-label="Staffed launch offer">
+<div class="modal-ov" id="launch-modal" role="dialog" aria-modal="true" aria-label="Khaya Solutions launch offer">
   <div class="modal">
     <div class="modal-top">
       <button class="modal-x" onclick="staffedModal(false)" aria-label="Close">&times;</button>
       <div class="em">🎉</div>
-      <h3>Staffed is launching!</h3>
-      <p>We're building South Africa's most trusted home &amp; care network &mdash; and the first to join get the founding perks.</p>
+      <h3>We're celebrating our launch!</h3>
+      <p>Khaya Solutions is live &mdash; South Africa's most trusted home &amp; care network. The first to join get the founding perks. 🥳</p>
     </div>
     <div class="modal-body">
       <div class="promo promo-worker">
         <span class="pill">First 200 workers</span>
         <h4>Your background check is on us &mdash; free.</h4>
-        <p>To celebrate launch, Staffed pays for your full AFISwitch / SAPS criminal check (normally R150+) for the first 200 workers who sign up. Get verified for free and go to the front of the hiring queue.</p>
-        <button class="btn btn-mint" onclick="staffedPromoGo('worker')">Sign up free &#8594;</button>
+        <p>To celebrate launch, Khaya Solutions pays for your full AFISwitch / SAPS criminal check (normally R300) for the first 200 workers who sign up. Get verified for free and go to the front of the hiring queue.</p>
+        <button class="btn btn-coral" onclick="staffedPromoGo('worker')">Sign up free &#8594;</button>
       </div>
       <div class="promo promo-emp">
         <span class="pill">Founding families · first 100</span>
-        <h4>15% off Staffed Care &mdash; locked in for life.</h4>
+        <h4>15% off Khaya Solutions Care &mdash; locked in for life.</h4>
         <div class="code">Code: FOUNDING15</div>
-        <p>Claim your founding spot today &mdash; <b>pay nothing now</b>. We'll put you first in the matching queue and message you the moment vetted workers go live in your area. Your 15% founding discount on Staffed Care is locked in for good, and you only ever pay when you actually hire. No workers wasted, no risk &mdash; just first dibs.</p>
+        <p>Claim your founding spot today &mdash; <b>pay nothing now</b>. We'll put you first in the matching queue and message you the moment vetted workers go live in your area. Your 15% founding discount on Khaya Solutions Care is locked in for good, and you only ever pay when you actually hire. No workers wasted, no risk &mdash; just first dibs.</p>
         <button class="btn btn-coral" onclick="staffedPromoGo('employer')">Claim founding spot &#8594;</button>
       </div>
     </div>
@@ -385,7 +385,7 @@ footer li a:hover{color:var(--coral);}
         <rect x="11" y="18" width="18" height="13.5" rx="3" fill="#fff"/>
         <path d="M20 28.6 C16.6 26 15 24.2 15 22.3 A2.1 2.1 0 0 1 20 21.6 A2.1 2.1 0 0 1 25 22.3 C25 24.2 23.4 26 20 28.6 Z" fill="#FF6B4A"/>
       </svg>
-      staffed<span class="dot">.</span>
+      Khaya <span class="dot">Solutions</span>
     </a>
     <div class="nav-links" id="navlinks">
       <a href="#how">How it works</a>
@@ -494,16 +494,16 @@ footer li a:hover{color:var(--coral);}
   </div>
 </section>
 
-<!-- ONLY ON STAFFED -->
+<!-- ONLY ON KHAYA SOLUTIONS -->
 <section style="background:var(--ink);color:#fff;">
   <div class="wrap">
     <div class="sec-head center">
-      <div class="eyebrow" style="color:var(--sun);">Only on Staffed</div>
+      <div class="eyebrow" style="color:var(--sun);">Only on Khaya Solutions</div>
       <h2 class="h2" style="color:#fff;">Things no one else gives you</h2>
       <p class="lead" style="color:rgba(255,255,255,.75);">The stuff that actually keeps your home running &mdash; and treats workers right.</p>
     </div>
     <div class="steps">
-      <div class="step"><div class="n" style="background:#FF8552">&#128679;</div><h3>Sick-day backup cover</h3><p>If your regular worker is ever sick or away, we send a vetted stand-in the same day. Emergency rate R299/day &mdash; or no call-out fee with Staffed Care.</p></div>
+      <div class="step"><div class="n" style="background:#FF8552">&#128679;</div><h3>Sick-day backup cover</h3><p>If your regular worker is ever sick or away, we send a vetted stand-in the same day. Emergency rate R299/day &mdash; or no call-out fee with Khaya Solutions Care.</p></div>
       <div class="step"><div class="n" style="background:#FF6B4A">&#129309;</div><h3>Fair-Work Guarantee</h3><p>Every worker is guaranteed fair pay, on time, a real contract and safe conditions &mdash; or we step in. We're the only ones who protect the worker too.</p></div>
       <div class="step"><div class="n" style="background:#DE441E">&#128260;</div><h3>90-day rematch</h3><p>If the fit isn't right, we find you a better match &mdash; free, within your guarantee period.</p></div>
     </div>
@@ -533,7 +533,7 @@ footer li a:hover{color:var(--coral);}
     <div>
       <div class="eyebrow">Safety, seriously</div>
       <h2 class="h2" style="margin-bottom:1rem;">We check, so you don't have to worry.</h2>
-      <p class="lead" style="margin-bottom:1.6rem;">Before anyone shows up on Staffed, they pass a proper, multi-step vetting process. Because this is your home, your kids, your gran. No corners cut. Ever. Our criminal checks run through AFISwitch &mdash; the system accredited to search the official SAPS criminal database.</p>
+      <p class="lead" style="margin-bottom:1.6rem;">Before anyone shows up on Khaya Solutions, they pass a proper, multi-step vetting process. Because this is your home, your kids, your gran. No corners cut. Ever. Our criminal checks run through AFISwitch &mdash; the system accredited to search the official SAPS criminal database.</p>
       <a href="#" class="btn btn-ink btn-lg">See how we vet →</a>
     </div>
     <div class="safe-card">
@@ -579,7 +579,7 @@ footer li a:hover{color:var(--coral);}
     <div>
       <div class="eyebrow" style="color:var(--mint-dark)">Dignity, always</div>
       <h2 class="h2" style="margin-bottom:1rem;">Safety works both ways.</h2>
-      <p class="lead" style="margin-bottom:1.6rem;">Workers are people, not chores. Every person on Staffed is treated with respect — fair pay, real contracts, safe working conditions and reasonable hours. No exploitation, nobody treated like a servant. Staffed only works when work is fair, and the good employers want exactly that.</p>
+      <p class="lead" style="margin-bottom:1.6rem;">Workers are people, not chores. Every person on Khaya Solutions is treated with respect — fair pay, real contracts, safe working conditions and reasonable hours. No exploitation, nobody treated like a servant. Khaya Solutions only works when work is fair, and the good employers want exactly that.</p>
       <a href="#" class="btn btn-mint btn-lg">How we protect workers →</a>
     </div>
   </div>
@@ -595,12 +595,12 @@ footer li a:hover{color:var(--coral);}
     <div class="testi">
       <div class="tcard" style="background:var(--coral-soft);border-color:transparent;">
         <div class="stars">★★★★★</div>
-        <p>"Finding a nanny I actually trust felt impossible — until Staffed. The vetting gave me total peace of mind."</p>
+        <p>"Finding a nanny I actually trust felt impossible — until Khaya Solutions. The vetting gave me total peace of mind."</p>
         <div class="who"><div class="a" style="background:var(--coral)">S</div><div><b>Sarah M.</b><small>Mom · Sandton</small></div></div>
       </div>
       <div class="tcard" style="background:var(--mint-soft);border-color:transparent;">
         <div class="stars">★★★★★</div>
-        <p>"Staffed treated me with respect from day one, helped with my clearance, and I had work within two weeks."</p>
+        <p>"Khaya Solutions treated me with respect from day one, helped with my clearance, and I had work within two weeks."</p>
         <div class="who"><div class="a" style="background:var(--mint)">T</div><div><b>Thandi N.</b><small>Nanny · Joburg</small></div></div>
       </div>
       <div class="tcard" style="background:var(--berry-soft);border-color:transparent;">
@@ -669,7 +669,7 @@ footer li a:hover{color:var(--coral);}
         <a href="#get-started" onclick="staffedTab('employer');return false;" class="btn btn-coral" style="width:100%;justify-content:center;">Find help</a>
       </div>
       <div class="price-card">
-        <h3>Staffed Care</h3>
+        <h3>Khaya Solutions Care</h3>
         <div class="who2">Optional ongoing support</div>
         <div class="price-amt">R99<small>/month</small></div>
         <div class="price-sub">Cancel anytime</div>
@@ -680,7 +680,7 @@ footer li a:hover{color:var(--coral);}
           <li>Contract updates &amp; renewals</li>
           <li>Priority rematch if needed</li>
         </ul>
-        <a href="#get-started" onclick="staffedTab('employer');return false;" class="btn btn-ghost" style="width:100%;justify-content:center;">Add Staffed Care</a>
+        <a href="#get-started" onclick="staffedTab('employer');return false;" class="btn btn-ghost" style="width:100%;justify-content:center;">Add Khaya Solutions Care</a>
       </div>
     </div>
     <div class="price-free">
@@ -708,7 +708,7 @@ footer li a:hover{color:var(--coral);}
       <div class="wage-row"><span>Home fixer / trade</span><b>R80&ndash;R350/hr</b></div>
       <div class="wage-row"><span>Minimum wage (legal floor)</span><b>R30.23/hr</b></div>
     </div>
-    <p class="wage-note">These are typical hourly wages the <b>worker earns</b> &mdash; separate from Staffed's once-off placement fee. Final pay is always agreed between you and the worker, in a proper BCEA contract.</p>
+    <p class="wage-note">These are typical hourly wages the <b>worker earns</b> &mdash; separate from Khaya Solutions's once-off placement fee. Final pay is always agreed between you and the worker, in a proper BCEA contract.</p>
   </div>
 </section>
 
@@ -723,7 +723,7 @@ footer li a:hover{color:var(--coral);}
 <div class="faq-item"><button class="faq-q" onclick="staffedFaq(this)">Is it free?</button><div class="faq-a"><div>Browsing is free, and it is completely free for workers to apply and get verified. Employers only pay a placement fee when you successfully hire someone.</div></div></div>
 <div class="faq-item"><button class="faq-q" onclick="staffedFaq(this)">What if the match doesn't work out?</button><div class="faq-a"><div>We check in with both sides after every placement. If the fit isn't right, we step in and find you a better match &mdash; free, within your guarantee period. You're never stuck.</div></div></div>
 <div class="faq-item"><button class="faq-q" onclick="staffedFaq(this)">How do you check in after I hire someone?</button><div class="faq-a"><div>We call both the family and the worker in the first week, then send quick check-in messages both ways &mdash; making sure everyone's happy, the pay and treatment are fair, and catching any problem early.</div></div></div>
-<div class="faq-item"><button class="faq-q" onclick="staffedFaq(this)">What happens if my worker is sick?</button><div class="faq-a"><div>With Staffed Care you are covered &mdash; if your regular worker is sick or away, we send you a vetted stand-in the same day so your home keeps running. Emergency cover is R299/day &mdash; or free to arrange with Staffed Care (you just pay the stand-in's daily wage). No scrambling, no lost workday.</div></div></div>
+<div class="faq-item"><button class="faq-q" onclick="staffedFaq(this)">What happens if my worker is sick?</button><div class="faq-a"><div>With Khaya Solutions Care you are covered &mdash; if your regular worker is sick or away, we send you a vetted stand-in the same day so your home keeps running. Emergency cover is R299/day &mdash; or free to arrange with Khaya Solutions Care (you just pay the stand-in's daily wage). No scrambling, no lost workday.</div></div></div>
       <div class="faq-item"><button class="faq-q" onclick="staffedFaq(this)">How are workers vetted?</button><div class="faq-a"><div>Every worker passes an AFISwitch criminal-record check against the live SAPS database, Home Affairs ID verification, a live selfie match and real reference calls. Anyone working with children is also checked against the National Register for Sex Offenders.</div></div></div>
 <div class="faq-item"><button class="faq-q" onclick="staffedFaq(this)">How are workers protected?</button><div class="faq-a"><div>Fair pay (at least the national minimum wage), proper BCEA contracts, help registering for UIF, safe working conditions, and the right to rate employers. No exploitation, ever.</div></div></div>
 <div class="faq-item"><button class="faq-q" onclick="staffedFaq(this)">What about my privacy?</button><div class="faq-a"><div>We're POPIA-compliant: we only collect what we genuinely need, we never sell your data, and you can view, correct or delete your information any time. See the Privacy Notice in the form section.</div></div></div>
@@ -750,8 +750,8 @@ footer li a:hover{color:var(--coral);}
     <!-- TODO: get a free key at web3forms.com and paste it into BOTH access_key fields below -->
     <form id="form-employer" class="form-card" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="98669c0d-7374-4219-868e-000b66273cbe">
-      <input type="hidden" name="subject" value="New Staffed employer enquiry">
-      <input type="hidden" name="from_name" value="Staffed website">
+      <input type="hidden" name="subject" value="New Khaya Solutions employer enquiry">
+      <input type="hidden" name="from_name" value="Khaya Solutions website">
       <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
       <h3>Find trusted help &#127968;</h3>
       <p class="fc-sub">Tell us what you need. We'll match you with vetted, verified workers and handle the paperwork. And we check in afterwards to make sure the fit works.</p>
@@ -767,17 +767,17 @@ footer li a:hover{color:var(--coral);}
         <div class="fg"><label>Founding code (optional)</label><input name="Founding code" placeholder="e.g. FOUNDING15"></div>
         <div class="fg full"><label>Anything else?</label><textarea name="Notes" placeholder="Your home, children's ages, special needs, languages..."></textarea></div>
       </div>
-      <label class="consent"><input type="checkbox" name="POPIA consent" value="Yes" required> I agree to Staffed processing my personal information to match me with vetted workers, as set out in the Privacy Notice below. <b>(POPIA)</b></label>
+      <label class="consent"><input type="checkbox" name="POPIA consent" value="Yes" required> I agree to Khaya Solutions processing my personal information to match me with vetted workers, as set out in the Privacy Notice below. <b>(POPIA)</b></label>
       <button class="btn btn-coral btn-lg" type="submit" style="width:100%;justify-content:center;">Start matching &#8594;</button>
     </form>
 
     <form id="form-worker" class="form-card" style="display:none;" action="https://api.web3forms.com/submit" method="POST" onsubmit="return staffedValidate()">
       <input type="hidden" name="access_key" value="98669c0d-7374-4219-868e-000b66273cbe">
-      <input type="hidden" name="subject" value="New Staffed worker application">
-      <input type="hidden" name="from_name" value="Staffed website">
+      <input type="hidden" name="subject" value="New Khaya Solutions worker application">
+      <input type="hidden" name="from_name" value="Khaya Solutions website">
       <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
       <h3>Find work with dignity &#128188;</h3>
-      <p class="fc-sub">Join Staffed, get verified, and connect with employers who pay fairly and treat you with respect. We're building our network now &mdash; register free to be first in line.</p>
+      <p class="fc-sub">Join Khaya Solutions, get verified, and connect with employers who pay fairly and treat you with respect. We're building our network now &mdash; register free to be first in line.</p>
 
       <!-- 1. ABOUT YOU -->
       <div class="form-sec"><span class="num">1</span> About you</div>
@@ -892,13 +892,13 @@ footer li a:hover{color:var(--coral);}
 
       <div class="fg full" style="margin-top:.4rem;"><label>Anything else we should know?</label><textarea name="About" placeholder="Tell us anything that makes you a great match — certificates, first-aid, special experience..."></textarea></div>
 
-      <label class="consent"><input type="checkbox" name="Consent: process data" value="Yes" required> I agree to Staffed processing my personal information to verify me and match me with work, as set out in our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>. I can withdraw this anytime. <b>(POPIA)</b></label>
-      <label class="consent"><input type="checkbox" name="Consent: criminal check" value="Yes" required> I give permission for Staffed to run a criminal background check (AFISwitch / SAPS) and verify my ID, references and skills. <b>(POPIA)</b></label>
+      <label class="consent"><input type="checkbox" name="Consent: process data" value="Yes" required> I agree to Khaya Solutions processing my personal information to verify me and match me with work, as set out in our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>. I can withdraw this anytime. <b>(POPIA)</b></label>
+      <label class="consent"><input type="checkbox" name="Consent: criminal check" value="Yes" required> I give permission for Khaya Solutions to run a criminal background check (AFISwitch / SAPS) and verify my ID, references and skills. <b>(POPIA)</b></label>
       <button class="btn btn-mint btn-lg" type="submit" style="width:100%;justify-content:center;">Apply to join &#8594;</button>
     </form>
 
     <div class="privacy">
-      <b>&#128274; Your privacy &amp; your rights.</b> We only collect what we genuinely need to match and verify you &mdash; nothing more (POPIA's &ldquo;minimality&rdquo; principle). We never sell your data. You can ask to see, correct or delete your information any time at <b>privacy@staffed.co.za</b>, you may withdraw your consent, and you have the right to lodge a complaint with the <a href="https://inforegulator.org.za/" target="_blank" rel="noopener">Information Regulator</a>. Workers are never charged to apply and are protected by South African labour law. Read our full <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.
+      <b>&#128274; Your privacy &amp; your rights.</b> We only collect what we genuinely need to match and verify you &mdash; nothing more (POPIA's &ldquo;minimality&rdquo; principle). We never sell your data. You can ask to see, correct or delete your information any time at <b>privacy@khayasolutions.co.za</b>, you may withdraw your consent, and you have the right to lodge a complaint with the <a href="https://inforegulator.org.za/" target="_blank" rel="noopener">Information Regulator</a>. Workers are never charged to apply and are protected by South African labour law. Read our full <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.
     </div>
 
     <div class="laws">
@@ -920,7 +920,7 @@ footer li a:hover{color:var(--coral);}
   <div class="wrap">
     <div class="sec-head center">
       <div class="eyebrow">The roadmap</div>
-      <h2 class="h2">Where Staffed is going</h2>
+      <h2 class="h2">Where Khaya Solutions is going</h2>
       <p class="lead">We're starting with vetted home &amp; care placement, done right. Here's what's coming next.</p>
     </div>
     <div class="road-grid">
@@ -951,7 +951,7 @@ footer li a:hover{color:var(--coral);}
       <div>
         <a href="#" class="logo">
           <svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="12" fill="#FF6B4A"/><path d="M20 9 L31.5 18.5 H8.5 Z" fill="#fff"/><rect x="11" y="18" width="18" height="13.5" rx="3" fill="#fff"/><path d="M20 28.6 C16.6 26 15 24.2 15 22.3 A2.1 2.1 0 0 1 20 21.6 A2.1 2.1 0 0 1 25 22.3 C25 24.2 23.4 26 20 28.6 Z" fill="#FF6B4A"/></svg>
-          staffed<span class="dot">.</span>
+          Khaya <span class="dot">Solutions</span>
         </a>
         <p>South Africa's friendly, fully-vetted home & care marketplace. Fair, safe work for every worker. Trust, brought home.</p>
       </div>
@@ -960,7 +960,7 @@ footer li a:hover{color:var(--coral);}
       <div><h5>Company</h5><ul><li><a href="#">About</a></li><li><a href="#">Safety</a></li><li><a href="#">Contact</a></li></ul></div>
     </div>
     <div class="f-bottom">
-      <span>© 2026 Staffed. Made with ❤️ in South Africa.</span>
+      <span>© 2026 Khaya Solutions. Made with ❤️ in South Africa.</span>
       <span><a href="privacy.html" style="color:inherit;">Privacy</a> · Terms</span>
     </div>
   </div>
