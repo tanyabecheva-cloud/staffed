@@ -11,9 +11,9 @@
 <style>
 :root{
   --coral:#FF6B4A;--coral-dark:#EF4E2C;--coral-soft:#FFF1EC;
-  --mint:#10B981;--mint-dark:#0C9268;--mint-soft:#E7FBF3;
-  --sun:#FFC23C;--sun-soft:#FFF5DC;
-  --berry:#6C5CE7;--berry-soft:#F0EEFE;
+  --mint:#10B981;--mint-dark:#0C9268;--mint-soft:#EBF7F1;
+  --sun:#FF6B4A;--sun-soft:#FFF1EC;
+  --berry:#1C1726;--berry-soft:#F3EFEC;
   --ink:#1C1726;--ink-soft:#6A6377;
   --white:#fff;--paper:#FFFAF7;--line:#F0E8E2;
   --r:18px;--r-lg:30px;--pill:999px;
@@ -34,8 +34,8 @@ a{text-decoration:none;color:inherit;}
 .btn-ink:hover{background:#000;}
 .btn-ghost{background:#fff;color:var(--ink);border:2px solid var(--ink);}
 .btn-ghost:hover{background:var(--ink);color:#fff;}
-.btn-mint{background:var(--mint);color:#fff;}
-.btn-mint:hover{background:var(--mint-dark);}
+.btn-mint{background:var(--ink);color:#fff;}
+.btn-mint:hover{background:#000;}
 .btn-lg{padding:1.05rem 2rem;font-size:1.05rem;}
 
 /* NAV */
@@ -145,7 +145,7 @@ section{padding:5.5rem 0;}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
 .duo-card{border-radius:var(--r-lg);padding:2.8rem;position:relative;overflow:hidden;}
 .duo-emp{background:linear-gradient(150deg,var(--coral),#FF8C5A);color:#fff;}
-.duo-wrk{background:linear-gradient(150deg,var(--mint),#2BD4A0);color:#fff;}
+.duo-wrk{background:linear-gradient(150deg,#312A40,#1C1726);color:#fff;}
 .duo-card h3{font-weight:800;font-size:1.7rem;margin-bottom:.7rem;}
 .duo-card p{opacity:.95;line-height:1.55;margin-bottom:1.6rem;max-width:300px;}
 .duo-card .em{position:absolute;font-size:7rem;right:-10px;bottom:-20px;opacity:.18;}
@@ -421,9 +421,9 @@ footer li a:hover{color:var(--coral);}
       <div class="hero-proof">
         <div class="avatars">
           <span style="background:#FF6B4A">T</span>
-          <span style="background:#10B981">M</span>
-          <span style="background:#6C5CE7">N</span>
-          <span style="background:#FFC23C;color:#1C1726">+</span>
+          <span style="background:#EF4E2C">M</span>
+          <span style="background:#1C1726">N</span>
+          <span style="background:#FF6B4A;color:#fff">+</span>
         </div>
         <small><b>Every worker fully vetted</b><br>across South Africa</small>
       </div>
@@ -431,9 +431,9 @@ footer li a:hover{color:var(--coral);}
     <div class="hero-art">
       <div class="blob blob1"></div>
       <div class="badge-check">✓</div>
-      <div class="float-card fc1"><div class="ic" style="background:var(--coral-soft)"><svg viewBox="0 0 32 32" width="27" height="27" aria-hidden="true"><path fill="#FF6B4A" d="M19.8 6A4.3 4.3 0 0 0 16 3.8 4.3 4.3 0 0 0 12.2 6 6 6 0 0 0 9 11.4C9 15.9 12.1 19 16 19s7-3.1 7-7.6A6 6 0 0 0 19.8 6Z"/><circle cx="13" cy="11.6" r="1.15" fill="#FFF1EC"/><circle cx="19" cy="11.6" r="1.15" fill="#FFF1EC"/><path d="M13.7 14.5a3.2 3.2 0 0 0 4.6 0" stroke="#FFF1EC" stroke-width="1.3" fill="none" stroke-linecap="round"/><path fill="#FF6B4A" d="M16 20c-3 0-5.7.9-7.6 2.5C7 23.7 6.4 25 6.4 26.6h19.2c0-1.6-.6-2.9-2-4.1C21.7 20.9 19 20 16 20Z"/></svg></div><div class="t"><b>Thandi N.</b><small>Nanny · <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" style="vertical-align:-1px;fill:#FFC23C"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.9 6.7 19.5l1.2-6L3.4 9.3l6-.7Z"/></svg> 4.9 · Verified</small></div></div>
-      <div class="float-card fc2"><div class="ic" style="background:var(--mint-soft)"><svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><path fill="#10B981" d="M25.6 5.6C13.2 5.1 6.6 12 6.6 24.4c0 .6.4 1 1 1C20 25.4 26.5 18.5 26.5 6.1 26.5 5.8 26 5.6 25.6 5.6Z"/><path d="M10 22.5 22 10" stroke="#E7FBF3" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg></div><div class="t"><b>Moses D.</b><small>Gardener · <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" style="vertical-align:-1px;fill:#FFC23C"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.9 6.7 19.5l1.2-6L3.4 9.3l6-.7Z"/></svg> 5.0 · Verified</small></div></div>
-      <div class="float-card fc3"><div class="ic" style="background:var(--berry-soft)"><svg viewBox="0 0 32 32" width="25" height="25" aria-hidden="true"><path fill="#6C5CE7" d="M16 27C6.5 20.5 4 15.6 4 11.4A5.6 5.6 0 0 1 16 8.6 5.6 5.6 0 0 1 28 11.4C28 15.6 25.5 20.5 16 27Z"/></svg></div><div class="t"><b>Nomsa B.</b><small>Carer · <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" style="vertical-align:-1px;fill:#FFC23C"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.9 6.7 19.5l1.2-6L3.4 9.3l6-.7Z"/></svg> 4.8 · Verified</small></div></div>
+      <div class="float-card fc1"><div class="ic" style="background:var(--coral-soft)"><svg viewBox="0 0 32 32" width="27" height="27" aria-hidden="true"><path fill="#FF6B4A" d="M19.8 6A4.3 4.3 0 0 0 16 3.8 4.3 4.3 0 0 0 12.2 6 6 6 0 0 0 9 11.4C9 15.9 12.1 19 16 19s7-3.1 7-7.6A6 6 0 0 0 19.8 6Z"/><circle cx="13" cy="11.6" r="1.15" fill="#FFF1EC"/><circle cx="19" cy="11.6" r="1.15" fill="#FFF1EC"/><path d="M13.7 14.5a3.2 3.2 0 0 0 4.6 0" stroke="#FFF1EC" stroke-width="1.3" fill="none" stroke-linecap="round"/><path fill="#FF6B4A" d="M16 20c-3 0-5.7.9-7.6 2.5C7 23.7 6.4 25 6.4 26.6h19.2c0-1.6-.6-2.9-2-4.1C21.7 20.9 19 20 16 20Z"/></svg></div><div class="t"><b>Thandi N.</b><small>Nanny · <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" style="vertical-align:-1px;fill:#FF6B4A"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.9 6.7 19.5l1.2-6L3.4 9.3l6-.7Z"/></svg> 4.9 · Verified</small></div></div>
+      <div class="float-card fc2"><div class="ic" style="background:var(--coral-soft)"><svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><path fill="#1C1726" d="M25.6 5.6C13.2 5.1 6.6 12 6.6 24.4c0 .6.4 1 1 1C20 25.4 26.5 18.5 26.5 6.1 26.5 5.8 26 5.6 25.6 5.6Z"/><path d="M10 22.5 22 10" stroke="#FFF1EC" stroke-width="1.7" fill="none" stroke-linecap="round"/></svg></div><div class="t"><b>Moses D.</b><small>Gardener · <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" style="vertical-align:-1px;fill:#FF6B4A"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.9 6.7 19.5l1.2-6L3.4 9.3l6-.7Z"/></svg> 5.0 · Verified</small></div></div>
+      <div class="float-card fc3"><div class="ic" style="background:var(--berry-soft)"><svg viewBox="0 0 32 32" width="25" height="25" aria-hidden="true"><path fill="#FF6B4A" d="M16 27C6.5 20.5 4 15.6 4 11.4A5.6 5.6 0 0 1 16 8.6 5.6 5.6 0 0 1 28 11.4C28 15.6 25.5 20.5 16 27Z"/></svg></div><div class="t"><b>Nomsa B.</b><small>Carer · <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" style="vertical-align:-1px;fill:#FF6B4A"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.9 6.7 19.5l1.2-6L3.4 9.3l6-.7Z"/></svg> 4.8 · Verified</small></div></div>
     </div>
   </div>
 </header>
@@ -604,7 +604,7 @@ footer li a:hover{color:var(--coral);}
       <div class="tcard" style="background:var(--mint-soft);border-color:transparent;">
         <div class="stars">★★★★★</div>
         <p>"Khaya Solutions treated me with respect from day one, helped with my clearance, and I had work within two weeks."</p>
-        <div class="who"><div class="a" style="background:var(--mint)">T</div><div><b>Thandi N.</b><small>Nanny · Joburg</small></div></div>
+        <div class="who"><div class="a" style="background:var(--coral)">T</div><div><b>Thandi N.</b><small>Nanny · Joburg</small></div></div>
       </div>
       <div class="tcard" style="background:var(--berry-soft);border-color:transparent;">
         <div class="stars">★★★★★</div>
@@ -627,7 +627,7 @@ footer li a:hover{color:var(--coral);}
     <div class="duo-card duo-wrk">
       <h3>Looking for work?</h3>
       <p>Build a verified profile, get matched with employers who pay fairly and treat you with respect. Real contracts, safe conditions — never exploitation.</p>
-      <a href="#get-started" onclick="staffedTab('worker');return false;" class="btn" style="background:#fff;color:var(--mint-dark)">Start earning →</a>
+      <a href="#get-started" onclick="staffedTab('worker');return false;" class="btn" style="background:#fff;color:var(--ink)">Start earning →</a>
       <span class="em"><svg viewBox="0 0 24 24" width="118" height="118" aria-hidden="true" style="fill:#fff"><path d="M9 5h6a2 2 0 0 1 2 2v1h3a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a1 1 0 0 1 1-1h3V7a2 2 0 0 1 2-2Zm0 3h6V7H9Z"/></svg></span>
     </div>
   </div>
